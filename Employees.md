@@ -33,4 +33,4 @@ Our dataset contains 10 attributes (See Table 1), and 740 objects. Furthermore, 
 | Years               | Years of work                     | Numeric       | 0-9                                  |
 | Salary              | Salary of the employee            | Numeric       | 650-25000                            |
 | Job rate            | Employee evaluation               | Numeric       | 1-13                                 |
-| Permission          | The access rights and privileges  |               | 1-14                                 |
+| Permission          | The access rights and privileges  | Numeric       | 1-14                                 |
