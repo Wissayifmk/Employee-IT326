@@ -59,8 +59,11 @@ Detecting the outliers:
 <img width="622" alt="Screenshot 2023-10-05 231123" src="https://github.com/Wissayifmk/Employee-IT326/assets/144927134/0bdbbba2-d3af-4391-b84b-cb1c9ea583ac">
 
 
+
 <img width="623" alt="Screenshot 2023-10-05 231825" src="https://github.com/Wissayifmk/Employee-IT326/assets/144927134/667ef30f-c45b-4a10-9826-440ed85ff1c9">
 <img width="603" alt="Screenshot 2023-10-05 231932" src="https://github.com/Wissayifmk/Employee-IT326/assets/144927134/1140eb1d-2769-46d4-b083-027fd4f13648">
+
+
 
 <img width="587" alt="Screenshot 2023-10-05 232300" src="https://github.com/Wissayifmk/Employee-IT326/assets/144927134/5170d5bb-601e-400b-8e17-460c4a742131">
 <img width="577" alt="Screenshot 2023-10-05 232317" src="https://github.com/Wissayifmk/Employee-IT326/assets/144927134/8ad51a19-ebe1-40eb-b09e-22baa0b1f0e4">
