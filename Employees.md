@@ -57,3 +57,24 @@ Detecting the outliers:
 
 <img width="626" alt="Screenshot 2023-10-05 231058" src="https://github.com/Wissayifmk/Employee-IT326/assets/144927134/1b685fc7-1f4e-477b-b612-781453cbfcae">
 <img width="622" alt="Screenshot 2023-10-05 231123" src="https://github.com/Wissayifmk/Employee-IT326/assets/144927134/0bdbbba2-d3af-4391-b84b-cb1c9ea583ac">
+
+
+<img width="623" alt="Screenshot 2023-10-05 231825" src="https://github.com/Wissayifmk/Employee-IT326/assets/144927134/667ef30f-c45b-4a10-9826-440ed85ff1c9">
+<img width="603" alt="Screenshot 2023-10-05 231932" src="https://github.com/Wissayifmk/Employee-IT326/assets/144927134/1140eb1d-2769-46d4-b083-027fd4f13648">
+
+<img width="587" alt="Screenshot 2023-10-05 232300" src="https://github.com/Wissayifmk/Employee-IT326/assets/144927134/5170d5bb-601e-400b-8e17-460c4a742131">
+<img width="577" alt="Screenshot 2023-10-05 232317" src="https://github.com/Wissayifmk/Employee-IT326/assets/144927134/8ad51a19-ebe1-40eb-b09e-22baa0b1f0e4">
+
+Removing outliers:
+
+<img width="284" alt="Screenshot 2023-10-05 232928" src="https://github.com/Wissayifmk/Employee-IT326/assets/144927134/413e80a9-69b4-4bc5-af35-1b3e3e60d0bf">
+
+Data before removing the outliers:
+
+<img width="579" alt="Screenshot 2023-10-05 232832" src="https://github.com/Wissayifmk/Employee-IT326/assets/144927134/f4f91b23-929d-408b-badf-33caf07486dd">
+<img width="604" alt="Screenshot 2023-10-05 232843" src="https://github.com/Wissayifmk/Employee-IT326/assets/144927134/a362a22e-3eb8-4b23-9d42-1f0b36ad8ede">
+
+Data after removing the outliers:
+
+<img width="580" alt="Screenshot 2023-10-05 233203" src="https://github.com/Wissayifmk/Employee-IT326/assets/144927134/7e130351-38a5-48f0-a966-f739041e79cd">
+<img width="616" alt="Screenshot 2023-10-05 233214" src="https://github.com/Wissayifmk/Employee-IT326/assets/144927134/1b4eebf9-2a02-4e50-bf16-2e8846894daf">
