@@ -36,5 +36,6 @@ Our dataset contains 10 attributes (See Table 1), and 740 objects. Furthermore, 
 | Permission          | The access rights and privileges  | Numeric       | 1-14                                 |
 
 •	Sample of raw data:
-![image](https://github.com/Wissayifmk/Employee-IT326/assets/144927134/f4580867-58c7-4714-8dee-5b1d63743767)
+
+![image](https://github.com/Wissayifmk/Employee-IT326/assets/144927134/78d4e3d9-94b7-43a8-9103-c17cb20f7cde)
 
