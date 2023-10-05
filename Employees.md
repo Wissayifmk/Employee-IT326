@@ -34,3 +34,6 @@ Our dataset contains 10 attributes (See Table 1), and 740 objects. Furthermore, 
 | Salary              | Salary of the employee            | Numeric       | 650-25000                            |
 | Job rate            | Employee evaluation               | Numeric       | 1-13                                 |
 | Permission          | The access rights and privileges  | Numeric       | 1-14                                 |
+•	Sample of raw data:
+![image](https://github.com/Wissayifmk/Employee-IT326/assets/144927134/f4580867-58c7-4714-8dee-5b1d63743767)
+
