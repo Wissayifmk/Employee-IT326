@@ -37,5 +37,5 @@ Our dataset contains 10 attributes (See Table 1), and 740 objects. Furthermore, 
 
 •	Sample of raw data:
 
-![image](https://github.com/Wissayifmk/Employee-IT326/assets/144927134/78d4e3d9-94b7-43a8-9103-c17cb20f7cde)
+<img width="676" alt="Screenshot 2023-10-05 221423" src="https://github.com/Wissayifmk/Employee-IT326/assets/144927134/4002dbec-3098-4855-8ed5-565c55103010">
 
