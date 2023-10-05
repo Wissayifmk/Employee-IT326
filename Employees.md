@@ -39,3 +39,21 @@ Our dataset contains 10 attributes (See Table 1), and 740 objects. Furthermore, 
 
 <img width="676" alt="Screenshot 2023-10-05 221423" src="https://github.com/Wissayifmk/Employee-IT326/assets/144927134/4002dbec-3098-4855-8ed5-565c55103010">
 
+•	Missing values:
+
+<img width="182" alt="Screenshot 2023-10-05 222010" src="https://github.com/Wissayifmk/Employee-IT326/assets/144927134/d1370f5f-d56f-4b44-9d2c-8f034a8a3e4c">
+
+•	Statistical measures:
+
+<img width="368" alt="Screenshot 2023-10-05 222214" src="https://github.com/Wissayifmk/Employee-IT326/assets/144927134/532cc1dd-951f-4dc5-b7e8-6c363b5d7b6f">
+
+Data preprocessing:
+•	Checking for missing values:
+
+<img width="199" alt="Screenshot 2023-10-05 223953" src="https://github.com/Wissayifmk/Employee-IT326/assets/144927134/e4f9413c-458e-42f4-ac68-f94d42adbbba">
+
+•	Detecting and removing the outliers:
+Detecting the outliers:
+
+<img width="626" alt="Screenshot 2023-10-05 231058" src="https://github.com/Wissayifmk/Employee-IT326/assets/144927134/1b685fc7-1f4e-477b-b612-781453cbfcae">
+<img width="622" alt="Screenshot 2023-10-05 231123" src="https://github.com/Wissayifmk/Employee-IT326/assets/144927134/0bdbbba2-d3af-4391-b84b-cb1c9ea583ac">
