@@ -96,18 +96,66 @@ The pie chart shows that more than half of the employees work as a full-time jub
 bb <- Employees$Education %>% table() %>% barplot(axisnames=F, main='Education', ylab='Frequency',col=c('pink', 'blue', 'lightgreen'))
 text(bb, tab/2, labels=txt, cex=0.5)
 ```
+#Data preprocessing 
 
+#Data cleaning
+# to find the total null values in the dataset
+```{r}
+dim(Employees)
+Employees = na.omit(Employees)
+dim(Employees)
+sum(is.na(Employees))
+```
 
+#Detecting outliers
+```{r}
+OutSalary = outlier(Employees$Salary, logical =TRUE)
+sum(OutSalary)
+Find_outlierSalary = which(OutSalary ==TRUE, arr.ind = TRUE)
+OutSalary
+Find_outlierSalary
+```
 
+```{r}
+OutPermissions = outlier(Employees$Permissions, logical =TRUE)
+sum(OutPermissions)
+Find_outlierPre = which(OutPermissions ==TRUE, arr.ind = TRUE)
+OutPermissions
+Find_outlierPre
+```
 
+```{r}
+OutJobRate= outlier(Employees$'Job Rate', logical =TRUE)
+sum(OutJobRate)
+Find_outlierJob = which(OutJobRate ==TRUE, arr.ind = TRUE)
+OutJobRate
+Find_outlierJob
+```
 
+```{r}
+OutYears= outlier(Employees$Years, logical =TRUE)
+sum(OutYears)
+Find_outlierYears = which(OutYears ==TRUE, arr.ind = TRUE)
+OutYears
+Find_outlierYears
+```
+```{r}
+summary(Employees)
+str(Employees)
+```
 
+```{r}
+#Removing outliers
+Employees= Employees[-Find_outlierSalary,]
+Employees= Employees[-Find_outlierPre,]
+Employees= Employees[-Find_outlierJob,]
+Employees= Employees[-Find_outlierYears,]
+```
 
-
-
-
-
-
+```{r}
+summary(Employees)
+str(Employees)
+```
 
 
 #Define function normalize().
