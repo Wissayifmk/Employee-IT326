@@ -99,6 +99,17 @@ text(bb, tab/2, labels=txt, cex=0.5)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 #Define function normalize().
 ```{r}
 normalize <- function(x) {return ((x - min(x)) / (max(x) - min(x)))}
