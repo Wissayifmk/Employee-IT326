@@ -96,3 +96,46 @@ The pie chart shows that more than half of the employees work as a full-time jub
 bb <- Employees$Education %>% table() %>% barplot(axisnames=F, main='Education', ylab='Frequency',col=c('pink', 'blue', 'lightgreen'))
 text(bb, tab/2, labels=txt, cex=0.5)
 ```
+
+
+
+#Define function normalize().
+```{r}
+normalize <- function(x) {return ((x - min(x)) / (max(x) - min(x)))}
+```
+
+#Define function Z_normalize().
+```{r}
+Z_normalize <- function(x) {return ((x - mean(x)) / sd(x))}
+```
+
+#Call normalize funcrtion
+```{r}
+Employees$Permissions<-normalize(Employees$Permissions)
+print(Employees)
+
+Employees$'Job Rate'<-normalize(Employees$'Job Rate')
+print(Employees)
+
+Employees$Salary<-normalize(Employees$Salary)
+print(Employees)
+
+Employees$Years<-normalize(Employees$Years)
+print(Employees)
+```
+
+
+#Call Z_normalize funcrtion
+```{r}
+Employees$Permissions<-Z_normalize(Employees$Permissions)
+print(Employees)
+
+Employees$'Job Rate'<-Z_normalize(Employees$'Job Rate')
+print(Employees)
+
+Employees$Salary<-Z_normalize(Employees$Salary)
+print(Employees)
+
+Employees$Years<-Z_normalize(Employees$Years)
+print(Employees)
+```
