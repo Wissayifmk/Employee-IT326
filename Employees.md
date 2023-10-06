@@ -35,3 +35,101 @@ Our dataset contains 10 attributes (See Table 1), and 740 objects. Furthermore, 
 | Job rate            | Employee evaluation               | Numeric       | 1-13                                 |
 | Permission          | The access rights and privileges  | Numeric       | 1-14                                 |
 
+---
+title: "R Notebook"
+output: html_notebook
+---
+#Sample of row
+```{r}
+View(Employees)
+
+```
+
+#statiscal summarise -Nominal-
+```{r}
+summary(Employees$Education)
+```
+
+```{r}
+summary(Employees$Department)
+```
+
+```{r}
+summary(Employees$'Job Status')
+```
+
+```{r}
+summary(Employees$Location)
+```
+
+#statiscal summarise -Numerical-
+```{r}
+summary(Employees$Years)
+```
+
+```{r}
+summary(Employees$Salary)
+```
+
+```{r}
+summary(Employees$'Job Rate')
+```
+
+```{r}
+summary(Employees$Permissions)
+```
+
+#Code for variance
+```{r}
+var(Employees$Salary)
+```
+
+#Graphs
+
+#Boox plot for salary and years
+```{r}
+boxplot(Employees$Salary)
+```
+Description for Salary boxplot:
+The Salary boxplot illustrates that there are no outliers in Salary attribute, and it shows that the salaries are evenly distributed around the middle point, indicating a relatively balanced salary distribution.
+
+```{r}
+boxplot(Employees$Years)
+```
+Description for Years boxplot:
+The Years of Work boxplot illustrates how the values in the dataset have relatively balanced around the median value of 4. Also, there are no outliers found. So, no need for preprocessing.
+```{r}
+boxplot(Employees$'Job Rate')
+```
+Description for Job rate boxplot:
+The Job rate boxplot is relatively balanced around the median value of 5. In a more comprehensive analysis, no outliers exist in the Job rate attribute. However, there is a spread in the job rates above 50% of the dataset.
+
+```{r}
+boxplot(Employees$Permissions)
+```
+Description for Permissions boxplot:
+The Permissions boxplot reveals several important insights about the distribution of Permissions. It illustrates that the values of the attribute are almost balanced near to the median. In addition to this, there is no outliers that must be removed in preprocessing stage.
+
+#Histogram for permission 
+```{r}
+Permissions <- Employees$Permissions
+hist(Permissions)
+```
+Description for Permissions histogram.:
+The frequency of Permissions for the employees in the dataset is represented by the histogram. After observation, we noticed that the most values lie in approximately from 1 permission to 2. As for the rest of the employees, their Permissions range from 3 to 14 permission.
+
+# pie chart fo job status 
+```{r}
+tab <- Employees$'Job Status' %>% table()
+precentages <- tab %>% prop.table() %>% round(3) * 100 
+txt <- paste0(names(tab), '\n', precentages, '%') 
+pie(tab, labels=txt)
+```
+Description for Job Status pie chart:
+The pie chart shows that more than half of the employees work as a full-time jub. In addition to this, it will helps us determine salaries for each employee according to their Job Status.
+
+#Bar chart for Education 
+```{r}
+bb <- Employees$Education %>% table() %>% barplot(axisnames=F, main='Education', ylab='Frequency',col=c('pink', 'blue', 'lightgreen'))
+text(bb, tab/2, labels=txt, cex=0.5)
+```
