@@ -198,3 +198,29 @@ print(Employees)
 Employees$Years<-Z_normalize(Employees$Years)
 print(Employees)
 ```
+#Discretization
+
+```{r}
+Employees$Years <- ifelse(Employees$Years <= 0, "Entry level",
+                                 ifelse(Employees$Years <= 3, "Intermediate level",
+                                           ifelse(Employees$Years <= 9, "Advanced level",0)))
+```
+
+```{r}
+Employees$Salary_Range <- ifelse(Employees$Salary <= 600, "600-1000",
+                          ifelse(Employees$Salary <= 1000, "1000-1600",
+                                 ifelse(Employees$Salary <= 1600, "1600-2000",
+                                        ifelse(Employees$Salary <= 2600, "2000-2600", "Above 2600"))))
+```
+
+```{r}
+Employees$`Job Rate` <- ifelse(Employees$`Job Rate` <= 1, "1-6",
+                          ifelse(Employees$`Job Rate` <= 6, "6-10",
+                              ifelse(Employees$`Job Rate` <= 13, "10-13","Above 13")))
+```
+
+```{r}
+Employees$Permissions <- ifelse(Employees$Permissions <= 1, "1-7",
+                                ifelse(Employees$Permissions <= 7, "7-11",
+                                      ifelse(Employees$Permissions <= 14, "11-14","Above 14")))
+```
