@@ -113,7 +113,11 @@ Employees = na.omit(Employees)
 dim(Employees)
 sum(is.na(Employees))
 ```
-
+#Replace missing Data with average value
+```{r}
+Employees$Years = ifelse(is.na(Employees$Years), ave(Employees$Years, FUN =function(x) mean(x,na.rm=TRUE)), Employees$Years)
+View(Employees)
+```
 #Detecting outliers
 ```{r}
 OutSalary = outlier(Employees$Salary, logical =TRUE)
