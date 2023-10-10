@@ -92,10 +92,12 @@ pie(tab, labels=txt)
 Description for Job Status pie chart:
 The pie chart shows that more than half of the employees work as a full-time jub. In addition to this, it will helps us determine salaries for each employee according to their Job Status.
 
-#Bar chart for Education 
+#pie chart for Education 
 ```{r}
-bb <- Employees$Education %>% table() %>% barplot(axisnames=F, main='Education', ylab='Frequency',col=c('pink', 'blue', 'lightgreen'))
-text(bb, tab/2, labels=txt, cex=0.5)
+tab <- Employees$Education %>% table()
+precentages <- tab %>% prop.table() %>% round(3) * 100 
+txt <- paste0(names(tab), '\n', precentages, '%') 
+pie(tab, labels=txt)
 ```
 #Data preprocessing 
 
