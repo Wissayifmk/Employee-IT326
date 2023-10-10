@@ -2,6 +2,7 @@
 title: "R Notebook"
 output: html_notebook
 ---
+# This code is running using R notebook in RStudio
 #Sample of row
 ```{r}
 View(Employees)
