@@ -183,8 +183,6 @@ The pie chart shows that approximately half of the employees have academic educa
 # to find the total null values in the dataset
 ```{r}
 dim(Employees)
-Employees = na.omit(Employees)
-dim(Employees)
 sum(is.na(Employees))
 ```
 #Replace missing Data with average value
