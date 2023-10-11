@@ -218,7 +218,7 @@ Employees$Years <- ifelse(Employees$Years <= 0, "Entry level",
 ```
 
 ```{r}
-Employees$Salary_Range <- ifelse(Employees$Salary <= 600, "600-1000",
+Employees$Salary<- ifelse(Employees$Salary <= 600, "600-1000",
                           ifelse(Employees$Salary <= 1000, "1000-1600",
                                  ifelse(Employees$Salary <= 1600, "1600-2000",
                                         ifelse(Employees$Salary <= 2600, "2000-2600", "Above 2600"))))
