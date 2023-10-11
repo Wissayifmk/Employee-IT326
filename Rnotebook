@@ -115,6 +115,8 @@ summary(Employees$'Job Rate')
 ```{r}
 summary(Employees$Permissions)
 ```
+Description of summary:
+This is the summary of all data set
 
 #Code for variance
 ```{r}
@@ -187,6 +189,9 @@ sum(is.na(Employees))
 Employees$Years = ifelse(is.na(Employees$Years), ave(Employees$Years, FUN =function(x) mean(x,na.rm=TRUE)), Employees$Years)
 View(Employees)
 ```
+Description of data cleaning:
+After applying data cleaning to our dataset, it showed zero null values which means Employees dataset is clean and does not contain null values.
+
 #Detecting outliers
 ```{r}
 OutSalary = outlier(Employees$Salary, logical =TRUE)
@@ -231,6 +236,8 @@ Employees= Employees[-Find_outlierPre,]
 Employees= Employees[-Find_outlierJob,]
 Employees= Employees[-Find_outlierYears,]
 ```
+Description of detecting outliers, Removing outliers:
+This function is used to find outliers-if found- in order to remove them to have better prediction. 
 
 ```{r}
 summary(Employees)
@@ -278,6 +285,10 @@ print(Employees)
 Employees$Years<-Z_normalize(Employees$Years)
 print(Employees)
 ```
+Description of normalization function:
+This function is used to get similar ranges to rescale the numeric values 
+ to a common scale, without ruining the differences in the ranges of the values.
+
 #Discretization
 
 ```{r}
@@ -306,6 +317,9 @@ Employees$Permissions <- ifelse(Employees$Permissions <= 1, "1-7",
                                 ifelse(Employees$Permissions <= 7, "7-11",
                                       ifelse(Employees$Permissions <= 14, "11-14","Above 14")))
 ```
+Description of the discretization:
+This function arranges the values in intervals and give every interval a suitable label.
+Years, Salary, job rate and permission.
 
 #Encoding
 {r}
