@@ -322,11 +322,11 @@ This function arranges the values in intervals and give every interval a suitabl
 Years, Salary, job rate and permission.
 
 #Encoding
-{r}
+```{r}
 Employees$Education = factor(Employees$Education,levels = c("Bachelor","Doctor", "Prof", "Academic", "Institute"), labels = c(1, 2, 3, 4, 5))
 ```
 
-{r}
+```{r}
 Employees$Department = factor(Employees$Department,levels = c("Training","Protection", "NFI", "Finance", "HR", "Wash", "FSL", "Marketing", "Logistics", "M&E", "Livelihoods", "Emeergincy", "Health", "IT", "TPM", "Media", "Education", "Researches", "Supply chain", "Shelter", "Projects"), labels = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21))
 ```
 
@@ -334,22 +334,22 @@ Employees$Department = factor(Employees$Department,levels = c("Training","Protec
 Employees$'Job Status' = factor(Employees$'Job Status',levels = c("Part Time","Contract", "Full Time"), labels = c(1, 2, 3))
 ```
 
-{r}
+```{r}
 Employees$Location = factor(Employees$Location,levels = c("United Arab Emirates","Egypt", "Syria", "Saudi Arabia"), labels = c(1, 2, 3, 4))
 ```
 
-{r}
+```{r}
 Employees$Years = factor(Employees$Years,levels = c("Entry level","Intermediate level", "Advanced level"), labels = c(1, 2, 3))
 ```
 
-{r}
+```{r}
 Employees$Salary = factor(Employees$Salary,levels = c("600-1000","1000-1600", "1600-2000", "2000-2600", "Above 2600"), labels = c(1, 2, 3, 4, 5))
 ```
 
-{r}
+```{r}
 Employees$`Job Rate` = factor(Employees$`Job Rate`,levels = c("1-6","6-10", "10-13", "Above 13"), labels = c(1, 2, 3, 4))
 ```
 
-{r}
+```{r}
 Employees$Permissions = factor(Employees$Permissions,levels = c("1-7","7-11", "11-14", "Above 14"), labels = c(1, 2, 3, 4))
 ```
