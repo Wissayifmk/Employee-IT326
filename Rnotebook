@@ -353,3 +353,5 @@ Employees$`Job Rate` = factor(Employees$`Job Rate`,levels = c("1-6","6-10", "10-
 ```{r}
 Employees$Permissions = factor(Employees$Permissions,levels = c("1-7","7-11", "11-14", "Above 14"), labels = c(1, 2, 3, 4))
 ```
+Description of encoding:
+Encoding is the process of converting categorical data to numerical format to use it as an input in machine learning algorithms. 
