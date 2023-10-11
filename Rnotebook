@@ -330,7 +330,7 @@ Employees$Education = factor(Employees$Education,levels = c("Bachelor","Doctor",
 Employees$Department = factor(Employees$Department,levels = c("Training","Protection", "NFI", "Finance", "HR", "Wash", "FSL", "Marketing", "Logistics", "M&E", "Livelihoods", "Emeergincy", "Health", "IT", "TPM", "Media", "Education", "Researches", "Supply chain", "Shelter", "Projects"), labels = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21))
 ```
 
-{r}
+```{r}
 Employees$'Job Status' = factor(Employees$'Job Status',levels = c("Part Time","Contract", "Full Time"), labels = c(1, 2, 3))
 ```
 
@@ -355,3 +355,7 @@ Employees$Permissions = factor(Employees$Permissions,levels = c("1-7","7-11", "1
 ```
 Description of encoding:
 Encoding is the process of converting categorical data to numerical format to use it as an input in machine learning algorithms. 
+
+```{r}
+View(Employees)
+```
