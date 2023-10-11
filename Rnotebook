@@ -178,8 +178,8 @@ Description for Education pie chart:
 The pie chart shows that approximately half of the employees have academic education, and a few employees are prof, which helps us predict their salaries according to their level of education.
 
 #Data preprocessing 
-
 #Data cleaning
+
 # to find the total null values in the dataset
 ```{r}
 dim(Employees)
@@ -191,7 +191,7 @@ Employees$Years = ifelse(is.na(Employees$Years), ave(Employees$Years, FUN =funct
 View(Employees)
 ```
 Description of data cleaning:
-After applying data cleaning to our dataset, it showed zero null values which means Employees dataset is clean and does not contain null values.
+We checked if our data contains missing or null values and replace these missing values with average value to get more efficient dataset.
 
 #Detecting outliers
 ```{r}
@@ -321,6 +321,7 @@ Employees$Permissions <- ifelse(Employees$Permissions <= 1, "1-7",
 Description of the discretization:
 This function arranges the values in intervals and give every interval a suitable label.
 Years, Salary, job rate and permission.
+by discretization, the values will be simpler to classify or perform other methods.
 
 #Encoding
 ```{r}
