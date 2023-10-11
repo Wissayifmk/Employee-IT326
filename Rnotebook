@@ -346,3 +346,6 @@ Encoding is the process of converting categorical data to numerical format to us
 ```{r}
 View(Employees)
 ```
+
+#Feature Selection 
+Feature selection is not required in our dataset; because all of the attributes provide significant unique information about the selected variable, showing that every attribute contributes to the prediction task. In this case, removing any attribute via feature selection may result in the loss of important data. In addition to this, some machine learning algorithms have the ability to recognize complex interactions and attribute correlations. In this scenario, adding all variables allows the model to learn and exploit complex patterns in the data, which could improve predicting performance since our dataset contains 740 columns.
