@@ -174,6 +174,9 @@ precentages <- tab %>% prop.table() %>% round(3) * 100
 txt <- paste0(names(tab), '\n', precentages, '%') 
 pie(tab, labels=txt)
 ```
+Description for Education pie chart:
+The pie chart shows that approximately half of the employees have academic education, and a few employees are prof, which helps us predict their salaries according to their level of education.
+
 #Data preprocessing 
 
 #Data cleaning
