@@ -140,28 +140,27 @@ boxplot(Employees$Salary)
 ```
 
 Description for Salary boxplot:
-The Salary boxplot illustrates that there are no outliers in Salary attribute, and it shows that the salaries are evenly distributed around the middle point, indicating a relatively balanced salary distribution.
+The Salary boxplot illustrates that the salaries are evenly distributed around the middle point, indicating a relatively balanced salary distribution.
 
 ```{r}
 boxplot(Employees$Years)
 ```
 
 Description for Years boxplot:
-The Years of Work boxplot illustrates how the values in the dataset have relatively balanced around the median value of 4. Also, there are no outliers found. So, no need for preprocessing.
-
+The Years of Work boxplot illustrates how the values in the dataset have relatively balanced around the median value of 4. 
 ```{r}
 boxplot(Employees$'Job Rate')
 ```
 
 Description for Job rate boxplot:
-The Job rate boxplot is relatively balanced around the median value of 5. In a more comprehensive analysis, no outliers exist in the Job rate attribute. However, there is a spread in the job rates above 50% of the dataset.
+The Job rate boxplot is relatively balanced around the median value of 5. In a more comprehensive analysis, there is a spread in the job rates above 50% of the dataset.
 
 ```{r}
 boxplot(Employees$Permissions)
 ```
 
 Description for Permissions boxplot:
-The Permissions boxplot reveals several important insights about the distribution of Permissions. It illustrates that the values of the attribute are almost balanced near to the median. In addition to this, there is no outliers that must be removed in preprocessing stage.
+The Permissions boxplot reveals several important insights about the distribution of Permissions. It illustrates that the values of the attribute are almost balanced near to the median. 
 
 #Histogram for permission 
 
