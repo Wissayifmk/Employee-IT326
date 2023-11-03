@@ -1,12 +1,6 @@
 ---
 title: "Arab Region Employees"
-output:
-  pdf_document: default
-  html_document:
-    df_print: paged
-editor_options:
-  markdown:
-    wrap: 72
+output: html_document
 ---
 
 ### This code is running using R notebook in RStudio
