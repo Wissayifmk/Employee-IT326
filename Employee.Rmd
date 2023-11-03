@@ -1,0 +1,425 @@
+---
+title: "Arab Region Employees"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+editor_options:
+  markdown:
+    wrap: 72
+---
+
+### This code is running using R notebook in RStudio
+
+### Goul:
+
+Our main goal in collecting the Arab Employee dataset is to learn more
+about what affects how much Arab professionals get paid. We want to
+gather information about their qualifications, where they live, and how
+much experience they have. This data will help organizations and
+policymakers make better decisions about managing talent, planning for
+the future workforce, and making sure pay is fair in the Arab region.
+
+### Here are two specific goals we have for this dataset:
+
+#### Classification Goal:
+
+We want to group employees into different categories based on their
+qualifications, country location, and experience. By doing this, we can
+see patterns and trends among different groups. This will help us
+understand if there are differences in pay based on qualifications and
+experience, and it will help us identify talented individuals. With this
+information, we can develop strategies to support career growth and make
+sure people are being paid fairly.
+
+#### Defect Prediction Goal:
+
+We want to use machine learning and statistical techniques to create
+models that can predict any issues or anomalies with employee salaries.
+This could include things like unfair pay practices, wage gaps, or
+differences based on qualifications or experience. By catching these
+problems early, we can fix them and make sure everyone is being treated
+fairly. This analysis will help us improve compensation policies and
+make better decisions about managing talent.
+
+#### By achieving these goals, we can:
+
+Understand how salaries are distributed among different employee groups.
+Identify any biases or unfairness in pay based on qualifications,
+experience, or location. Develop strategies for hiring, developing, and
+keeping talented employees. Make sure pay practices are fair and
+transparent. Catch and fix salary-related issues before they become
+bigger problems. Plan for the future workforce and allocate resources
+effectively. Make better decisions about pay and talent management in
+the Arab region. Overall, collecting the Arab Employee dataset with
+information about salary, qualifications, location, and experience is
+really important. It will help us analyze the data and make fair
+decisions that create a good working environment for Arab professionals.
+
+### Source of the dataset:
+
+Kaggle
+
+### link of the dataset:
+
+<https://www.kaggle.com/datasets/qusaybtoush1990/employes>
+
+### General Information about Employees dataset:
+
+Our dataset contains 10 attributes (See Table 1), and 740 objects.
+Furthermore, class lables the class label for our dataset is Salary.
+
+*Table 1: General Information about the attributes for Employees
+dataset.*
+
+| Attributes name | Description                       | Data type | Possible values                      |
+|-----------------|-----------------------------------|-----------|--------------------------------------|
+| ID              | Employee id                       | Nominal   | 6 values                             |
+| Education       | Education level for the employee  | Nominal   | Prof-Doctor-Bachelor\\...            |
+| Department      | Department that employee works in | Nominal   | FSL-NEI-IT\\...                      |
+| Job status      | Employment situatio               | Nominal   | Full time-part time-cotract          |
+| Location        | The location of the job           | Nominal   | saudi arabia-United Arab Emirates... |
+| Start date      | Date to start the job             | Nominal   | 7Jan11-1Jan20                        |
+| Years           | Years of work \| Numeric          | Numeric   | 0-9                                  |
+| Salary          | Salary of the employee            | Numeric   | 650-25000                            |
+| Job rate        | Employee evaluation               | Numeric   | 1-13                                 |
+| Permission      | The access rights and privileges  | Numeric   | 1-14                                 |
+
+#### Sample of Employees dataset
+
+```{r}
+View(Employees)
+```
+
+#### Number of column and rows
+
+```{r}
+dim(Employees)
+```
+
+#### statiscal summarise -Nominal-
+
+```{r}
+summary(Employees$Education)
+```
+
+```{r}
+summary(Employees$Department)
+```
+
+```{r}
+summary(Employees$'Job Status')
+```
+
+```{r}
+summary(Employees$Location)
+```
+
+#### statiscal summarise -Numerical-
+
+```{r}
+summary(Employees$Years)
+```
+
+```{r}
+summary(Employees$Salary)
+```
+
+```{r}
+summary(Employees$'Job Rate')
+```
+
+```{r}
+summary(Employees$Permissions)
+```
+
+### Description of summary:
+
+#### This is the summary of all data set
+
+#### Code for variance
+
+```{r}
+var(Employees$Salary)
+```
+
+#### Graphs
+
+##### Box plot for salary and years
+
+```{r}
+boxplot(Employees$Salary)
+```
+
+###### Description for Salary boxplot:
+
+###### The Salary boxplot illustrates that the salaries are evenly distributed around the middle point, indicating a relatively balanced salary distribution.
+
+```{r}
+boxplot(Employees$Years)
+```
+
+###### Description for Years boxplot:
+
+###### The Years of Work boxplot illustrates how the values in the dataset have relatively balanced around the median value of 4.
+
+```{r}
+boxplot(Employees$'Job Rate')
+```
+
+###### Description for Job rate boxplot:
+
+###### The Job rate boxplot is relatively balanced around the median value of 5. In a more comprehensive analysis, there is a spread in the job rates above 50% of the dataset.
+
+```{r}
+boxplot(Employees$Permissions)
+```
+
+###### Description for Permissions boxplot:
+
+###### The Permissions boxplot reveals several important insights about the distribution of Permissions. It illustrates that the values of the attribute are almost balanced near to the median.
+
+##### Histogram for permission
+
+```{r}
+Permissions <- Employees$Permissions
+hist(Permissions)
+```
+
+###### Description for Permissions histogram.:
+
+###### The frequency of Permissions for the employees in the dataset is represented by the histogram. After observation, we noticed that the most values lie in approximately from 1 permission to 2. As for the rest of the employees, their Permissions range from 3 to 14 permission.
+
+##### pie chart fo job status
+
+```{r}
+tab <- Employees$'Job Status' %>% table()
+precentages <- tab %>% prop.table() %>% round(3) * 100 
+txt <- paste0(names(tab), '\n', precentages, '%') 
+pie(tab, labels=txt)
+```
+
+###### Description for Job Status pie chart:
+
+###### The pie chart shows that more than half of the employees work as a full-time jub. In addition to this, it will helps us determine salaries for each employee according to their Job Status.
+
+##### pie chart for Education
+
+```{r}
+tab <- Employees$Education %>% table()
+precentages <- tab %>% prop.table() %>% round(3) * 100 
+txt <- paste0(names(tab), '\n', precentages, '%') 
+pie(tab, labels=txt)
+```
+
+###### Description for Education pie chart:
+
+###### The pie chart shows that approximately half of the employees have academic education, and a few employees are prof, which helps us predict their salaries according to their level of education.
+
+### Data preprocessing
+
+#### Data cleaning
+
+##### to find the total null values in the dataset
+
+```{r}
+dim(Employees)
+sum(is.na(Employees))
+```
+
+##### Replace missing Data with average value
+
+```{r}
+Employees$Years = ifelse(is.na(Employees$Years), ave(Employees$Years, FUN =function(x) mean(x,na.rm=TRUE)), Employees$Years)
+View(Employees)
+```
+
+###### Description of data cleaning:
+
+###### We checked if our data contains missing or null values and replace these missing values with average value to get more efficient dataset.
+
+##### Detecting outliers
+
+```{r}
+OutSalary = outlier(Employees$Salary, logical =TRUE)
+sum(OutSalary)
+Find_outlierSalary = which(OutSalary ==TRUE, arr.ind = TRUE)
+OutSalary
+Find_outlierSalary
+```
+
+```{r}
+OutPermissions = outlier(Employees$Permissions, logical =TRUE)
+sum(OutPermissions)
+Find_outlierPre = which(OutPermissions ==TRUE, arr.ind = TRUE)
+OutPermissions
+Find_outlierPre
+```
+
+```{r}
+OutJobRate= outlier(Employees$'Job Rate', logical =TRUE)
+sum(OutJobRate)
+Find_outlierJob = which(OutJobRate ==TRUE, arr.ind = TRUE)
+OutJobRate
+Find_outlierJob
+```
+
+```{r}
+OutYears= outlier(Employees$Years, logical =TRUE)
+sum(OutYears)
+Find_outlierYears = which(OutYears ==TRUE, arr.ind = TRUE)
+OutYears
+Find_outlierYears
+```
+
+```{r}
+summary(Employees)
+str(Employees)
+```
+
+```{r}
+#Removing outliers
+Employees= Employees[-Find_outlierSalary,]
+Employees= Employees[-Find_outlierPre,]
+Employees= Employees[-Find_outlierJob,]
+Employees= Employees[-Find_outlierYears,]
+```
+
+###### Description of detecting outliers, Removing outliers:
+
+###### This function is used to find outliers-if found- in order to remove them to have better prediction.
+
+```{r}
+summary(Employees)
+str(Employees)
+```
+
+##### Define function normalize().
+
+```{r}
+normalize <- function(x) {return ((x - min(x)) / (max(x) - min(x)))}
+```
+
+##### Define function Z_normalize().
+
+```{r}
+Z_normalize <- function(x) {return ((x - mean(x)) / sd(x))}
+```
+
+##### Call normalize funcrtion
+
+```{r}
+Employees$Permissions<-normalize(Employees$Permissions)
+print(Employees)
+```
+
+```{r}
+Employees$'Job Rate'<-normalize(Employees$'Job Rate')
+print(Employees)
+```
+
+```{r}
+Employees$Salary<-normalize(Employees$Salary)
+print(Employees)
+```
+
+```{r}
+Employees$Years<-normalize(Employees$Years)
+print(Employees)
+```
+
+##### Call Z_normalize funcrtion
+
+```{r}
+Employees$Permissions<-Z_normalize(Employees$Permissions)
+print(Employees)
+```
+
+```{r}
+Employees$'Job Rate'<-Z_normalize(Employees$'Job Rate')
+print(Employees)
+```
+
+```{r}
+Employees$Salary<-Z_normalize(Employees$Salary)
+print(Employees)
+```
+
+```{r}
+Employees$Years<-Z_normalize(Employees$Years)
+print(Employees)
+```
+
+###### Description of normalization function:
+
+###### This function is used to get similar ranges to rescale the numeric values to a common scale, without ruining the differences in the ranges of the values.
+
+##### Discretization
+
+```{r}
+Employees$Years <- ifelse(Employees$Years <= 0, "Entry level",
+                                 ifelse(Employees$Years <= 3, "Intermediate level",
+                                           ifelse(Employees$Years <= 9, "Advanced level",0)))
+```
+
+```{r}
+Employees$Salary<- ifelse(Employees$Salary <= 600, "600-1000",
+                          ifelse(Employees$Salary <= 1000, "1000-1600",
+                                 ifelse(Employees$Salary <= 1600, "1600-2000",
+                                        ifelse(Employees$Salary <= 2600, "2000-2600", "Above 2600"))))
+```
+
+```{r}
+Employees$`Job Rate` <- ifelse(Employees$`Job Rate` <= 1, "1-6",
+                          ifelse(Employees$`Job Rate` <= 6, "6-10",
+                              ifelse(Employees$`Job Rate` <= 13, "10-13","Above 13")))
+```
+
+```{r}
+Employees$Permissions <- ifelse(Employees$Permissions <= 1, "1-7",
+                                ifelse(Employees$Permissions <= 7, "7-11",
+                                      ifelse(Employees$Permissions <= 14, "11-14","Above 14")))
+```
+
+###### Description of the discretization:
+
+###### This function arranges the values in intervals and give every interval a suitable label. Years, Salary, job rate and permission. by discretization, the values will be simpler to classify or perform other methods.
+
+##### Encoding
+
+```{r}
+Employees$Education = factor(Employees$Education,levels = c("Bachelor","Doctor", "Prof", "Academic", "Institute"), labels = c(1, 2, 3, 4, 5))
+```
+
+```{r}
+Employees$Department = factor(Employees$Department,levels = c("Training","Protection", "NFI", "Finance", "HR", "Wash", "FSL", "Marketing", "Logistics", "M&E", "Livelihoods", "Emeergincy", "Health", "IT", "TPM", "Media", "Education", "Researches", "Supply chain", "Shelter", "Projects"), labels = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21))
+```
+
+```{r}
+Employees$'Job Status' = factor(Employees$'Job Status',levels = c("Part Time","Contract", "Full Time"), labels = c(1, 2, 3))
+```
+
+```{r}
+Employees$Location = factor(Employees$Location,levels = c("United Arab Emirates","Egypt", "Syria", "Saudi Arabia"), labels = c(1, 2, 3, 4))
+```
+
+###### Description of encoding:
+
+###### Encoding is the process of converting categorical data to numerical format to use it as an input in machine learning algorithms.
+
+```{r}
+View(Employees)
+```
+
+##### Feature Selection
+
+Feature selection is not required in our dataset; because all of the
+attributes provide significant unique information about the selected
+variable, showing that every attribute contributes to the prediction
+task. In this case, removing any attribute via feature selection may
+result in the loss of important data. In addition to this, some machine
+learning algorithms have the ability to recognize complex interactions
+and attribute correlations. In this scenario, adding all variables
+allows the model to learn and exploit complex patterns in the data,
+which could improve predicting performance since our dataset contains
+740 columns.
