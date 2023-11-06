@@ -1,6 +1,9 @@
 ---
 title: "Arab Region Employees"
 output: html_document
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
 ### This code is running using R notebook in RStudio
@@ -129,7 +132,7 @@ summary(Employees$Permissions)
 
 ### Description of summary:
 
-#### This is the summary of all data set
+This is the summary of all data set
 
 #### Code for variance
 
@@ -137,7 +140,7 @@ summary(Employees$Permissions)
 var(Employees$Salary)
 ```
 
-#### Graphs
+### Graphs
 
 ##### Box plot for salary and years
 
@@ -145,33 +148,40 @@ var(Employees$Salary)
 boxplot(Employees$Salary)
 ```
 
-###### Description for Salary boxplot:
+##### Description for Salary boxplot:
 
-###### The Salary boxplot illustrates that the salaries are evenly distributed around the middle point, indicating a relatively balanced salary distribution.
+The Salary boxplot illustrates that the salaries are evenly distributed
+around the middle point, indicating a relatively balanced salary
+distribution.
 
 ```{r}
 boxplot(Employees$Years)
 ```
 
-###### Description for Years boxplot:
+##### Description for Years boxplot:
 
-###### The Years of Work boxplot illustrates how the values in the dataset have relatively balanced around the median value of 4.
+The Years of Work boxplot illustrates how the values in the dataset have
+relatively balanced around the median value of 4.
 
 ```{r}
 boxplot(Employees$'Job Rate')
 ```
 
-###### Description for Job rate boxplot:
+##### Description for Job rate boxplot:
 
-###### The Job rate boxplot is relatively balanced around the median value of 5. In a more comprehensive analysis, there is a spread in the job rates above 50% of the dataset.
+The Job rate boxplot is relatively balanced around the median value of
+5. In a more comprehensive analysis, there is a spread in the job rates
+above 50% of the dataset.
 
 ```{r}
 boxplot(Employees$Permissions)
 ```
 
-###### Description for Permissions boxplot:
+##### Description for Permissions boxplot:
 
-###### The Permissions boxplot reveals several important insights about the distribution of Permissions. It illustrates that the values of the attribute are almost balanced near to the median.
+The Permissions boxplot reveals several important insights about the
+distribution of Permissions. It illustrates that the values of the
+attribute are almost balanced near to the median.
 
 ##### Histogram for permission
 
@@ -180,22 +190,28 @@ Permissions <- Employees$Permissions
 hist(Permissions)
 ```
 
-###### Description for Permissions histogram.:
+##### Description for Permissions histogram.:
 
-###### The frequency of Permissions for the employees in the dataset is represented by the histogram. After observation, we noticed that the most values lie in approximately from 1 permission to 2. As for the rest of the employees, their Permissions range from 3 to 14 permission.
+The frequency of Permissions for the employees in the dataset is
+represented by the histogram. After observation, we noticed that the
+most values lie in approximately from 1 permission to 2. As for the rest
+of the employees, their Permissions range from 3 to 14 permission.
 
-##### pie chart fo job status
+##### Bar Chart for Salary
 
 ```{r}
-tab <- Employees$'Job Status' %>% table()
-precentages <- tab %>% prop.table() %>% round(3) * 100 
-txt <- paste0(names(tab), '\n', precentages, '%') 
-pie(tab, labels=txt)
+#Bar Chart
+Employees$Salary %>% table() %>% barplot() 
 ```
 
-###### Description for Job Status pie chart:
+##### Description for Bar Chart for Salary:
 
-###### The pie chart shows that more than half of the employees work as a full-time jub. In addition to this, it will helps us determine salaries for each employee according to their Job Status.
+The frequency of Salary for the employees in the dataset is represented
+by the Bar chart. After observation, we noticed that the most values lie
+in approximately from 1600 to 2600. while from 600-1000 and 1000-1600
+are close to each other. As for the rest of the employees, their
+Salaries has big difference, which we have to consider it for the
+classification and clustering.
 
 ##### pie chart for Education
 
@@ -206,15 +222,17 @@ txt <- paste0(names(tab), '\n', precentages, '%')
 pie(tab, labels=txt)
 ```
 
-###### Description for Education pie chart:
+##### Description for Education pie chart:
 
-###### The pie chart shows that approximately half of the employees have academic education, and a few employees are prof, which helps us predict their salaries according to their level of education.
+The pie chart shows that approximately half of the employees have
+academic education, and a few employees are prof, which helps us predict
+their salaries according to their level of education.
 
 ### Data preprocessing
 
 #### Data cleaning
 
-##### to find the total null values in the dataset
+##### To find the total null values in the dataset
 
 ```{r}
 dim(Employees)
@@ -313,11 +331,6 @@ print(Employees)
 ```
 
 ```{r}
-Employees$Salary<-normalize(Employees$Salary)
-print(Employees)
-```
-
-```{r}
 Employees$Years<-normalize(Employees$Years)
 print(Employees)
 ```
@@ -331,11 +344,6 @@ print(Employees)
 
 ```{r}
 Employees$'Job Rate'<-Z_normalize(Employees$'Job Rate')
-print(Employees)
-```
-
-```{r}
-Employees$Salary<-Z_normalize(Employees$Salary)
 print(Employees)
 ```
 
@@ -357,10 +365,9 @@ Employees$Years <- ifelse(Employees$Years <= 0, "Entry level",
 ```
 
 ```{r}
-Employees$Salary<- ifelse(Employees$Salary <= 600, "600-1000",
-                          ifelse(Employees$Salary <= 1000, "1000-1600",
-                                 ifelse(Employees$Salary <= 1600, "1600-2000",
-                                        ifelse(Employees$Salary <= 2600, "2000-2600", "Above 2600"))))
+Employees$Salary <- cut(Employees$Salary, 
+                        breaks = c(-Inf, 600 , 1000 , 1600 , 2600 , Inf),
+                        labels = c("Below 600", "600-1000", "1000-1600", "1600-2600", "Above 2600"))
 ```
 
 ```{r}
