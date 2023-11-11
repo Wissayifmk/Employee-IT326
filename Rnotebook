@@ -29,6 +29,15 @@ experience, and it will help us identify talented individuals. With this
 information, we can develop strategies to support career growth and make
 sure people are being paid fairly.
 
+#### Clustering Goal:
+
+We want to group similar data points so we grouped employees with similar
+salaries together. By doing this, will help in uncovering hidden patterns 
+and structures within the data, making it easier to understand the inherent
+relationships between different employees' info. It also makes it feasible
+to divide our enormous dataset into smaller, easier-to-understand subsets.
+This can make analyzing complicated datasets easier.
+
 #### Defect Prediction Goal:
 
 We want to use machine learning and statistical techniques to create
