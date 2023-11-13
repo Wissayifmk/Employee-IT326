@@ -624,12 +624,16 @@ print(paste("Sensitivity (Recall):", sensitivity))
 print(paste("Specificity:",specificity))
 ```
 
+#### 6.1.4 Comparison:
+
+### Table 2
 | Information Gain | 70% Train , 30% Test | 75% Train , 25% Test | 65% Train , 35% Test |
 |------------------|------------------|------------------|------------------|
 | Accuracy         | 78%                  | 83%                  | 83%                  |
 | Precision        | 100%                 | 92%                  | 95%                  |
 | Sensitivity      | 57%                  | 67%                  | 68%                  |
 | Specificity      | 100%                 | 93%                  | 96%                  |
+#### 6.1.5 Discussion:
 
 The accuracy metric measures the overall correctness of the model's
 predictions. Both the 75% Train, 25% Test and 65% Train, 35% Test
@@ -886,12 +890,17 @@ print(paste("Sensitivity (Recall):", sensitivity))
 print(paste("Specificity:",specificity))
 ```
 
+#### 6.2.4 Comparison:
+
+### Table 3
 | Gini Index  | 70% Train , 30% Test | 75% Train , 25% Test | 65% Train , 35% Test |
 |------------------|------------------|------------------|------------------|
 | Accuracy    | 83%                  | 82%                  | 80%                  |
 | Precision   | 92%                  | 93%                  | 100%                 |
 | Sensitivity | 70%                  | 65%                  | 59%                  |
 | Specificity | 93%                  | 94%                  | 100%                 |
+
+#### 6.2.5 Discussion:
 
 The accuracy metric measures the overall correctness of the model's
 predictions. The 70% Train, 30% Test partition has the highest accuracy,
@@ -1165,12 +1174,17 @@ print(paste("Specificity:",specificity))
 plot(model3)
 ```
 
+#### 6.3.4 Comparison:
+
+### Table 4
 | Gain Ratio  | 70% Train , 30% Test | 75% Train , 25% Test | 65% Train , 35% Test |
 |------------------|------------------|------------------|------------------|
 | Accuracy    | 86%                  | 86%                  | 85%                  |
 | Precision   | 100%                 | 1%                   | 100%                 |
 | Sensitivity | 60%                  | 60%                  | 61%                  |
 | Specificity | 100%                 | 100%                 | 100%                 |
+
+#### 6.3.5 Discussion:
 
 The accuracy metric measures the overall correctness of the model's
 predictions. The 70% Train, 30% Test and 75% Train, 25% Test partitions
