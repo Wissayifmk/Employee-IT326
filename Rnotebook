@@ -1216,3 +1216,21 @@ accuracy, sensitivity, and specificity values. However, the 75% Train,
 other partitions. The 70% Train, 30% Test and 65% Train, 35% Test
 partitions have the highest precision and similar sensitivity and
 specificity values.
+
+
+
+
+
+
+
+
+
+
+### Table 5
+|                                    | k=2                                                            | k=3                                                   | k=4                                                   |
+|--------------------------------|--------------|--------------|--------------|
+| Average Silhoutte width            | 0.3                                                            | 0.25                                                  | 0.22                                                  |
+| total within-cluster sum of square | 39732.43                                                       | 33334.55                                              | 28748.45                                              |
+| BCubed precision                   | 0.3390482                                                      | 0.3370164                                             | 0.3391507                                             |
+| BCubed recall                      | 0.5191814                                                      | 0.3558403                                             | 0.2587214                                             |
+| Visualization                      | all the figures is shown above |all the figures is shown above | all the figures is shown above |
