@@ -79,7 +79,7 @@ Furthermore, class lables the class label for our dataset is Salary.
 ### 3.1 Table 1: General Information about the attributes for Employees dataset.
 
 | Attributes name | Description                       | Data type | Possible values                      |
-|------------------|------------------|------------------|--------------------|
+|------------------|------------------|------------------|-------------------|
 | ID              | Employee id                       | Nominal   | 6 values                             |
 | Education       | Education level for the employee  | Nominal   | Prof-Doctor-Bachelor\\...            |
 | Department      | Department that employee works in | Nominal   | FSL-NEI-IT\\...                      |
@@ -383,7 +383,7 @@ Employees$Salary <- as.numeric(Employees$Salary)
 Employees$Salary <- as.factor(Employees$Salary)
 ```
 
-#### 5.5.4 checking the number of stroke/ non-stroke observations
+#### 5.5.4 checking the Salaries observations
 
 ```{r}
 prop.table(table(Employees$Salary))
@@ -420,12 +420,11 @@ of our dataset.
 str(Employees)
 ```
 
-#### 
-6.1.0 information gain
+#### 6.1.0 information gain Information gain
 
-Information gain (rpart) is a measure used in decision tree algorithms.
-It is used to evaluate the quality of a split in a decision tree by
-measuring the reduction in entropy in the dataset.
+(rpart) is a measure used in decision tree algorithms. It is used to
+evaluate the quality of a split in a decision tree by measuring the
+reduction in entropy in the dataset.
 
 The information gain approach in rpart considers various potential
 splits based on different features in the dataset. For each split, the
