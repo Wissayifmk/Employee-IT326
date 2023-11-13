@@ -8,7 +8,7 @@ editor_options:
 
 ### This code is running using R notebook in RStudio
 
-### Goul:
+### 1.0 Goul:
 
 Our main goal in collecting the Arab Employee dataset is to learn more
 about what affects how much Arab professionals get paid. We want to
@@ -19,7 +19,7 @@ the future workforce, and making sure pay is fair in the Arab region.
 
 ### Here are two specific goals we have for this dataset:
 
-#### Classification Goal:
+#### 1.1 Classification Goal:
 
 We want to group employees into different categories based on their
 qualifications, country location, and experience. By doing this, we can
@@ -29,16 +29,17 @@ experience, and it will help us identify talented individuals. With this
 information, we can develop strategies to support career growth and make
 sure people are being paid fairly.
 
-#### Clustering Goal:
+#### 1.2 Clustering Goal:
 
-We want to group similar data points so we grouped employees with similar
-salaries together. By doing this, will help in uncovering hidden patterns 
-and structures within the data, making it easier to understand the inherent
-relationships between different employees' info. It also makes it feasible
-to divide our enormous dataset into smaller, easier-to-understand subsets.
-This can make analyzing complicated datasets easier.
+We want to group similar data points so we grouped employees with
+similar salaries together. By doing this, will help in uncovering hidden
+patterns and structures within the data, making it easier to understand
+the inherent relationships between different employees' info. It also
+makes it feasible to divide our enormous dataset into smaller,
+easier-to-understand subsets. This can make analyzing complicated
+datasets easier.
 
-#### Defect Prediction Goal:
+#### 1.3 Defect Prediction Goal:
 
 We want to use machine learning and statistical techniques to create
 models that can predict any issues or anomalies with employee salaries.
@@ -48,7 +49,7 @@ problems early, we can fix them and make sure everyone is being treated
 fairly. This analysis will help us improve compensation policies and
 make better decisions about managing talent.
 
-#### By achieving these goals, we can:
+#### 1.4 By achieving these goals, we can:
 
 Understand how salaries are distributed among different employee groups.
 Identify any biases or unfairness in pay based on qualifications,
@@ -62,24 +63,23 @@ information about salary, qualifications, location, and experience is
 really important. It will help us analyze the data and make fair
 decisions that create a good working environment for Arab professionals.
 
-### Source of the dataset:
+### 2.1 Source of the dataset:
 
 Kaggle
 
-### link of the dataset:
+### 2.2 link of the dataset:
 
 <https://www.kaggle.com/datasets/qusaybtoush1990/employes>
 
-### General Information about Employees dataset:
+### 3.0 General Information about Employees dataset:
 
 Our dataset contains 10 attributes (See Table 1), and 740 objects.
 Furthermore, class lables the class label for our dataset is Salary.
 
-*Table 1: General Information about the attributes for Employees
-dataset.*
+### 3.1 Table 1: General Information about the attributes for Employees dataset.
 
 | Attributes name | Description                       | Data type | Possible values                      |
-|------------------|------------------|------------------|-------------------|
+|----------------|-------------------|----------------|---------------------|
 | ID              | Employee id                       | Nominal   | 6 values                             |
 | Education       | Education level for the employee  | Nominal   | Prof-Doctor-Bachelor\\...            |
 | Department      | Department that employee works in | Nominal   | FSL-NEI-IT\\...                      |
@@ -91,19 +91,19 @@ dataset.*
 | Job rate        | Employee evaluation               | Numeric   | 1-13                                 |
 | Permission      | The access rights and privileges  | Numeric   | 1-14                                 |
 
-#### Sample of Employees dataset
+#### 3.2 Sample of Employees dataset
 
 ```{r}
 View(Employees)
 ```
 
-#### Number of column and rows
+#### 3.3 Number of column and rows
 
 ```{r}
 dim(Employees)
 ```
 
-#### statiscal summarise -Nominal-
+#### 3.4 statiscal summarise -Nominal-
 
 ```{r}
 summary(Employees$Education)
@@ -121,7 +121,7 @@ summary(Employees$'Job Status')
 summary(Employees$Location)
 ```
 
-#### statiscal summarise -Numerical-
+#### 3.5 statiscal summarise -Numerical-
 
 ```{r}
 summary(Employees$Years)
@@ -139,26 +139,24 @@ summary(Employees$'Job Rate')
 summary(Employees$Permissions)
 ```
 
-### Description of summary:
-
+Description of summary:
 This is the summary of all data set
 
-#### Code for variance
+#### 3.6 Code for variance
 
 ```{r}
 var(Employees$Salary)
 ```
 
-### Graphs
+### 4.0 Graphs
 
-##### Box plot for salary and years
+#### 4.1 Box plot for salary and years
 
 ```{r}
 boxplot(Employees$Salary)
 ```
 
-##### Description for Salary boxplot:
-
+Description for Salary boxplot:
 The Salary boxplot illustrates that the salaries are evenly distributed
 around the middle point, indicating a relatively balanced salary
 distribution.
@@ -167,8 +165,7 @@ distribution.
 boxplot(Employees$Years)
 ```
 
-##### Description for Years boxplot:
-
+Description for Years boxplot:
 The Years of Work boxplot illustrates how the values in the dataset have
 relatively balanced around the median value of 4.
 
@@ -176,8 +173,7 @@ relatively balanced around the median value of 4.
 boxplot(Employees$'Job Rate')
 ```
 
-##### Description for Job rate boxplot:
-
+Description for Job rate boxplot:
 The Job rate boxplot is relatively balanced around the median value of
 5. In a more comprehensive analysis, there is a spread in the job rates
 above 50% of the dataset.
@@ -186,35 +182,32 @@ above 50% of the dataset.
 boxplot(Employees$Permissions)
 ```
 
-##### Description for Permissions boxplot:
-
+Description for Permissions boxplot:
 The Permissions boxplot reveals several important insights about the
 distribution of Permissions. It illustrates that the values of the
 attribute are almost balanced near to the median.
 
-##### Histogram for permission
+#### 4.2 Histogram for permission
 
 ```{r}
 Permissions <- Employees$Permissions
 hist(Permissions)
 ```
 
-##### Description for Permissions histogram.:
-
+Description for Permissions histogram.:
 The frequency of Permissions for the employees in the dataset is
 represented by the histogram. After observation, we noticed that the
 most values lie in approximately from 1 permission to 2. As for the rest
 of the employees, their Permissions range from 3 to 14 permission.
 
-##### Bar Chart for Salary
+#### 4.3 Bar Chart for Salary
 
 ```{r}
 #Bar Chart
-Employees$Salary %>% table() %>% barplot() 
+Employees$Salary %>% table() %>% barplot()
 ```
 
-##### Description for Bar Chart for Salary:
-
+Description for Bar Chart for Salary:
 The frequency of Salary for the employees in the dataset is represented
 by the Bar chart. After observation, we noticed that the most values lie
 in approximately from 1600 to 2600. while from 600-1000 and 1000-1600
@@ -222,7 +215,7 @@ are close to each other. As for the rest of the employees, their
 Salaries has big difference, which we have to consider it for the
 classification and clustering.
 
-##### pie chart for Education
+#### 4.4 pie chart for Education
 
 ```{r}
 tab <- Employees$Education %>% table()
@@ -231,35 +224,35 @@ txt <- paste0(names(tab), '\n', precentages, '%')
 pie(tab, labels=txt)
 ```
 
-##### Description for Education pie chart:
-
+Description for Education pie chart:
 The pie chart shows that approximately half of the employees have
 academic education, and a few employees are prof, which helps us predict
 their salaries according to their level of education.
 
-### Data preprocessing
+### 5.0.0 Data preprocessing
 
-#### Data cleaning
+### 5.1.0 Data cleaning
 
-##### To find the total null values in the dataset
+#### 5.1.1 To find the total null values in the dataset
 
 ```{r}
 dim(Employees)
 sum(is.na(Employees))
 ```
 
-##### Replace missing Data with average value
+#### 5.1.2 Replace missing Data with average value
 
 ```{r}
 Employees$Years = ifelse(is.na(Employees$Years), ave(Employees$Years, FUN =function(x) mean(x,na.rm=TRUE)), Employees$Years)
 View(Employees)
 ```
 
-###### Description of data cleaning:
+Description of data cleaning:
+We checked if our data contains missing or
+null values and replace these missing values with average value to get
+more efficient dataset.
 
-###### We checked if our data contains missing or null values and replace these missing values with average value to get more efficient dataset.
-
-##### Detecting outliers
+#### 5.1.3 Detecting outliers
 
 ```{r}
 OutSalary = outlier(Employees$Salary, logical =TRUE)
@@ -298,138 +291,914 @@ summary(Employees)
 str(Employees)
 ```
 
+#### 5.1.4 Removing outliers
+
 ```{r}
-#Removing outliers
 Employees= Employees[-Find_outlierSalary,]
 Employees= Employees[-Find_outlierPre,]
 Employees= Employees[-Find_outlierJob,]
 Employees= Employees[-Find_outlierYears,]
 ```
 
-###### Description of detecting outliers, Removing outliers:
-
-###### This function is used to find outliers-if found- in order to remove them to have better prediction.
+Description of detecting outliers, Removing outliers:
+This function is used to find outliers-if found- in order to remove them to have better prediction.
 
 ```{r}
 summary(Employees)
 str(Employees)
 ```
 
-##### Define function normalize().
-
-```{r}
-normalize <- function(x) {return ((x - min(x)) / (max(x) - min(x)))}
-```
-
-##### Define function Z_normalize().
-
-```{r}
-Z_normalize <- function(x) {return ((x - mean(x)) / sd(x))}
-```
-
-##### Call normalize funcrtion
-
-```{r}
-Employees$Permissions<-normalize(Employees$Permissions)
-print(Employees)
-```
-
-```{r}
-Employees$'Job Rate'<-normalize(Employees$'Job Rate')
-print(Employees)
-```
-
-```{r}
-Employees$Years<-normalize(Employees$Years)
-print(Employees)
-```
-
-##### Call Z_normalize funcrtion
-
-```{r}
-Employees$Permissions<-Z_normalize(Employees$Permissions)
-print(Employees)
-```
-
-```{r}
-Employees$'Job Rate'<-Z_normalize(Employees$'Job Rate')
-print(Employees)
-```
-
-```{r}
-Employees$Years<-Z_normalize(Employees$Years)
-print(Employees)
-```
-
-###### Description of normalization function:
-
-###### This function is used to get similar ranges to rescale the numeric values to a common scale, without ruining the differences in the ranges of the values.
-
-##### Discretization
-
-```{r}
-Employees$Years <- ifelse(Employees$Years <= 0, "Entry level",
-                                 ifelse(Employees$Years <= 3, "Intermediate level",
-                                           ifelse(Employees$Years <= 9, "Advanced level",0)))
-```
+### 5.2.0 Discretization
 
 ```{r}
 Employees$Salary <- cut(Employees$Salary, 
-                        breaks = c(-Inf, 600 , 1000 , 1600 , 2600 , Inf),
-                        labels = c("Below 600", "600-1000", "1000-1600", "1600-2600", "Above 2600"))
+                        breaks = c( 600 , 1000 , 1600 , 2600 ),
+                        labels = c( "600-1000", "1000-1600", "1600-2600"))
+```
+
+Description of the discretization:
+This function arranges the values in intervals and give every interval a suitable label. by discretization, the Salary will be simpler to classify or perform other methods.
+
+### 5.3.0 Encoding
+
+```{r}
+Employees$Education =  as.numeric(factor(Employees$Education))
 ```
 
 ```{r}
-Employees$`Job Rate` <- ifelse(Employees$`Job Rate` <= 1, "1-6",
-                          ifelse(Employees$`Job Rate` <= 6, "6-10",
-                              ifelse(Employees$`Job Rate` <= 13, "10-13","Above 13")))
+Employees$Department =  as.numeric(factor(Employees$Department))
 ```
 
 ```{r}
-Employees$Permissions <- ifelse(Employees$Permissions <= 1, "1-7",
-                                ifelse(Employees$Permissions <= 7, "7-11",
-                                      ifelse(Employees$Permissions <= 14, "11-14","Above 14")))
-```
-
-###### Description of the discretization:
-
-###### This function arranges the values in intervals and give every interval a suitable label. Years, Salary, job rate and permission. by discretization, the values will be simpler to classify or perform other methods.
-
-##### Encoding
-
-```{r}
-Employees$Education = factor(Employees$Education,levels = c("Bachelor","Doctor", "Prof", "Academic", "Institute"), labels = c(1, 2, 3, 4, 5))
+Employees$'Job Status' = as.numeric(factor(Employees$'Job Status'))
 ```
 
 ```{r}
-Employees$Department = factor(Employees$Department,levels = c("Training","Protection", "NFI", "Finance", "HR", "Wash", "FSL", "Marketing", "Logistics", "M&E", "Livelihoods", "Emeergincy", "Health", "IT", "TPM", "Media", "Education", "Researches", "Supply chain", "Shelter", "Projects"), labels = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21))
+Employees$Location = as.numeric(factor(Employees$Location)) 
+```
+
+### 5.4.0 Feature Selection
+
+```{r}
+set.seed(123)
+Employees$Salary <- as.factor(Employees$Salary )
+predictors <- Employees[, -8] 
+class_label <- Employees$Salary 
+model <- randomForest(predictors, class_label, importance = TRUE)
+importance <- importance(model)
+ranked_features <- sort(importance[, "MeanDecreaseGini"], decreasing = TRUE)
+
+# Print the ranked features
+print(ranked_features)
+
+barplot(ranked_features, horiz = TRUE, col = c("lightblue2"), las = 1, main = "Airline satisfaction Variable Import")
+```
+
+### 5.5.0 Imbalance
+
+#### 5.5.1 Bar Chart for Salary
+
+```{r}
+#Bar Chart
+Employees$Salary %>% table() %>% barplot()
+```
+
+#### 5.5.2 Convert Salary column to factor
+
+```{r}
+Employees$Salary <- as.factor(Employees$Salary)
+```
+
+#### 5.5.3 upscaling the data
+
+```{r}
+Employees <- upSample(Employees[,-8], Employees$Salary, yname="Salary")
+Employees$Salary <- as.numeric(Employees$Salary)
+Employees$Salary <- as.factor(Employees$Salary)
+```
+
+#### 5.5.4 checking the number of stroke/ non-stroke observations
+
+```{r}
+prop.table(table(Employees$Salary))
+plot(Employees$Salary)
+title(main = "Data after oversampling", xlab = "Salary", ylab = "observations")
+```
+
+### 6.0.0 Classification
+
+```{r}
+str(Employees)
+```
+
+#### 6.1.1 information gain (70% , 30%)
+
+```{r}
+# 1.a fixed random seed to make results reproducible
+set.seed(1234)
+```
+
+
+```{r}
+# 2.Split the datasets into two subsets: Training(70%) and Testing(30%):
+ind <- sample(2, nrow(Employees), replace = TRUE, prob = c(0.7, 0.3))
+train.data <- Employees[ind == 1, ]
+test.data <- Employees[ind == 2, ]
 ```
 
 ```{r}
-Employees$'Job Status' = factor(Employees$'Job Status',levels = c("Part Time","Contract", "Full Time"), labels = c(1, 2, 3))
+# 3.Converting attribute to factor
+train.data$Years <- factor(train.data$Years)
+test.data$Years <- factor(test.data$Years)
+train.data$'Job Rate' <- factor(train.data$'Job Rate')
+test.data$'Job Rate' <- factor(test.data$'Job Rate')
+train.data$Permissions <- factor(train.data$Permissions)
+test.data$Permissions <- factor(test.data$Permissions)
+train.data$ID <- factor(train.data$ID)
+test.data$ID <- factor(test.data$ID)
+train.data$'Start Date' <- factor(train.data$'Start Date')
+test.data$'Start Date' <- factor(test.data$'Start Date')
+train.data$Education <- factor(train.data$Education)
+test.data$Education <- factor(test.data$Education)
+train.data$Department <- factor(train.data$Department)
+test.data$Department <- factor(test.data$Department)
+train.data$'Job Status' <- factor(train.data$'Job Status')
+test.data$'Job Status' <- factor(test.data$'Job Status')
+train.data$Location <- factor(train.data$Location)
+test.data$Location <- factor(test.data$Location)
+```
+
+
+```{r}
+# 4.Creating the tree
+EmployeesTree <- rpart(Salary ~ Years + Education + Department + `Job Status` + Location + `Job Rate` + Permissions , data = train.data,parm=list(split="information"))
+
+# 5.Visualize the decision tree using rpart.plot
+rpart.plot(EmployeesTree, cex = 0.5, extra = 1)
+
+# 6.Make predictions on the test set
+predictions <- predict(EmployeesTree, test.data, type = "class")  # Assuming it's a classification problem
+
+# 7.Evaluate the accuracy of the predictions
+accuracy <- sum(predictions == test.data$Salary) / nrow(test.data)
+
+
+# 8.Confusion matrix
+conf_matrix <- table(predictions, test.data$Salary)
+
+# 9.Calculate evaluation metrics
+TP <- conf_matrix[2, 2]  # True Positives
+TN <- conf_matrix[1, 1]  # True Negatives
+FP <- conf_matrix[2, 1]  # False Positives
+FN <- conf_matrix[1, 2]  # False Negatives
+
+
+# 10.Calculate precision
+precision <- TP / (TP + FP)
+
+# 11.Calculate sensitivity (True Positive Rate or Recall)
+sensitivity <- TP / (TP + FN)
+
+# 12.Calculate specificity (True Negative Rate)
+specificity <- TN / (TN + FP)
+
+# 13.Output the evaluation metrics
+print(paste("Accuracy:", accuracy))
+print(paste("Precision:", precision))
+print(paste("Sensitivity (Recall):", sensitivity))
+print(paste("Specificity:",specificity))
+```
+
+#### 6.1.2 information gain (75% , 25%)
+
+```{r}
+# 1.a fixed random seed to make results reproducible
+set.seed(1234)
+```
+
+# 1.Split the datasets into two subsets: Training(75%) and Testing(25%):
+
+```{r}
+# 2.Split the datasets into two subsets: Training(75%) and Testing(25%):
+ind <- sample(2, nrow(Employees), replace = TRUE, prob = c(0.75, 0.25))
+train.data <- Employees[ind == 1, ]
+test.data <- Employees[ind == 2, ]
 ```
 
 ```{r}
-Employees$Location = factor(Employees$Location,levels = c("United Arab Emirates","Egypt", "Syria", "Saudi Arabia"), labels = c(1, 2, 3, 4))
+# 3.Converting attribute to factor
+train.data$Years <- factor(train.data$Years)
+test.data$Years <- factor(test.data$Years)
+train.data$'Job Rate' <- factor(train.data$'Job Rate')
+test.data$'Job Rate' <- factor(test.data$'Job Rate')
+train.data$Permissions <- factor(train.data$Permissions)
+test.data$Permissions <- factor(test.data$Permissions)
+train.data$ID <- factor(train.data$ID)
+test.data$ID <- factor(test.data$ID)
+train.data$'Start Date' <- factor(train.data$'Start Date')
+test.data$'Start Date' <- factor(test.data$'Start Date')
+train.data$Education <- factor(train.data$Education)
+test.data$Education <- factor(test.data$Education)
+train.data$Department <- factor(train.data$Department)
+test.data$Department <- factor(test.data$Department)
+train.data$'Job Status' <- factor(train.data$'Job Status')
+test.data$'Job Status' <- factor(test.data$'Job Status')
+train.data$Location <- factor(train.data$Location)
+test.data$Location <- factor(test.data$Location)
 ```
-
-###### Description of encoding:
-
-###### Encoding is the process of converting categorical data to numerical format to use it as an input in machine learning algorithms.
 
 ```{r}
-View(Employees)
+# 4.Creating the tree
+EmployeesTree <- rpart(Salary ~ Years + Education + Department + `Job Status` + Location + `Job Rate` + Permissions , data = train.data,parm=list(split="information"))
+
+# 5.Visualize the decision tree using rpart.plot
+rpart.plot(EmployeesTree, cex = 0.5, extra = 1)
+
+# 6.Make predictions on the test set
+predictions <- predict(EmployeesTree, test.data, type = "class")  # Assuming it's a classification problem
+
+# 7.Evaluate the accuracy of the predictions
+accuracy <- sum(predictions == test.data$Salary) / nrow(test.data)
+
+
+
+# 8.Confusion matrix
+conf_matrix <- table(predictions, test.data$Salary)
+
+# 9.Calculate evaluation metrics
+TP <- conf_matrix[2, 2]  # True Positives
+TN <- conf_matrix[1, 1]  # True Negatives
+FP <- conf_matrix[2, 1]  # False Positives
+FN <- conf_matrix[1, 2]  # False Negatives
+
+
+# 10.Calculate precision
+precision <- TP / (TP + FP)
+
+# 11.Calculate sensitivity (True Positive Rate or Recall)
+sensitivity <- TP / (TP + FN)
+
+# 12.Calculate specificity (True Negative Rate)
+specificity <- TN / (TN + FP)
+
+# 13.Output the evaluation metrics
+print(paste("Accuracy:", accuracy))
+print(paste("Precision:", precision))
+print(paste("Sensitivity (Recall):", sensitivity))
+print(paste("Specificity:",specificity))
 ```
 
-##### Feature Selection
+#### 6.1.3 information gain (65% , 35%)
 
-Feature selection is not required in our dataset; because all of the
-attributes provide significant unique information about the selected
-variable, showing that every attribute contributes to the prediction
-task. In this case, removing any attribute via feature selection may
-result in the loss of important data. In addition to this, some machine
-learning algorithms have the ability to recognize complex interactions
-and attribute correlations. In this scenario, adding all variables
-allows the model to learn and exploit complex patterns in the data,
-which could improve predicting performance since our dataset contains
-740 columns.
+
+```{r}
+# 1.a fixed random seed to make results reproducible
+set.seed(1234)
+```
+
+```{r}
+# 2.Split the datasets into two subsets: Training(65%) and Testing(35%):
+ind <- sample(2, nrow(Employees), replace = TRUE, prob = c(0.65, 0.35))
+train.data <- Employees[ind == 1, ]
+test.data <- Employees[ind == 2, ]
+```
+
+```{r}
+# 3.Converting attribute to factor
+train.data$Years <- factor(train.data$Years)
+test.data$Years <- factor(test.data$Years)
+train.data$'Job Rate' <- factor(train.data$'Job Rate')
+test.data$'Job Rate' <- factor(test.data$'Job Rate')
+train.data$Permissions <- factor(train.data$Permissions)
+test.data$Permissions <- factor(test.data$Permissions)
+train.data$ID <- factor(train.data$ID)
+test.data$ID <- factor(test.data$ID)
+train.data$'Start Date' <- factor(train.data$'Start Date')
+test.data$'Start Date' <- factor(test.data$'Start Date')
+train.data$Education <- factor(train.data$Education)
+test.data$Education <- factor(test.data$Education)
+train.data$Department <- factor(train.data$Department)
+test.data$Department <- factor(test.data$Department)
+train.data$'Job Status' <- factor(train.data$'Job Status')
+test.data$'Job Status' <- factor(test.data$'Job Status')
+train.data$Location <- factor(train.data$Location)
+test.data$Location <- factor(test.data$Location)
+```
+
+```{r}
+# 4.Creating the tree
+EmployeesTree <- rpart(Salary ~ Years + Education + Department + `Job Status` + Location + `Job Rate` + Permissions , data = train.data,parm=list(split="information"))
+
+# 5.Visualize the decision tree using rpart.plot
+rpart.plot(EmployeesTree, cex = 0.5, extra = 1)
+
+# 6.Make predictions on the test set
+predictions <- predict(EmployeesTree, test.data, type = "class")  # Assuming it's a classification problem
+
+# 7.Evaluate the accuracy of the predictions
+accuracy <- sum(predictions == test.data$Salary) / nrow(test.data)
+
+# 8.Confusion matrix
+conf_matrix <- table(predictions, test.data$Salary)
+
+# 9.Calculate evaluation metrics
+TP <- conf_matrix[2, 2]  # True Positives
+TN <- conf_matrix[1, 1]  # True Negatives
+FP <- conf_matrix[2, 1]  # False Positives
+FN <- conf_matrix[1, 2]  # False Negatives
+
+
+# 10.Calculate precision
+precision <- TP / (TP + FP)
+
+# 11.Calculate sensitivity (True Positive Rate or Recall)
+sensitivity <- TP / (TP + FN)
+
+# 12.Calculate specificity (True Negative Rate)
+specificity <- TN / (TN + FP)
+
+# 13.Output the evaluation metrics
+print(paste("Accuracy:", accuracy))
+print(paste("Precision:", precision))
+print(paste("Sensitivity (Recall):", sensitivity))
+print(paste("Specificity:",specificity))
+```
+
+| Information Gain | 70% Train , 30% Test | 75% Train , 25% Test | 65% Train , 35% Test |
+|------------------|------------------|------------------|------------------|
+| Accuracy         | 78%                  | 83%                  | 83%                  |
+| Precision        | 100%                 | 92%                  | 95%                  |
+| Sensitivity      | 57%                  | 67%                  | 68%                  |
+| Specificity      | 100%                 | 93%                  | 96%                  |
+
+The accuracy metric measures the overall correctness of the model's
+predictions. Both the 75% Train, 25% Test and 65% Train, 35% Test
+partitions have higher accuracy compared to the 70% Train, 30% Test
+partition.
+
+Precision measures the proportion of correctly predicted positive
+instances out of the total instances predicted as positive. The 70%
+Train, 30% Test partition has the highest precision, followed by the 65%
+Train, 35% Test partition, and then the 75% Train, 25% Test partition.
+
+Sensitivity, also known as recall or true positive rate, measures the
+proportion of actual positive instances correctly identified by the
+model. The 65% Train, 35% Test partition has the highest sensitivity,
+followed by the 75% Train, 25% Test partition, and then the 70% Train,
+30% Test partition.
+
+Specificity measures the proportion of actual negative instances
+correctly identified by the model. The 65% Train, 35% Test partition has
+the highest specificity, followed by the 75% Train, 25% Test partition,
+and then the 70% Train, 30% Test partition.
+
+In summary, the performance of the information gain partition varies
+depending on the train-test split percentages. The 75% Train, 25% Test
+and 65% Train, 35% Test partitions generally outperform the 70% Train,
+30% Test partition in terms of accuracy, precision, sensitivity, and
+specificity. However, the 70% Train, 30% Test partition has the highest
+precision, while the 65% Train, 35% Test partition has the highest
+sensitivity and specificity.
+
+#### 6.2.1 Gini Index (70% , 30%)
+
+```{r}
+# 1.a fixed random seed to make results reproducible
+set.seed(1234)
+```
+
+```{r}
+# 2.Split the datasets into two subsets: Training(70%) and Testing(30%):
+ind <- sample(2, nrow(Employees), replace = TRUE, prob = c(0.7, 0.3))
+train_data <- Employees[ind == 1, ]
+test_data <- Employees[ind == 2, ]
+```
+
+```{r}
+# 3.Converting attribute to factor
+train_data$Years <- factor(train_data$Years)
+test_data$Years <- factor(test_data$Years)
+train_data$'Job Rate' <- factor(train_data$'Job Rate')
+test_data$'Job Rate' <- factor(test_data$'Job Rate')
+train_data$Permissions <- factor(train_data$Permissions)
+test_data$Permissions <- factor(test_data$Permissions)
+train_data$ID <- factor(train_data$ID)
+test_data$ID <- factor(test_data$ID)
+train_data$'Start Date' <- factor(train_data$'Start Date')
+test_data$'Start Date' <- factor(test_data$'Start Date')
+train_data$Education <- factor(train_data$Education)
+test_data$Education <- factor(test_data$Education)
+train_data$Department <- factor(train_data$Department)
+test_data$Department <- factor(test_data$Department)
+train_data$'Job Status' <- factor(train_data$'Job Status')
+test_data$'Job Status' <- factor(test_data$'Job Status')
+train_data$Location <- factor(train_data$Location)
+test_data$Location <- factor(test_data$Location)
+```
+
+```{r}
+# 4.Creating the tree
+EmployeesTree <- rpart(Salary ~ Years + Education + Department + `Job Status` + Location + `Job Rate` + Permissions , data = train_data,parm=list(split="gini"))
+
+# 5.Visualize the decision tree using rpart.plot
+rpart.plot(EmployeesTree, cex = 0.5, extra = 1)
+
+# 6.Make predictions on the test set
+predictions <- predict(EmployeesTree, test_data, type = "class")  # Assuming it's a classification problem
+
+# 7.Evaluate the accuracy of the predictions
+accuracy <- sum(predictions == test_data$Salary) / nrow(test_data)
+
+# 8.Confusion matrix
+conf_matrix <- table(predictions, test_data$Salary)
+
+# 9.Calculate evaluation metrics
+TP <- conf_matrix[2, 2]  # True Positives
+TN <- conf_matrix[1, 1]  # True Negatives
+FP <- conf_matrix[2, 1]  # False Positives
+FN <- conf_matrix[1, 2]  # False Negatives
+
+
+# 10.Calculate precision
+precision <- TP / (TP + FP)
+
+# 11.Calculate sensitivity (True Positive Rate or Recall)
+sensitivity <- TP / (TP + FN)
+
+# 12.Calculate specificity (True Negative Rate)
+specificity <- TN / (TN + FP)
+
+# 13.Output the evaluation metrics
+print(paste("Accuracy:", accuracy))
+print(paste("Precision:", precision))
+print(paste("Sensitivity (Recall):", sensitivity))
+print(paste("Specificity:",specificity))
+```
+
+#### 6.2.2 Gini Index (75% , 25%)
+
+
+```{r}
+# 1.a fixed random seed to make results reproducible
+set.seed(1234)
+```
+
+```{r}
+# 2.Split the datasets into two subsets: Training(75%) and Testing(25%):
+ind <- sample(2, nrow(Employees), replace = TRUE, prob = c(0.75, 0.25))
+train_data <- Employees[ind == 1, ]
+test_data <- Employees[ind == 2, ]
+```
+
+```{r}
+# 3.Converting attribute to factor
+train_data$Years <- factor(train_data$Years)
+test_data$Years <- factor(test_data$Years)
+train_data$'Job Rate' <- factor(train_data$'Job Rate')
+test_data$'Job Rate' <- factor(test_data$'Job Rate')
+train_data$Permissions <- factor(train_data$Permissions)
+test_data$Permissions <- factor(test_data$Permissions)
+train_data$ID <- factor(train_data$ID)
+test_data$ID <- factor(test_data$ID)
+train_data$'Start Date' <- factor(train_data$'Start Date')
+test_data$'Start Date' <- factor(test_data$'Start Date')
+train_data$Education <- factor(train_data$Education)
+test_data$Education <- factor(test_data$Education)
+train_data$Department <- factor(train_data$Department)
+test_data$Department <- factor(test_data$Department)
+train_data$'Job Status' <- factor(train_data$'Job Status')
+test_data$'Job Status' <- factor(test_data$'Job Status')
+train_data$Location <- factor(train_data$Location)
+test_data$Location <- factor(test_data$Location)
+```
+
+```{r}
+# 4.Creating the tree
+EmployeesTree <- rpart(Salary ~ Years + Education + Department + `Job Status` + Location + `Job Rate` + Permissions , data = train_data,parm=list(split="gini"))
+
+# 5.Visualize the decision tree using rpart.plot
+rpart.plot(EmployeesTree, cex = 0.5, extra = 1)
+
+# 6.Make predictions on the test set
+predictions <- predict(EmployeesTree, test_data, type = "class")  # Assuming it's a classification problem
+
+# 7.Evaluate the accuracy of the predictions
+accuracy <- sum(predictions == test_data$Salary) / nrow(test_data)
+
+# 8.Confusion matrix
+conf_matrix <- table(predictions, test_data$Salary)
+
+# 9.Calculate evaluation metrics
+TP <- conf_matrix[2, 2]  # True Positives
+TN <- conf_matrix[1, 1]  # True Negatives
+FP <- conf_matrix[2, 1]  # False Positives
+FN <- conf_matrix[1, 2]  # False Negatives
+
+
+# 10.Calculate precision
+precision <- TP / (TP + FP)
+
+# 11.Calculate sensitivity (True Positive Rate or Recall)
+sensitivity <- TP / (TP + FN)
+
+# 12.Calculate specificity (True Negative Rate)
+specificity <- TN / (TN + FP)
+
+# 13.Output the evaluation metrics
+print(paste("Accuracy:", accuracy))
+print(paste("Precision:", precision))
+print(paste("Sensitivity (Recall):", sensitivity))
+print(paste("Specificity:",specificity))
+```
+
+#### 6.2.3 Gini Index (65% , 35%)
+
+```{r}
+# 1.a fixed random seed to make results reproducible
+set.seed(1234)
+```
+
+```{r}
+# 2.Split the datasets into two subsets: Training(65%) and Testing(35%):
+ind <- sample(2, nrow(Employees), replace = TRUE, prob = c(0.65, 0.35))
+train_data <- Employees[ind == 1, ]
+test_data <- Employees[ind == 2, ]
+```
+
+```{r}
+# 3.Converting attribute to factor
+train_data$Years <- factor(train_data$Years)
+test_data$Years <- factor(test_data$Years)
+train_data$'Job Rate' <- factor(train_data$'Job Rate')
+test_data$'Job Rate' <- factor(test_data$'Job Rate')
+train_data$Permissions <- factor(train_data$Permissions)
+test_data$Permissions <- factor(test_data$Permissions)
+train_data$ID <- factor(train_data$ID)
+test_data$ID <- factor(test_data$ID)
+train_data$'Start Date' <- factor(train_data$'Start Date')
+test_data$'Start Date' <- factor(test_data$'Start Date')
+train_data$Education <- factor(train_data$Education)
+test_data$Education <- factor(test_data$Education)
+train_data$Department <- factor(train_data$Department)
+test_data$Department <- factor(test_data$Department)
+train_data$'Job Status' <- factor(train_data$'Job Status')
+test_data$'Job Status' <- factor(test_data$'Job Status')
+train_data$Location <- factor(train_data$Location)
+test_data$Location <- factor(test_data$Location)
+```
+
+```{r}
+# 4.Creating the tree
+EmployeesTree <- rpart(Salary ~ Years + Education + Department + `Job Status` + Location + `Job Rate` + Permissions , data = train_data,parm=list(split="gini"))
+
+# 5.Visualize the decision tree using rpart.plot
+rpart.plot(EmployeesTree, cex = 0.5, extra = 1)
+
+# 6.Make predictions on the test set
+predictions <- predict(EmployeesTree, test_data, type = "class")  # Assuming it's a classification problem
+
+# 7.Evaluate the accuracy of the predictions
+accuracy <- sum(predictions == test_data$Salary) / nrow(test_data)
+
+# 8.Confusion matrix
+conf_matrix <- table(predictions, test_data$Salary)
+
+# 9.Calculate evaluation metrics
+TP <- conf_matrix[2, 2]  # True Positives
+TN <- conf_matrix[1, 1]  # True Negatives
+FP <- conf_matrix[2, 1]  # False Positives
+FN <- conf_matrix[1, 2]  # False Negatives
+
+
+# 10.Calculate precision
+precision <- TP / (TP + FP)
+
+# 11.Calculate sensitivity (True Positive Rate or Recall)
+sensitivity <- TP / (TP + FN)
+
+# 12.Calculate specificity (True Negative Rate)
+specificity <- TN / (TN + FP)
+
+# 13.Output the evaluation metrics
+print(paste("Accuracy:", accuracy))
+print(paste("Precision:", precision))
+print(paste("Sensitivity (Recall):", sensitivity))
+print(paste("Specificity:",specificity))
+```
+
+| Gini Index  | 70% Train , 30% Test | 75% Train , 25% Test | 65% Train , 35% Test |
+|------------------|------------------|------------------|------------------|
+| Accuracy    | 83%                  | 82%                  | 80%                  |
+| Precision   | 92%                  | 93%                  | 100%                 |
+| Sensitivity | 70%                  | 65%                  | 59%                  |
+| Specificity | 93%                  | 94%                  | 100%                 |
+
+The accuracy metric measures the overall correctness of the model's
+predictions. The 70% Train, 30% Test partition has the highest accuracy,
+followed by the 75% Train, 25% Test partition, and then the 65% Train,
+35% Test partition.
+
+Precision measures the proportion of correctly predicted positive
+instances out of the total instances predicted as positive. The 65%
+Train, 35% Test partition has the highest precision, followed by the 75%
+Train, 25% Test partition, and then the 70% Train, 30% Test partition.
+
+Sensitivity, also known as recall or true positive rate, measures the
+proportion of actual positive instances correctly identified by the
+model. The 70% Train, 30% Test partition has the highest sensitivity,
+followed by the 75% Train, 25% Test partition, and then the 65% Train,
+35% Test partition.
+
+Specificity measures the proportion of actual negative instances
+correctly identified by the model. The 65% Train, 35% Test partition has
+the highest specificity, followed by the 75% Train, 25% Test partition,
+and then the 70% Train, 30% Test partition.
+
+In summary, the performance of the Gini Index partition also varies
+depending on the train-test split percentages. The 70% Train, 30% Test
+partition generally outperforms the other partitions in terms of
+accuracy. However, the 65% Train, 35% Test partition has the highest
+precision, while the 70% Train, 30% Test partition has the highest
+sensitivity. The 65% Train, 35% Test partition also has the highest
+specificity.
+
+#### 6.3.1 Gain Ratio (70% , 30%)
+
+```{r}
+# 1.a fixed random seed to make results reproducible
+set.seed(1234)
+```
+
+```{r}
+# 2.Split the datasets into two subsets: Training(70%) and Testing(30%):
+train_indices <- sample(1:nrow(Employees), nrow(Employees) * 0.7)
+trainData <- Employees[train_indices, ]
+testData <- Employees[-train_indices , ]
+
+```
+
+```{r}
+# 3.Converting attribute to factor
+trainData$Years <- factor(trainData$Years)
+testData$Years <- factor(testData$Years)
+trainData$'Job Rate' <- factor(trainData$'Job Rate')
+testData$'Job Rate' <- factor(testData$'Job Rate')
+trainData$Permissions <- factor(trainData$Permissions)
+testData$Permissions <- factor(testData$Permissions)
+trainData$ID <- factor(trainData$ID)
+testData$ID <- factor(testData$ID)
+trainData$'Start Date' <- factor(trainData$'Start Date')
+testData$'Start Date' <- factor(testData$'Start Date')
+trainData$Education <- factor(trainData$Education)
+testData$Education <- factor(testData$Education)
+trainData$Department <- factor(trainData$Department)
+testData$Department <- factor(testData$Department)
+trainData$'Job Status' <- factor(trainData$'Job Status')
+testData$'Job Status' <- factor(testData$'Job Status')
+trainData$Location <- factor(trainData$Location)
+testData$Location <- factor(testData$Location)
+rainData$Salary <- factor(trainData$Salary)
+testData$Salary <- factor(testData$Salary)
+```
+
+```{r}
+# 4.Creating the tree
+model1 <- C5.0(Salary ~ `Job Status` + `Job Rate` + Permissions, data = trainData)
+
+# 5.Make predictions on the test set
+predictions <- predict(model1, testData, type = "class")
+
+# 6.Evaluate the accuracy of the predictions
+accuracy <- sum(predictions == testData$Salary) / nrow(testData)
+
+# 7.Confusion matrix
+conf_matrix <- table(predictions, testData$Salary)
+
+# 8.Calculate evaluation metrics
+TP <- conf_matrix[2, 2]  # True Positives
+TN <- conf_matrix[1, 1]  # True Negatives
+FP <- conf_matrix[2, 1]  # False Positives
+FN <- conf_matrix[1, 2]  # False Negatives
+
+
+# 9.Calculate precision
+precision <- TP / (TP + FP)
+
+# 10.Calculate sensitivity (True Positive Rate or Recall)
+sensitivity <- TP / (TP + FN)
+
+# 11.Calculate specificity (True Negative Rate)
+specificity <- TN / (TN + FP)
+
+# 12.Output the evaluation metrics
+print(paste("Accuracy:", accuracy))
+print(paste("Precision:", precision))
+print(paste("Sensitivity (Recall):", sensitivity))
+print(paste("Specificity:",specificity))
+```
+
+```{r}
+# 13.Visualize the decision tree using plot
+plot(model1)
+```
+
+#### 6.3.2 Gain Ratio (75% , 25%)
+
+```{r}
+# 1.a fixed random seed to make results reproducible
+set.seed(1234)
+```
+
+```{r}
+# 2.Split the datasets into two subsets: Training(75%) and Testing(25%):
+train_indices <- sample(1:nrow(Employees), nrow(Employees) * 0.75)
+trainData <- Employees[train_indices, ]
+testData <- Employees[-train_indices , ]
+```
+
+```{r}
+# 3.Converting attribute to factor
+trainData$Years <- factor(trainData$Years)
+testData$Years <- factor(testData$Years)
+trainData$'Job Rate' <- factor(trainData$'Job Rate')
+testData$'Job Rate' <- factor(testData$'Job Rate')
+trainData$Permissions <- factor(trainData$Permissions)
+testData$Permissions <- factor(testData$Permissions)
+trainData$ID <- factor(trainData$ID)
+testData$ID <- factor(testData$ID)
+trainData$'Start Date' <- factor(trainData$'Start Date')
+testData$'Start Date' <- factor(testData$'Start Date')
+trainData$Education <- factor(trainData$Education)
+testData$Education <- factor(testData$Education)
+trainData$Department <- factor(trainData$Department)
+testData$Department <- factor(testData$Department)
+trainData$'Job Status' <- factor(trainData$'Job Status')
+testData$'Job Status' <- factor(testData$'Job Status')
+trainData$Location <- factor(trainData$Location)
+testData$Location <- factor(testData$Location)
+rainData$Salary <- factor(trainData$Salary)
+testData$Salary <- factor(testData$Salary)
+```
+
+```{r}
+# 4.Creating the tree
+model2 <- C5.0(Salary ~ `Job Status` + `Job Rate` + Department + Permissions, data = trainData, control = C5.0Control(CF = 0.1))
+
+# 5.Make predictions on the test set
+predictions <- predict(model2, testData, type = "class")
+
+# 6.Evaluate the accuracy of the predictions
+accuracy <- sum(predictions == testData$Salary) / nrow(testData)
+
+
+# 7.Confusion matrix
+conf_matrix <- table(predictions, testData$Salary)
+
+# 8.Calculate evaluation metrics
+TP <- conf_matrix[2, 2]  # True Positives
+TN <- conf_matrix[1, 1]  # True Negatives
+FP <- conf_matrix[2, 1]  # False Positives
+FN <- conf_matrix[1, 2]  # False Negatives
+
+
+# 9.Calculate precision
+precision <- TP / (TP + FP)
+
+# 10.Calculate sensitivity (True Positive Rate or Recall)
+sensitivity <- TP / (TP + FN)
+
+# 11.Calculate specificity (True Negative Rate)
+specificity <- TN / (TN + FP)
+
+# 12.Output the evaluation metrics
+print(paste("Accuracy:", accuracy))
+print(paste("Precision:", precision))
+print(paste("Sensitivity (Recall):", sensitivity))
+print(paste("Specificity:",specificity))
+```
+
+```{r}
+# 13.Visualize the decision tree using plot
+plot(model2)
+```
+
+#### 6.3.3 Gain Ratio (65% , 35%)
+
+```{r}
+# 1.a fixed random seed to make results reproducible
+set.seed(1234)
+```
+
+```{r}
+# 2.Split the datasets into two subsets: Training(65%) and Testing(35%):
+train_indices <- sample(1:nrow(Employees), nrow(Employees) * 0.65)
+trainData <- Employees[train_indices, ]
+testData <- Employees[-train_indices , ]
+```
+
+```{r}
+# 3.Converting attribute to factor
+trainData$Years <- factor(trainData$Years)
+testData$Years <- factor(testData$Years)
+trainData$'Job Rate' <- factor(trainData$'Job Rate')
+testData$'Job Rate' <- factor(testData$'Job Rate')
+trainData$Permissions <- factor(trainData$Permissions)
+testData$Permissions <- factor(testData$Permissions)
+trainData$ID <- factor(trainData$ID)
+testData$ID <- factor(testData$ID)
+trainData$'Start Date' <- factor(trainData$'Start Date')
+testData$'Start Date' <- factor(testData$'Start Date')
+trainData$Education <- factor(trainData$Education)
+testData$Education <- factor(testData$Education)
+trainData$Department <- factor(trainData$Department)
+testData$Department <- factor(testData$Department)
+trainData$'Job Status' <- factor(trainData$'Job Status')
+testData$'Job Status' <- factor(testData$'Job Status')
+trainData$Location <- factor(trainData$Location)
+testData$Location <- factor(testData$Location)
+rainData$Salary <- factor(trainData$Salary)
+testData$Salary <- factor(testData$Salary)
+```
+
+```{r}
+# 4.Train a CART model
+model3 <- C5.0(Salary ~ `Job Status` + `Job Rate` + Department + Permissions, data = trainData, control = C5.0Control(CF = 0.1))
+
+
+# 5.Make predictions on the test dataset
+predictions <- predict(model3, testData, type = "class")
+
+
+# 6.Evaluate the accuracy of the predictions
+accuracy <- sum(predictions == testData$Salary) / nrow(testData)
+
+
+# 7.Confusion matrix
+conf_matrix <- table(predictions, testData$Salary)
+
+# 8.Calculate evaluation metrics
+TP <- conf_matrix[2, 2]  # True Positives
+TN <- conf_matrix[1, 1]  # True Negatives
+FP <- conf_matrix[2, 1]  # False Positives
+FN <- conf_matrix[1, 2]  # False Negatives
+
+
+# 9.Calculate precision
+precision <- TP / (TP + FP)
+
+# 10.Calculate sensitivity (True Positive Rate or Recall)
+sensitivity <- TP / (TP + FN)
+
+# 11.Calculate specificity (True Negative Rate)
+specificity <- TN / (TN + FP)
+
+# 12.Output the evaluation metrics
+print(paste("Accuracy:", accuracy))
+print(paste("Precision:", precision))
+print(paste("Sensitivity (Recall):", sensitivity))
+print(paste("Specificity:",specificity))
+
+```
+
+```{r}
+# 13.Visualize the decision tree using plot
+plot(model3)
+```
+
+| Gain Ratio  | 70% Train , 30% Test | 75% Train , 25% Test | 65% Train , 35% Test |
+|------------------|------------------|------------------|------------------|
+| Accuracy    | 86%                  | 86%                  | 85%                  |
+| Precision   | 100%                 | 1%                   | 100%                 |
+| Sensitivity | 60%                  | 60%                  | 61%                  |
+| Specificity | 100%                 | 100%                 | 100%                 |
+
+The accuracy metric measures the overall correctness of the model's
+predictions. The 70% Train, 30% Test and 75% Train, 25% Test partitions
+have the highest accuracy, followed by the 65% Train, 35% Test
+partition.
+
+Precision measures the proportion of correctly predicted positive
+instances out of the total instances predicted as positive. The 70%
+Train, 30% Test and 65% Train, 35% Test partitions have the highest
+precision, while the 75% Train, 25% Test partition has a very low
+precision.
+
+Sensitivity, also known as recall or true positive rate, measures the
+proportion of actual positive instances correctly identified by the
+model. The sensitivity values are similar across all three partitions,
+with the 65% Train, 35% Test partition having a slightly higher
+sensitivity.
+
+Specificity measures the proportion of actual negative instances
+correctly identified by the model. All three partitions have a perfect
+specificity, indicating that they correctly identify all negative
+instances.
+
+In summary, the Gain Ratio partition shows relatively consistent
+performance across different train-test split percentages. The 70%
+Train, 30% Test and 75% Train, 25% Test partitions have similar
+accuracy, sensitivity, and specificity values. However, the 75% Train,
+25% Test partition has a significantly lower precision compared to the
+other partitions. The 70% Train, 30% Test and 65% Train, 35% Test
+partitions have the highest precision and similar sensitivity and
+specificity values.
