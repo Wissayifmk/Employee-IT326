@@ -1378,6 +1378,9 @@ We used Clustering techniques to apply unsupervised learning to
 our data. Clustering groups similar data pointstogether based
 on some characteristics.The primary goal of clustering is to find natural groupings or clusters
 within our dataset without any prior knowledge of the groups.
+In this section we are going to partition our data using k-means.
+we are going to try three different k-means values which are (2,3 and 4).For each one we will calculate the average silhouette, total within-cluster
+sum of square and the BCubed precision and recall.
 
 ### 5.2.1 Silhouette coefficient
 
@@ -1404,7 +1407,7 @@ and the centroid of its assigned cluster.
 
 ### 5.2.4 Elbow method
 
-(factoextra) making easy to extract and visualize the output of exploratory multivariate data analyses.
+(factoextra) pakage making easy to extract and visualize the output of exploratory multivariate data analyses.
 
 the elbow approach is a technique used to find the ideal number of clusters in a dataset.
 It aids in determining the point at which the number of clusters increases and the quality of
@@ -1516,15 +1519,13 @@ cat("BCubed Precision:", precision, "\n")
 cat("BCubed Recall:", recall, "\n")
 ```
 
-#### 6.2.2 Discussion
 
 
-
-# 7.1.2 Second K-mean (k=3)
+#### 6.2.2 Second K-mean (k=3)
 
 1.  creating the 3 clusters
 
-# Cluster k=3
+#### Cluster k=3
 
 ```{r}
 #calculate k-mean k=3
@@ -1605,11 +1606,11 @@ cat("BCubed Precision:", precision, "\n")
 cat("BCubed Recall:", recall, "\n")
 ```
 
-# 7.1.3 Third K-mean (k=4)
+#### 6.2.3 Third K-mean (k=4)
 
 1.  creating the 4 clusters
 
-# Cluster k=4
+#### Cluster k=4
 
 ```{r}
 #calculate k-mean k=4
@@ -1690,17 +1691,19 @@ cat("BCubed Precision:", precision, "\n")
 cat("BCubed Recall:", recall, "\n")
 ```
 
-7.1.4 Using Elbow method
+#### 6.2.4 Using Elbow method
 
 ```{r}
 ##### Elbow with wss 
 fviz_nbclust(Employees, kmeans, method = "wss")+ labs(subtitle = "Elbow method")
 ```
+#### 6.2.5 Disscution
 
-Description of Elbow Method: The Elbow Method is one of the methods used
-to determine the optimal number of clusters.
+In this Elbow method graph, The highest point signifies the optimal number of clusters in the dataset.
+and here the highest point is 2 which means the number of clusters is set to 2. 
+(elbow method does not always produce a clear, distinct "highest" point).
 
-### 7.1.5 Comparison:
+#### 6.2.6 Comparison:
 
 ##### Table 5
 
@@ -1712,7 +1715,7 @@ to determine the optimal number of clusters.
 | BCubed recall                      | 0.5123139                 | 0.3660838                 | 0.2540036                 |
 | Visualization                      | all figure is shown above | all figure is shown above | all figure is shown above |
 
-### 7.2.0 Discussion:
+#### 6.2.7 Discussion:
 
 From the results of the methods implemented on "Employees" data set we
 obtained the following: the model with the number of clusters k=2 had
