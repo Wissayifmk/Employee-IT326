@@ -441,7 +441,7 @@ Since we have a small range in our dataset, we don't have to use the
 data normalization. As for the salary which has a large range; instead,
 we used data discretization that will help us in classification.
 
-### 4.6.0 Data Factorisation 
+### 4.6.0 Data Factorisation
 
 We applied it in classification section -5.0.0- which is important for
 applying classification technique. But we used it in a training set and
@@ -460,7 +460,10 @@ str(Employees)
 
 ### 5.0.0 Data Mining Techniques
 
-### 6.0.0 Classification
+We employed both supervised and unsupervised learning methods on our
+dataset, utilizing techniques for classifying and grouping the data.
+
+### 5.1.0 Classification
 
 We used classification techniques to apply supervised learning to our
 data. We applied a decision tree for classification, which is a
@@ -489,7 +492,7 @@ of our dataset.
 str(Employees)
 ```
 
-#### 6.1.0 information gain Information gain
+#### 5.1.1 information gain Information gain
 
 (rpart) is a measure used in decision tree algorithms. It is used to
 evaluate the quality of a split in a decision tree by measuring the
@@ -508,6 +511,36 @@ through all possible splits and selects the one with the highest
 information gain. This process is repeated recursively for each
 resulting subset until a stopping criterion is met, such as reaching a
 maximum tree depth or a minimum number of samples in a leaf node.
+
+#### 5.1.2 Gini Index
+
+Gini index (rpart) can be considered as a measure for the level of
+impurity in a dataset. When building the tree, decision tree algorithms
+frequently use it to determine the split's quality.
+
+The approach takes into consideration several possible splits depending
+on distinct aspects in the dataset in order to employ the Gini index in
+a decision tree. Every split's Gini index is computed, and the split
+with the lowest value is chosen. The selected split produces the
+resulting subsets with the best level of homogeneity or purity.
+
+#### 5.1.3 Gain Ratio
+
+Gain ratio (C.50) is a measure utilized in decision tree algorithms to
+assess the quality of a split by considering both the information gain
+and the intrinsic information of a feature. It factors in the entropy or
+impurity of a dataset and the potential information obtained from
+dividing the data based on a specific feature.
+
+The algorithm examines the gain ratios of different features while
+employing the gain ratio under a decision tree, selecting the feature
+with the highest ratio as the ideal split. This will reduce the
+likelihood of bias toward attributes with a high number of values or
+categories.
+
+### 6.0.0 Evaluation and comparison
+
+#### 6.1.0 information gain
 
 #### 6.1.1 information gain (70% , 30%)
 
@@ -781,16 +814,6 @@ sensitivity and specificity.
 
 #### 6.2.0 Gini Index
 
-Gini index (rpart) can be considered as a measure for the level of
-impurity in a dataset. When building the tree, decision tree algorithms
-frequently use it to determine the split's quality.
-
-The approach takes into consideration several possible splits depending
-on distinct aspects in the dataset in order to employ the Gini index in
-a decision tree. Every split's Gini index is computed, and the split
-with the lowest value is chosen. The selected split produces the
-resulting subsets with the best level of homogeneity or purity.
-
 #### 6.2.1 Gini Index (70% , 30%)
 
 ```{r}
@@ -1059,18 +1082,6 @@ sensitivity. The 65% Train, 35% Test partition also has the highest
 specificity.
 
 #### 6.3.0 Gain Ratio
-
-Gain ratio (C.50) is a measure utilized in decision tree algorithms to
-assess the quality of a split by considering both the information gain
-and the intrinsic information of a feature. It factors in the entropy or
-impurity of a dataset and the potential information obtained from
-dividing the data based on a specific feature.
-
-The algorithm examines the gain ratios of different features while
-employing the gain ratio under a decision tree, selecting the feature
-with the highest ratio as the ideal split. This will reduce the
-likelihood of bias toward attributes with a high number of values or
-categories.
 
 #### 6.3.1 Gain Ratio (70% , 30%)
 
@@ -1367,7 +1378,7 @@ together based on some characteristics.
 
 library(factoextra)
 
-# 7.1.0 First K-mean (k=2)
+### 7.1.0 First K-mean (k=2)
 
 1.  Deleting columns
 
@@ -1671,7 +1682,7 @@ to determine the optimal number of clusters.
 ### Table 5
 
 |                                    | k=2                       | k=3                       | k=4                       |
-|---------------------------|---------------|---------------|---------------|
+|------------------------|----------------|----------------|----------------|
 | Average Silhoutte width            | 0.29                      | 0.24                      | 0.21                      |
 | total within-cluster sum of square | 39369.3                   | 33408.38                  | 28836.46                  |
 | BCubed precision                   | 0.3383452                 | 0.3362839                 | 0.3374109                 |
@@ -1713,6 +1724,78 @@ grouping together all instances of a specific category.
 The model with the number of clusters k=2 seems to be the optimal number
 of clustering since most of the evaluation methods' results supports it,
 we also applied the Elbow Method and we had the result of k=2.
+
+### **7.0 Findings:**
+
+In the beginning, we selected a dataset that represents the Sala\'ry
+data to predict the probability of their Salary in a new jobs. To have
+efficient, correct, and the best possible accuracy results we applied
+several preprocessing techniques that improve the efficiency of the
+data. We applied several plotting methods such as boxplot, histogram and
+bar chart to illustrate the data so it can help us understand our data
+and make the appropriate preprocessing techniques. Based on the blots
+and other commands, we removed all null, missing, and outliers\' values
+that can badly affect the results. Also, we applied data transformation,
+so we normalized discretized, and incdeed some attributes to give them
+equal weight and to facilitate handling the data during data mining
+tasks.
+
+Consequently, we applied the data mining tasks which are classification
+and clustering. For classification, we use the decision tree method to
+construct our model, we tried 3 different sizes of training and testing
+data to get the best result for construction and evaluation and
+different methods. So we concluded the following results: Information
+Gain: \* 70% Training data, 30% Test data, accuracy = 78%
+
+-   75% Training data, 25% Test data, accuracy = 83%
+
+-   65% Training data, 35% Test data, accuracy = 83% The model that has
+    the best accuracy was the first model with 75% and 60% training data
+    which means that most tuples were correctly classified.
+
+Gini Index: \* 70% Training data, 30% Test data, accuracy = 83%
+
+-   75% Training data, 25% Test data, accuracy =82%
+
+-   65% Training data, 35% Test data, accuracy = 80%
+
+The model that has the best accuracy was the first model with 70%
+training data and 30% test data which means that most tuples were
+correctly classified.
+
+Gain Ratio:
+
+-   70% Training data, 30% Test data, accuracy = 86%
+
+-   75% Training data, 25% Test data, accuracy =86%
+
+-   65% Training data, 35% Test data, accuracy = 85%
+
+The model that has the best accuracy was the first model with 70%
+training data and 30% test data and second model with 75% training data
+and 25% test which means that most tuples were correctly classified.
+
+In order to determine the ideal number of clusters for clustering, we
+employed the K-means algorithm with three distinct K. We then computed
+the average silhouette width for each K, and came to the following
+conclusions: When cluster (K) is equal to 2, the average silhouette
+width is 0.29. When cluster (K) is equal to 3, the average silhouette
+width is 0.24.When cluster (K) is equal to 4, the average silhouette
+width is 0.21. • The average silhouette width is 0.246. Since the 2-Mean
+model has the best average silhouette width---meaning that items within
+the same cluster are as close to each other as possible and as far away
+from the objects in the other cluster as possible---it has the ideal
+number of clusters. Additionally, as the figures in the assessment and
+comparison section demonstrate, when compared to the other models, the
+2-Mean clustering has the least amount of cluster overlapping.
+
+Finally, both models are helpful for predicting Salaries and helped us
+to reach our goal which is helping people to take in consideration if
+they having a good salary at their current job or the new job also!, but
+Since our data contains a class label \"Salary\" This makes Supervised
+Learning models(classification) more accurate and suitable to apply than
+unsupervised learning model(clustering), as the expected output is known
+beforehand this way we makes use of the class label attribute.
 
 ### 8.0 Reference
 
