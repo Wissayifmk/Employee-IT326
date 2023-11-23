@@ -1460,10 +1460,6 @@ rownames(silh) <- rownames(Employees)
 fviz_silhouette(silh)
 ```
 
-Description of average silhouette coefficient: The average silhouette
-coefficient over all data points is computed. The average silhouette
-value that is high suggests that the clustering configuration is
-suitable and the clusters are well separated.
 
 5.  calculating the Total Within Cluster Sum of two clusters
 
@@ -1472,9 +1468,6 @@ suitable and the clusters are well separated.
 km$tot.withinss
 ```
 
-Description of Total sum of squares It is the sum of the squared
-distances between each data point in the dataset and the centroid of its
-assigned cluster
 
 6.  calculating BCubed precision and recall of two clusters
 
@@ -1523,13 +1516,9 @@ cat("BCubed Precision:", precision, "\n")
 cat("BCubed Recall:", recall, "\n")
 ```
 
-### Description of BCubed precision and recall
+#### 6.2.2 Discussion
 
-Precision: measures the accuracy of the clustering results with respect
-to individual data points. It is the ratio of correctly clustered
-instances to the total instances in a cluster. Recall: measures the
-ability of the clustering algorithm to capture all instances of a
-particular category or class
+
 
 # 7.1.2 Second K-mean (k=3)
 
