@@ -1372,15 +1372,47 @@ other partitions. The 70% Train, 30% Test and 65% Train, 35% Test
 partitions have the highest precision and similar sensitivity and
 specificity values.
 
-### 7.0.0 Clustering
+### 5.2.0 Clustring
 
-Description of Clustering: Clustering is an unsupervised learning
-technique in machine learning. Clustering groups similar data points
-together based on some characteristics.
+We used Clustering techniques to apply unsupervised learning to 
+our data. Clustering groups similar data pointstogether based
+on some characteristics.The primary goal of clustering is to find natural groupings or clusters
+within our dataset without any prior knowledge of the groups.
 
-library(factoextra)
+### 5.2.1 Silhouette coefficient
 
-### 7.1.0 First K-mean (k=2)
+The average silhouette coefficient used to evaluate the quality of clusters
+formed by a clustering algorithm, such as K-means or hierarchical clustering. 
+It gives an overall evaluation of the suitability of the clustering and quantifies
+how well each data point fits into the designated cluster.
+
+### 5.2.2 BCubed precision and recall
+
+BCubed is used to assess the quality of clustering results,
+It focuses on assessing the precision and recall of clustered data points
+concerning their true categories or classes.
+Precision of an object indicates how many other objects in the same cluster belong to the same
+category as the object.
+Recall of an object reflects how many objects of the same category are assigned to the same
+cluster.
+
+### 5.2.3 Total within-cluster sum of square
+
+Total within-cluster sum of square measures the compactness or homogeneity of clusters
+by calculating the sum of squared distances between each data point
+and the centroid of its assigned cluster.
+
+### 5.2.4 Elbow method
+
+(factoextra) making easy to extract and visualize the output of exploratory multivariate data analyses.
+
+the elbow approach is a technique used to find the ideal number of clusters in a dataset.
+It aids in determining the point at which the number of clusters increases and the quality of
+clustering improves less and less.
+
+#### 6.2.0 Clustring
+
+#### 6.2.1 First K-mean (k=2)
 
 1.  Deleting columns
 
@@ -1681,7 +1713,7 @@ to determine the optimal number of clusters.
 
 ### 7.1.5 Comparison:
 
-### Table 5
+##### Table 5
 
 |                                    | k=2                       | k=3                       | k=4                       |
 |----------------------|-----------------|-----------------|-----------------|
@@ -1818,3 +1850,6 @@ Accessed on: November 8, 2023.
 [3] RDocumentation, "rpart - RDocumentation," RDocumentation, Available:
 <https://www.rdocumentation.org/packages/rpart/versions/4.1.21/topics/rpart>[,](https://www.rdocumentation.org/packages/FSelectorRcpp/versions/0.3.11/topics/information_gain,)
 Accessed on: November 10, 2023.
+
+
+
