@@ -6,20 +6,29 @@ editor_options:
     wrap: 72
 ---
 
-### This code is running using R notebook in RStudio
+### 1.0 Problem:
 
-### 1.0 Goul:
+There is a lack of data regarding the factors that influence the
+salaries of Arab employees. This knowledge gap makes it difficult for
+organizations and authorities to make well-informed choices about future
+employee planning, and providing fair salaries across the Arab world. To
+address this issue, we aim to use the Arab Employee dataset, which will
+provide important data on Arab professionals' qualifications, locations,
+and years of experience. We can help organizations and authorities make
+better decisions by getting this data, thereby encouraging fair salaries
+practices and enhancing people management strategies in the Arab area.
 
-Our main goal in collecting the Arab Employee dataset is to learn more
-about what affects how much Arab professionals get paid. We want to
-gather information about their qualifications, where they live, and how
-much experience they have. This data will help organizations and
-policymakers make better decisions about managing talent, planning for
-the future workforce, and making sure pay is fair in the Arab region.
+### 2.0 Data Mining Tasks:
 
-### Here are two specific goals we have for this dataset:
+Data mining is essential for predicting the likelihood of achieving fair
+salary classifications and employing clustering techniques. By utilizing
+data mining algorithms on a vast dataset that encompasses the
+qualifications, geographic locations, and years of experience of diverse
+professionals, we can extract valuable insights.
 
-#### 1.1 Classification Goal:
+#### Here are three specific goals we have for this dataset:
+
+#### 2.1 Classification Goal:
 
 We want to group employees into different categories based on their
 qualifications, country location, and experience. By doing this, we can
@@ -29,7 +38,7 @@ experience, and it will help us identify talented individuals. With this
 information, we can develop strategies to support career growth and make
 sure people are being paid fairly.
 
-#### 1.2 Clustering Goal:
+#### 2.2 Clustering Goal:
 
 We want to group similar data points so we grouped employees with
 similar salaries together. By doing this, will help in uncovering hidden
@@ -39,7 +48,7 @@ makes it feasible to divide our enormous dataset into smaller,
 easier-to-understand subsets. This can make analyzing complicated
 datasets easier.
 
-#### 1.3 Defect Prediction Goal:
+#### 2.3 Defect Prediction Goal:
 
 We want to use machine learning and statistical techniques to create
 models that can predict any issues or anomalies with employee salaries.
@@ -49,7 +58,7 @@ problems early, we can fix them and make sure everyone is being treated
 fairly. This analysis will help us improve compensation policies and
 make better decisions about managing talent.
 
-#### 1.4 By achieving these goals, we can:
+#### By achieving these goals, we can:
 
 Understand how salaries are distributed among different employee groups.
 Identify any biases or unfairness in pay based on qualifications,
@@ -63,20 +72,22 @@ information about salary, qualifications, location, and experience is
 really important. It will help us analyze the data and make fair
 decisions that create a good working environment for Arab professionals.
 
-### 2.1 Source of the dataset:
+### 3.0 Data 
+
+### 3.1 Source of the dataset:
 
 Kaggle
 
-### 2.2 link of the dataset:
+### 3.2 link of the dataset:
 
 <https://www.kaggle.com/datasets/qusaybtoush1990/employes>
 
-### 3.0 General Information about Employees dataset:
+### 3.3 General Information about Employees dataset:
 
-Our dataset contains 10 attributes (See Table 1), and 740 objects.
-Furthermore, class lables the class label for our dataset is Salary.
+Our dataset contains 10 attributes, and 740 objects (See Table 1).
+Furthermore, the class label for our dataset is Salary.
 
-### 3.1 Table 1: General Information about the attributes for Employees dataset.
+##### Table 1: General Information about the attributes for Employees dataset.
 
 | Attributes name | Description                       | Data type | Possible values                      |
 |------------------|------------------|------------------|-------------------|
@@ -91,19 +102,19 @@ Furthermore, class lables the class label for our dataset is Salary.
 | Job rate        | Employee evaluation               | Numeric   | 1-13                                 |
 | Permission      | The access rights and privileges  | Numeric   | 1-14                                 |
 
-#### 3.2 Sample of Employees dataset
+#### 3.4 Sample of Employees dataset
 
 ```{r}
 View(Employees)
 ```
 
-#### 3.3 Number of column and rows
+#### 3.5 Number of column and rows
 
 ```{r}
 dim(Employees)
 ```
 
-#### 3.4 statiscal summarise -Nominal-
+#### 3.6 statiscal summarise -Nominal-
 
 ```{r}
 summary(Employees$Education)
@@ -121,7 +132,7 @@ summary(Employees$'Job Status')
 summary(Employees$Location)
 ```
 
-#### 3.5 statiscal summarise -Numerical-
+#### 3.7 statiscal summarise -Numerical-
 
 ```{r}
 summary(Employees$Years)
@@ -139,17 +150,23 @@ summary(Employees$'Job Rate')
 summary(Employees$Permissions)
 ```
 
-Description of summary: This is the summary of all data set
+Description of summary: This is the summary of all data set including
+Nominal and Numerical Data.
 
-#### 3.6 Code for variance
+#### 3.8 Code for variance
 
 ```{r}
 var(Employees$Salary)
 ```
 
-### 4.0 Graphs
+### 3.9 Graphs
 
-#### 4.1 Box plot for salary and years
+As we know, graphs are great tools for analyzing patterns and
+relationships in data because they provide a visual way to explore and
+evaluate data. So, in this section, we discussed some plots to have a
+full review of our data.
+
+#### 3.9.1 Box plot for salary and years
 
 ```{r}
 boxplot(Employees$Salary)
@@ -184,7 +201,7 @@ several important insights about the distribution of Permissions. It
 illustrates that the values of the attribute are almost balanced near to
 the median.
 
-#### 4.2 Histogram for permission
+#### 3.9.2 Histogram for permission
 
 ```{r}
 Permissions <- Employees$Permissions
@@ -197,7 +214,7 @@ observation, we noticed that the most values lie in approximately from 1
 permission to 2. As for the rest of the employees, their Permissions
 range from 3 to 14 permission.
 
-#### 4.3 Bar Chart for Salary
+#### 3.9.3 Bar Chart for Salary
 
 ```{r}
 #Bar Chart
@@ -210,7 +227,7 @@ chart is made for salary, the frequency of each value mostly appears
 ones. For best representation; it will be better to do discretisation
 before.
 
-#### 4.4 pie chart for Education
+#### 3.9.4 pie chart for Education
 
 ```{r}
 tab <- Employees$Education %>% table()
@@ -224,18 +241,32 @@ approximately half of the employees have academic education, and a few
 employees are prof, which helps us predict their salaries according to
 their level of education.
 
-### 5.0.0 Data preprocessing
+### 4.0.0 Data preprocessing
 
-### 5.1.0 Data cleaning
+In out data, we worked on various Data preprocessing techniques, such
+as:Data Cleaning, Data Discretization, Encodings, Feature Selection and
+Imbalance the Deta.
 
-#### 5.1.1 To find the total null values in the dataset
+##### Snapshot before applying Data preproccessing techniques:
+
+```{r}
+dim(Employees)
+```
+
+```{r}
+str(Employees)
+```
+
+### 4.1.0 Data cleaning
+
+#### 4.1.1 To find the total null values in the dataset
 
 ```{r}
 dim(Employees)
 sum(is.na(Employees))
 ```
 
-#### 5.1.2 Replace missing Data with average value
+#### 4.1.2 Replace missing Data with average value
 
 ```{r}
 Employees$Years = ifelse(is.na(Employees$Years), ave(Employees$Years, FUN =function(x) mean(x,na.rm=TRUE)), Employees$Years)
@@ -246,7 +277,7 @@ Description of data cleaning: We checked if our data contains missing or
 null values and replace these missing values with average value to get
 more efficient dataset.
 
-#### 5.1.3 Detecting outliers
+#### 4.1.3 Detecting outliers
 
 ```{r}
 OutSalary = outlier(Employees$Salary, logical =TRUE)
@@ -285,7 +316,7 @@ summary(Employees)
 str(Employees)
 ```
 
-#### 5.1.4 Removing outliers
+#### 4.1.4 Removing outliers
 
 ```{r}
 Employees= Employees[-Find_outlierSalary,]
@@ -303,7 +334,7 @@ summary(Employees)
 str(Employees)
 ```
 
-### 5.2.0 Discretization
+### 4.2.0 Data Discretization
 
 ```{r}
 Employees$Salary <- cut(Employees$Salary, 
@@ -315,7 +346,7 @@ Description of the discretization: This function arranges the values in
 intervals and give every interval a suitable label. by discretization,
 the Salary will be simpler to classify or perform other methods.
 
-### 5.3.0 Encoding
+### 4.3.0 Encoding
 
 ```{r}
 Employees$Education =  as.numeric(factor(Employees$Education))
@@ -337,7 +368,7 @@ Description of encoding: Encoding is the process of converting
 categorical data to numerical format. We need to convert the data to be
 able to do clustering.
 
-### 5.4.0 Feature Selection
+### 4.4.0 Feature Selection
 
 ```{r}
 set.seed(123)
@@ -353,19 +384,23 @@ print(ranked_features)
 
 barplot(ranked_features, horiz = TRUE, col = c("lightblue2"), las = 1, main = "Airline satisfaction Variable Import")
 ```
-Description of feature selection:
-Feature selection is a process in machine learning, it is used to improve model performance. 
-In several datasets, there are many features, and not all of the features participate equally to the performance of the model. Some of the features could even make redundancy or some noise.
-Feature selection assist in showing the most relevant features, leading to simpler and more interpretable models.
-In our dataset the most relevant features were "Job Status", "Job Rate" and "ID".
 
+Description of feature selection: Feature selection is a process in
+machine learning, it is used to improve model performance. In several
+datasets, there are many features, and not all of the features
+participate equally to the performance of the model. Some of the
+features could even make redundancy or some noise. Feature selection
+assist in showing the most relevant features, leading to simpler and
+more interpretable models. In our dataset the most relevant features
+were "Job Status", "Job Rate" and "ID".
 
-### 5.5.0 Imbalance
-Description of Imbalance:
-Imbalance refers to a situation where the distribution of attributes in a dataset is not uniform. 
-without imbalance tasks such as classification can be effected.
+### 4.5.0 Data Imbalance
 
-#### 5.5.1 Bar Chart for Salary
+Description of Imbalance: Imbalance refers to a situation where the
+distribution of attributes in a dataset is not uniform. without
+imbalance tasks such as classification can be effected.
+
+#### 4.5.1 Bar Chart for Salary
 
 ```{r}
 #Bar Chart
@@ -378,13 +413,13 @@ approximately from 1600 to 2600. while from 600-1000 and 1000-1600 are
 close to each other. The range of Salaries has big difference, which we
 have to consider it for the classification and clustering.
 
-#### 5.5.2 Convert Salary column to factor
+#### 4.5.2 Convert Salary column to factor
 
 ```{r}
 Employees$Salary <- as.factor(Employees$Salary)
 ```
 
-#### 5.5.3 upscaling the data
+#### 4.5.3 upscaling the data
 
 ```{r}
 Employees <- upSample(Employees[,-8], Employees$Salary, yname="Salary")
@@ -392,13 +427,38 @@ Employees$Salary <- as.numeric(Employees$Salary)
 Employees$Salary <- as.factor(Employees$Salary)
 ```
 
-#### 5.5.4 checking the Salaries observations
+#### 4.5.4 checking the Salaries observations
 
 ```{r}
 prop.table(table(Employees$Salary))
 plot(Employees$Salary)
 title(main = "Data after oversampling", xlab = "Salary", ylab = "observations")
 ```
+
+### 4.6.0 Data Normalization
+
+Since we have a small range in our dataset, we don't have to use the
+data normalization. As for the salary which has a large range; instead,
+we used data discretization that will help us in classification.
+
+### 4.6.0 Data Factorisation 
+
+We applied it in classification section -5.0.0- which is important for
+applying classification technique. But we used it in a training set and
+testing set rather than the original which will affect the clustering
+technique.
+
+##### Snapshot After applying Data preproccessing techniques:
+
+```{r}
+dim(Employees)
+```
+
+```{r}
+str(Employees)
+```
+
+### 5.0.0 Data Mining Techniques
 
 ### 6.0.0 Classification
 
@@ -1299,39 +1359,41 @@ other partitions. The 70% Train, 30% Test and 65% Train, 35% Test
 partitions have the highest precision and similar sensitivity and
 specificity values.
 
-
 ### 7.0.0 Clustering
 
-Description of Clustering:
-Clustering is an unsupervised learning technique in machine learning. 
-Clustering groups similar data points together based on some characteristics.
+Description of Clustering: Clustering is an unsupervised learning
+technique in machine learning. Clustering groups similar data points
+together based on some characteristics.
 
-library(factoextra)  
+library(factoextra)
 
 # 7.1.0 First K-mean (k=2)
 
-1. Deleting columns
+1.  Deleting columns
 
 ```{r}
 Sal <- Employees$Salary
 ##Delete columns
 Employees <- Employees[, !names(Employees) %in% c("Salary","ID", "Start Date")]
 ```
-Reason for removing some columns:
-We removed "Salary" because it is our class label and we are dealing with an unsupervised learning technique which means we don't need the class label.
-We removed " Start Date" because it had "unknown" type and it was not possible to convert its type to numric in order to start with clustering.
-We as well removed "ID" because it is of type "character" and converting it to numric will help us with nothing in our dataset.
 
+Reason for removing some columns: We removed "Salary" because it is our
+class label and we are dealing with an unsupervised learning technique
+which means we don't need the class label. We removed " Start Date"
+because it had "unknown" type and it was not possible to convert its
+type to numric in order to start with clustering. We as well removed
+"ID" because it is of type "character" and converting it to numric will
+help us with nothing in our dataset.
 
-2. Creating two clusters
-# Cluster k=2
+2.  Creating two clusters \# Cluster k=2
+
 ```{r}
 #calculate k-mean k=2
 km <- kmeans(Employees, centers= 2, iter.max = 100 , algorithm="Lloyd", nstart=100)
 km
 ```
 
-3. visualizing the result in graphical format of two clusters
+3.  visualizing the result in graphical format of two clusters
 
 ```{r}
 #plot k-mean 
@@ -1339,11 +1401,11 @@ fviz_cluster(list(data = Employees, cluster = km$cluster),
              ellipse.type = "norm", geom = "point", stand = FALSE,
              palette = "jco", ggtheme = theme_classic())
 ```
-Description of plotting the k-mean:
-visualizing results of a k-means clustering in a graphical format.
 
+Description of plotting the k-mean: visualizing results of a k-means
+clustering in a graphical format.
 
-4. calculating the Average Silhouette Coefficient of two clusters
+4.  calculating the Average Silhouette Coefficient of two clusters
 
 ```{r}
 #avg silhouette
@@ -1352,20 +1414,24 @@ silh <- silhouette(km$cluster, dist(Employees))
 rownames(silh) <- rownames(Employees)
 fviz_silhouette(silh)
 ```
-Description of average silhouette coefficient:
-The average silhouette coefficient over all data points is computed.
-The average silhouette value that is high suggests that the clustering configuration is suitable and the clusters are well separated.
 
-5. calculating the Total Within Cluster Sum  of two clusters
+Description of average silhouette coefficient: The average silhouette
+coefficient over all data points is computed. The average silhouette
+value that is high suggests that the clustering configuration is
+suitable and the clusters are well separated.
+
+5.  calculating the Total Within Cluster Sum of two clusters
+
 ```{r}
 # Total sum of squares
 km$tot.withinss
 ```
-Description of Total sum of squares
-It is the sum of the squared distances between each data point in the dataset and the centroid of its assigned cluster
 
+Description of Total sum of squares It is the sum of the squared
+distances between each data point in the dataset and the centroid of its
+assigned cluster
 
-6. calculating BCubed precision and recall of two clusters
+6.  calculating BCubed precision and recall of two clusters
 
 ```{r}
 cluster_assignments <- c(km$cluster) 
@@ -1411,23 +1477,29 @@ recall <- metrics$recall
 cat("BCubed Precision:", precision, "\n") 
 cat("BCubed Recall:", recall, "\n")
 ```
-### Description of BCubed precision and recall
-Precision: measures the accuracy of the clustering results with respect to individual data points. It is the ratio of correctly clustered instances to the total instances in a cluster.
-Recall: measures the ability of the clustering algorithm to capture all instances of a particular category or class
 
+### Description of BCubed precision and recall
+
+Precision: measures the accuracy of the clustering results with respect
+to individual data points. It is the ratio of correctly clustered
+instances to the total instances in a cluster. Recall: measures the
+ability of the clustering algorithm to capture all instances of a
+particular category or class
 
 # 7.1.2 Second K-mean (k=3)
 
-1. creating the 3 clusters
+1.  creating the 3 clusters
 
 # Cluster k=3
+
 ```{r}
 #calculate k-mean k=3
 km <- kmeans(Employees, centers= 3, iter.max = 100 , algorithm="Lloyd", nstart=100)
 km
 ```
 
-2. visualizing the result in graphical format of three clusters
+2.  visualizing the result in graphical format of three clusters
+
 ```{r}
 #plot k-mean 
 fviz_cluster(list(data = Employees, cluster = km$cluster),
@@ -1435,7 +1507,7 @@ fviz_cluster(list(data = Employees, cluster = km$cluster),
              palette = "jco", ggtheme = theme_classic())
 ```
 
-3. calculating the Average Silhouette Coefficient of three clusters
+3.  calculating the Average Silhouette Coefficient of three clusters
 
 ```{r}
 #avg silhouette
@@ -1445,13 +1517,14 @@ rownames(silh) <- rownames(Employees)
 fviz_silhouette(silh)
 ```
 
-4. calculating the Total Within Cluster Sum  of three clusters
+4.  calculating the Total Within Cluster Sum of three clusters
+
 ```{r}
 # Total sum of squares
 km$tot.withinss
 ```
 
-5. calculating BCubed precision and recall of three clusters
+5.  calculating BCubed precision and recall of three clusters
 
 ```{r}
 cluster_assignments <- c(km$cluster) 
@@ -1500,16 +1573,17 @@ cat("BCubed Recall:", recall, "\n")
 
 # 7.1.3 Third K-mean (k=4)
 
-1. creating the 4 clusters
+1.  creating the 4 clusters
 
 # Cluster k=4
+
 ```{r}
 #calculate k-mean k=4
 km <- kmeans(Employees, centers= 4, iter.max = 100 , algorithm="Lloyd", nstart=100)
 km
 ```
 
-2.visualizing the result in graphical format of four clusters 
+2.visualizing the result in graphical format of four clusters
 
 ```{r}
 #plot k-mean 
@@ -1518,7 +1592,7 @@ fviz_cluster(list(data = Employees, cluster = km$cluster),
              palette = "jco", ggtheme = theme_classic())
 ```
 
-3. calculating the Average Silhouette Coefficient of four clusters
+3.  calculating the Average Silhouette Coefficient of four clusters
 
 ```{r}
 #avg silhouette
@@ -1528,13 +1602,14 @@ rownames(silh) <- rownames(Employees)
 fviz_silhouette(silh)
 ```
 
-4. calculating the Total Within Cluster Sum  of four clusters
+4.  calculating the Total Within Cluster Sum of four clusters
+
 ```{r}
 # Total sum of squares
 km$tot.withinss
 ```
 
-5. calculating BCubed precision and recall of four clusters
+5.  calculating BCubed precision and recall of four clusters
 
 ```{r}
 cluster_assignments <- c(km$cluster) 
@@ -1582,49 +1657,79 @@ cat("BCubed Recall:", recall, "\n")
 ```
 
 7.1.4 Using Elbow method
+
 ```{r}
 ##### Elbow with wss 
 fviz_nbclust(Employees, kmeans, method = "wss")+ labs(subtitle = "Elbow method")
 ```
-Description of Elbow Method:
-The Elbow Method is one of the methods used to determine the optimal number of clusters.
 
+Description of Elbow Method: The Elbow Method is one of the methods used
+to determine the optimal number of clusters.
 
 ### 7.1.5 Comparison:
 
 ### Table 5
 
-|                                    | k=2                                                            | k=3                                                   | k=4                                                   |
-|--------------------------------|--------------|--------------|--------------|
-| Average Silhoutte width            | 0.29                                                            | 0.24                                                  | 0.21                                                  |
-| total within-cluster sum of square | 39369.3                                                       | 33408.38                                             | 28836.46                                              |
-| BCubed precision                   | 0.3383452                                                      | 0.3362839                                             | 0.3374109                                             |
-| BCubed recall                      | 0.5123139                                                      | 0.3660838                                             | 0.2540036                                             |
-| Visualization                      | all figure is shown above  |  all figure is shown above |  all figure is shown above |
-
+|                                    | k=2                       | k=3                       | k=4                       |
+|---------------------------|---------------|---------------|---------------|
+| Average Silhoutte width            | 0.29                      | 0.24                      | 0.21                      |
+| total within-cluster sum of square | 39369.3                   | 33408.38                  | 28836.46                  |
+| BCubed precision                   | 0.3383452                 | 0.3362839                 | 0.3374109                 |
+| BCubed recall                      | 0.5123139                 | 0.3660838                 | 0.2540036                 |
+| Visualization                      | all figure is shown above | all figure is shown above | all figure is shown above |
 
 ### 7.2.0 Discussion:
 
-From the results of the methods implemented on "Employees" data set we obtained the following:
- the model with the number of clusters k=2 had average silhouette width=0.29 it is the best result 
-since the model with the number of clusters k=3 and 4 had average silhouette width=0.24 and 0.21 respectively 
-this means that the the model with the number of clusters k=2  has the highest average silhouette result, 
-this value indicates that that objects within the same cluster are close to each other
-and as far as possible to the objects in the other cluster.
+From the results of the methods implemented on "Employees" data set we
+obtained the following: the model with the number of clusters k=2 had
+average silhouette width=0.29 it is the best result since the model with
+the number of clusters k=3 and 4 had average silhouette width=0.24 and
+0.21 respectively this means that the the model with the number of
+clusters k=2 has the highest average silhouette result, this value
+indicates that that objects within the same cluster are close to each
+other and as far as possible to the objects in the other cluster.
 
-For total within cluster sum results of model with the number of clusters k=2 we had a result with the value of 39369.3 this value
-represents the distances between each data point in a cluster and the centroid of that cluster,
-it is which is considered relatively large comparing with the other two models' results, for model with the number of clusters k=3 and 4 we had the results 
-33408.38 and 28836.46 respectively, in my opinion the as the number of clusters (k) increases, 
-the total within cluster sum generally decreases because the data points are closer to their cluster centroids.
+For total within cluster sum results of model with the number of
+clusters k=2 we had a result with the value of 39369.3 this value
+represents the distances between each data point in a cluster and the
+centroid of that cluster, it is which is considered relatively large
+comparing with the other two models' results, for model with the number
+of clusters k=3 and 4 we had the results 33408.38 and 28836.46
+respectively, in my opinion the as the number of clusters (k) increases,
+the total within cluster sum generally decreases because the data points
+are closer to their cluster centroids.
 
-BCubed precision and recall results showed that model with the number of clusters k=2 has the highest precision
-with the value 0.3383452 and the highest recall with the value 0.5123139, the model with the number of clusters k=3 and 4 
-had precision values of 0.3362839 and 0.3374109 respectively and the model with the number of clusters k=3 snd 4 had 
-recall values of 0.3660838   and 0.2540036 respectively, A higher precision indicates that, within a cluster, 
-the data points are more homogeneous and accurately assigned to the same group and 
-higher recall implies that the clustering algorithm is effective in identifying and grouping together all instances of a specific category.
+BCubed precision and recall results showed that model with the number of
+clusters k=2 has the highest precision with the value 0.3383452 and the
+highest recall with the value 0.5123139, the model with the number of
+clusters k=3 and 4 had precision values of 0.3362839 and 0.3374109
+respectively and the model with the number of clusters k=3 snd 4 had
+recall values of 0.3660838 and 0.2540036 respectively, A higher
+precision indicates that, within a cluster, the data points are more
+homogeneous and accurately assigned to the same group and higher recall
+implies that the clustering algorithm is effective in identifying and
+grouping together all instances of a specific category.
 
-The model with the number of clusters k=2 seems to be the optimal number of clustering 
-since most of the evaluation methods' results supports it, 
+The model with the number of clusters k=2 seems to be the optimal number
+of clustering since most of the evaluation methods' results supports it,
 we also applied the Elbow Method and we had the result of k=2.
+
+### 8.0 Reference
+
+[1] QUSAY AL-BTOUSH, Employees, Kaggle, 2021,Available:
+<https://www.kaggle.com/datasets/qusaybtoush1990/employes.> Accessed on:
+September 10, 2023
+
+[2] [1] S.-A. N. Alexandropoulos, S. B. Kotsiantis, and M. N. Vrahatis,
+"Data preprocessing in predictive data mining," *The Knowledge
+Engineering Review*, vol. 34, no. e1, pp. 1-33, 2019. DOI:
+10.1017/S026988891800036X.
+
+[3] RDocumentation, "Information Gain - RDocumentation," RDocumentation,
+Available:
+<https://www.rdocumentation.org/packages/FSelectorRcpp/versions/0.3.11/topics/information_gain,>
+Accessed on: November 8, 2023.
+
+[3] RDocumentation, "rpart - RDocumentation," RDocumentation, Available:
+<https://www.rdocumentation.org/packages/rpart/versions/4.1.21/topics/rpart>[,](https://www.rdocumentation.org/packages/FSelectorRcpp/versions/0.3.11/topics/information_gain,)
+Accessed on: November 10, 2023.
