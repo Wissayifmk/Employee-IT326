@@ -620,6 +620,28 @@ print(paste("Sensitivity (Recall):", sensitivity))
 print(paste("Specificity:",specificity))
 ```
 
+##### Description of information gain tree (70% , 30%):
+
+We can observe that we have 5 rules as we have 5 leaf nodes and 5 level,
+these are rules from the above tree: 
+
+▪ IF Job Status = 1,3 THEN it has more conditions
+
+-   IF Job status = 1 AND Department=
+    2,3,4,5,6,7,8,9,13,14,15,16,18,19,20,21 THEN Salary is 1.
+
+-   IF Job status = 1 AND Department !=
+    2,3,4,5,6,7,8,9,13,14,15,16,18,19,20,21 AND Years = 1,2,3 THEN
+    Salary is 1.
+
+-   IF Job status = 1 AND Department !=
+    2,3,4,5,6,7,8,9,13,14,15,16,18,19,20,21 AND Years != 1,2,3 THEN
+    Salary is 2.
+
+-   IF Job status = 3 THEN Salary is 1.
+
+▪ IF Job status != 1,3 THEN Salary is 3.
+
 #### 6.1.3 information gain (75% , 25%)
 
 ```{r}
@@ -697,6 +719,28 @@ print(paste("Sensitivity (Recall):", sensitivity))
 print(paste("Specificity:",specificity))
 ```
 
+##### Description of information gain tree (75% , 25%):
+
+We can observe that we have 5 rules as we have 5 leaf nodes and 5 level,
+these are some rules from the above tree: 
+
+▪ IF Job Status = 1,3 THEN it has more conditions
+
+-   IF Job status = 1 AND Department=
+    2,3,4,5,6,7,8,9,13,14,15,16,18,19,20,21 THEN Salary is 1.
+
+-   IF Job status = 1 AND Department !=
+    2,3,4,5,6,7,8,9,13,14,15,16,18,19,20,21 AND Years = 1,2,3 THEN
+    Salary is 1.
+
+-   IF Job status = 1 AND Department !=
+    2,3,4,5,6,7,8,9,13,14,15,16,18,19,20,21 AND Years != 1,2,3 THEN
+    Salary is 2.
+
+-   IF Job status = 3 THEN Salary is 2.
+
+▪ IF Job status != 1,3 THEN Salary is 3.
+
 #### 6.1.4 information gain (65% , 35%)
 
 ```{r}
@@ -771,6 +815,47 @@ print(paste("Precision:", precision))
 print(paste("Sensitivity (Recall):", sensitivity))
 print(paste("Specificity:",specificity))
 ```
+
+##### Description of information gain tree (65% , 35%):
+
+We can observe that we have 10 rules as we have 10 leaf nodes and 8
+level, these are some rules from the above tree: 
+
+▪ IF Job Status = 1,3 THEN it has more conditions
+
+-   IF Job status = 1 AND Permission =2,3,9,13,14 Then Salary is 1.
+
+-   IF Job status = 1 AND Permission !=2,3,9,13,14 Department =
+    2,3,4,5,6,7,8,13,14,15,16,18,19,20,21 AND Years = 0,3,6,7,8 THEN
+    Salary is 1.
+
+-   IF Job status = 1 AND Permission !=2,3,9,13,14 Department =
+    2,3,4,5,6,7,8,13,14,15,16,18,19,20,21 AND Years != 0,3,6,7,8 AND
+    Permission = 1,6,8,12 THEN Salary is 1.
+
+-   IF Job status = 1 AND Permission !=2,3,9,13,14 Department =
+    2,3,4,5,6,7,8,13,14,15,16,18,19,20,21 AND Years != 0,3,6,7,8 AND
+    Permission != 1,6,8,12 AND Job Rate= 3,4 THEN Salary is 1.
+
+-   IF Job status = 1 AND Permission !=2,3,9,13,14 Department =
+    2,3,4,5,6,7,8,13,14,15,16,18,19,20,21 AND Years != 0,3,6,7,8 AND
+    Permission != 1,6,8,12 AND Job Rate != 3,4 THEN Salary is 2.
+
+-   IF Job status = 1 AND Permission !=2,3,9,13,14 Department !=
+    2,3,4,5,6,7,8,13,14,15,16,18,19,20,21 AND Years = 1,2,3,4,6,7 AND
+    Job Rate = 1,4,5 THEN Salary is 1.
+
+-   IF Job status = 1 AND Permission !=2,3,9,13,14 Department !=
+    2,3,4,5,6,7,8,13,14,15,16,18,19,20,21 AND Years = 1,2,3,4,6,7 AND
+    Job Rate != 1,4,5 THEN Salary is 2.
+
+-   IF Job status = 1 AND Permission !=2,3,9,13,14 Department !=
+    2,3,4,5,6,7,8,13,14,15,16,18,19,20,21 AND Years != 1,2,3,4,6,7 THEN
+    Salary is 2.
+
+-   IF Job status != 1 THEN Salary is 2.
+
+▪ IF Job status != 1,3 THEN Salary is 3.
 
 #### 6.1.5 Comparison:
 
@@ -891,6 +976,28 @@ print(paste("Sensitivity (Recall):", sensitivity))
 print(paste("Specificity:",specificity))
 ```
 
+##### Description of Gini Index tree (70% , 30%):
+
+We can observe that we have 5 rules as we have 5 leaf nodes and 5 level,
+these are rules from the above tree: 
+
+▪ IF Job Status = 1,3 THEN it has more conditions
+
+-   IF Job status = 1 AND Department=
+    2,3,4,5,6,7,8,9,13,14,15,16,18,19,20,21 THEN Salary is 1.
+
+-   IF Job status = 1 AND Department !=
+    2,3,4,5,6,7,8,9,13,14,15,16,18,19,20,21 AND Years = 1,2,3 THEN
+    Salary is 1.
+
+-   IF Job status = 1 AND Department !=
+    2,3,4,5,6,7,8,9,13,14,15,16,18,19,20,21 AND Years != 1,2,3 THEN
+    Salary is 2.
+
+-   IF Job status = 3 THEN Salary is 2.
+
+▪ IF Job status != 1,3 THEN Salary is 3.
+
 #### 6.1.9 Gini Index (75% , 25%)
 
 ```{r}
@@ -966,6 +1073,28 @@ print(paste("Sensitivity (Recall):", sensitivity))
 print(paste("Specificity:",specificity))
 ```
 
+##### Description of Gini Index tree (75% , 25%):
+
+We can observe that we have 5 rules as we have 5 leaf nodes and 5 level,
+these are some rules from the above tree: 
+
+▪ IF Job Status = 1,3 THEN it has more conditions
+
+-   IF Job status = 1 AND Department=
+    2,3,4,5,6,7,8,9,13,14,15,16,18,19,20,21 THEN Salary is 1.
+
+-   IF Job status = 1 AND Department !=
+    2,3,4,5,6,7,8,9,13,14,15,16,18,19,20,21 AND Years = 1,2,3 THEN
+    Salary is 1.
+
+-   IF Job status = 1 AND Department !=
+    2,3,4,5,6,7,8,9,13,14,15,16,18,19,20,21 AND Years != 1,2,3 THEN
+    Salary is 2.
+
+-   IF Job status = 3 THEN Salary is 2.
+
+▪ IF Job status != 1,3 THEN Salary is 3.
+
 #### 6.1.10 Gini Index (65% , 35%)
 
 ```{r}
@@ -1040,6 +1169,28 @@ print(paste("Precision:", precision))
 print(paste("Sensitivity (Recall):", sensitivity))
 print(paste("Specificity:",specificity))
 ```
+
+##### Description of Gini Index tree (65% , 35%):
+
+We can observe that we have 5 rules as we have 5 leaf nodes and 5 level,
+these are some rules from the above tree:
+
+▪ IF Job Status = 1,3 THEN it has more conditions
+
+-   IF Job status = 1 AND Department=
+    2,3,4,5,6,7,8,9,13,14,15,16,18,19,20,21 THEN Salary is 1.
+
+-   IF Job status = 1 AND Department !=
+    2,3,4,5,6,7,8,9,13,14,15,16,18,19,20,21 AND Years = 1,2,3 THEN
+    Salary is 1.
+
+-   IF Job status = 1 AND Department !=
+    2,3,4,5,6,7,8,9,13,14,15,16,18,19,20,21 AND Years != 1,2,3 THEN
+    Salary is 2.
+
+-   IF Job status = 3 THEN Salary is 2.
+
+▪ IF Job status != 1,3 THEN Salary is 3.
 
 #### 6.1.11 Comparison:
 
@@ -1165,6 +1316,17 @@ print(paste("Specificity:",specificity))
 plot(model1)
 ```
 
+##### Description of Gain Ratio tree (70% , 30%):
+
+We can observe that we have 3 rules as we have 3 leaf nodes and 1 level,
+these are some rules from the above tree: 
+
+▪ IF Job Status = 1 THEN Salary is 1.
+
+▪ IF Job Status = 3 THEN Salary is 2.
+
+▪ IF Job Status = 2 THEN Salary is 3.
+
 #### 6.1.15 Gain Ratio (75% , 25%)
 
 ```{r}
@@ -1244,6 +1406,17 @@ print(paste("Specificity:",specificity))
 # 13.Visualize the decision tree using plot
 plot(model2)
 ```
+
+##### Description of Gain Ratio tree (75% , 25%):
+
+We can observe that we have 3 rules as we have 3 leaf nodes and 1 level,
+these are some rules from the above tree: 
+
+▪ IF Job Status = 1 THEN Salary is 1.
+
+▪ IF Job Status = 3 THEN Salary is 2.
+
+▪ IF Job Status = 2 THEN Salary is 3.
 
 #### 6.1.16 Gain Ratio (65% , 35%)
 
@@ -1328,6 +1501,17 @@ print(paste("Specificity:",specificity))
 plot(model3)
 ```
 
+##### Description of Gain Ratio tree (65% , 35%):
+
+We can observe that we have 3 rules as we have 3 leaf nodes and 1 level,
+these are some rules from the above tree: 
+
+▪ IF Job Status = 1 THEN Salary is 1.
+
+▪ IF Job Status = 3 THEN Salary is 2.
+
+▪ IF Job Status = 2 THEN Salary is 3.
+
 #### 6.1.17 Comparison:
 
 ##### Table 4
@@ -1374,44 +1558,47 @@ specificity values.
 
 ### 5.2.0 Clustring
 
-We used Clustering techniques to apply unsupervised learning to 
-our data. Clustering groups similar data pointstogether based
-on some characteristics.The primary goal of clustering is to find natural groupings or clusters
-within our dataset without any prior knowledge of the groups.
-In this section we are going to partition our data using k-means.
-we are going to try three different k-means values which are (2,3 and 4).For each one we will calculate the average silhouette, total within-cluster
-sum of square and the BCubed precision and recall.
+We used Clustering techniques to apply unsupervised learning to our
+data. Clustering groups similar data pointstogether based on some
+characteristics.The primary goal of clustering is to find natural
+groupings or clusters within our dataset without any prior knowledge of
+the groups. In this section we are going to partition our data using
+k-means. we are going to try three different k-means values which are
+(2,3 and 4).For each one we will calculate the average silhouette, total
+within-cluster sum of square and the BCubed precision and recall.
 
 ### 5.2.1 Silhouette coefficient
 
-The average silhouette coefficient used to evaluate the quality of clusters
-formed by a clustering algorithm, such as K-means or hierarchical clustering. 
-It gives an overall evaluation of the suitability of the clustering and quantifies
-how well each data point fits into the designated cluster.
+The average silhouette coefficient used to evaluate the quality of
+clusters formed by a clustering algorithm, such as K-means or
+hierarchical clustering. It gives an overall evaluation of the
+suitability of the clustering and quantifies how well each data point
+fits into the designated cluster.
 
 ### 5.2.2 BCubed precision and recall
 
-BCubed is used to assess the quality of clustering results,
-It focuses on assessing the precision and recall of clustered data points
-concerning their true categories or classes.
-Precision of an object indicates how many other objects in the same cluster belong to the same
-category as the object.
-Recall of an object reflects how many objects of the same category are assigned to the same
-cluster.
+BCubed is used to assess the quality of clustering results, It focuses
+on assessing the precision and recall of clustered data points
+concerning their true categories or classes. Precision of an object
+indicates how many other objects in the same cluster belong to the same
+category as the object. Recall of an object reflects how many objects of
+the same category are assigned to the same cluster.
 
 ### 5.2.3 Total within-cluster sum of square
 
-Total within-cluster sum of square measures the compactness or homogeneity of clusters
-by calculating the sum of squared distances between each data point
-and the centroid of its assigned cluster.
+Total within-cluster sum of square measures the compactness or
+homogeneity of clusters by calculating the sum of squared distances
+between each data point and the centroid of its assigned cluster.
 
 ### 5.2.4 Elbow method
 
-(factoextra) pakage making easy to extract and visualize the output of exploratory multivariate data analyses.
+(factoextra) pakage making easy to extract and visualize the output of
+exploratory multivariate data analyses.
 
-the elbow approach is a technique used to find the ideal number of clusters in a dataset.
-It aids in determining the point at which the number of clusters increases and the quality of
-clustering improves less and less.
+the elbow approach is a technique used to find the ideal number of
+clusters in a dataset. It aids in determining the point at which the
+number of clusters increases and the quality of clustering improves less
+and less.
 
 #### 6.2.0 Clustring
 
@@ -1463,14 +1650,12 @@ rownames(silh) <- rownames(Employees)
 fviz_silhouette(silh)
 ```
 
-
 5.  calculating the Total Within Cluster Sum of two clusters
 
 ```{r}
 # Total sum of squares
 km$tot.withinss
 ```
-
 
 6.  calculating BCubed precision and recall of two clusters
 
@@ -1518,8 +1703,6 @@ recall <- metrics$recall
 cat("BCubed Precision:", precision, "\n") 
 cat("BCubed Recall:", recall, "\n")
 ```
-
-
 
 #### 6.2.2 Second K-mean (k=3)
 
@@ -1697,18 +1880,20 @@ cat("BCubed Recall:", recall, "\n")
 ##### Elbow with wss 
 fviz_nbclust(Employees, kmeans, method = "wss")+ labs(subtitle = "Elbow method")
 ```
+
 #### 6.2.5 Disscution
 
-In this Elbow method graph, The highest point signifies the optimal number of clusters in the dataset.
-and here the highest point is 2 which means the number of clusters is set to 2. 
-(elbow method does not always produce a clear, distinct "highest" point).
+In this Elbow method graph, The highest point signifies the optimal
+number of clusters in the dataset. and here the highest point is 2 which
+means the number of clusters is set to 2. (elbow method does not always
+produce a clear, distinct "highest" point).
 
 #### 6.2.6 Comparison:
 
 ##### Table 5
 
 |                                    | k=2                       | k=3                       | k=4                       |
-|----------------------|-----------------|-----------------|-----------------|
+|---------------------|-----------------|-----------------|-----------------|
 | Average Silhoutte width            | 0.29                      | 0.24                      | 0.21                      |
 | total within-cluster sum of square | 39369.3                   | 33408.38                  | 28836.46                  |
 | BCubed precision                   | 0.3383452                 | 0.3362839                 | 0.3374109                 |
@@ -1839,9 +2024,10 @@ Available:
 <https://www.rdocumentation.org/packages/FSelectorRcpp/versions/0.3.11/topics/information_gain,>
 Accessed on: November 8, 2023.
 
-[3] RDocumentation, "rpart - RDocumentation," RDocumentation, Available:
+[4] RDocumentation, "rpart - RDocumentation," RDocumentation, Available:
 <https://www.rdocumentation.org/packages/rpart/versions/4.1.21/topics/rpart>[,](https://www.rdocumentation.org/packages/FSelectorRcpp/versions/0.3.11/topics/information_gain,)
 Accessed on: November 10, 2023.
 
-
-
+[5] RDocumentation, "C5.0 - RDocumentation," RDocumentation, Available:
+<https://www.rdocumentation.org/packages/C50/versions/0.1.8/topics/C5.0.default,)
+Accessed on: November 10, 2023.
