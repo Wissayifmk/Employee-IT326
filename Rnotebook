@@ -2031,3 +2031,8 @@ Accessed on: November 10, 2023.
 [5] RDocumentation, "C5.0 - RDocumentation," RDocumentation, Available:
 <https://www.rdocumentation.org/packages/C50/versions/0.1.8/topics/C5.0.default,)
 Accessed on: November 10, 2023.
+
+[6] G. K. Roussel, M. Chessel, and S. J. Champely, "Factoextra: Extract and Visualize
+the Results of Multivariate Data Analyses," R package version 1.0.7, Extract and
+Visualize the Results of Multivariate Data Analyses, 2021. [Online].
+Available: https://cran.r-project.org/package=factoextra. Accessed: November 29, 2023.
