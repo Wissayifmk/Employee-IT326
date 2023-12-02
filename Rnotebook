@@ -2193,6 +2193,10 @@ Since our data contains a class label "Salary" This makes Supervised
 Learning models(classification) more accurate and suitable to apply than
 unsupervised learning model(clustering), as the expected output is known
 beforehand this way we makes use of the class label attribute.
+Also, when comparing the highest accuracy when applying the Classification Model:
+Accuracy = 86% with the highest accuracy when applying the Clustering Model: 
+Precision = 33%, we notice that the accuracy rate in the Classification Model is
+higher, which shows that using Classification to predict Salary is the best and most accurate.
 
 ### 8.0 Reference
 
