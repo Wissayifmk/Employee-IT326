@@ -1894,46 +1894,47 @@ produce a clear, distinct "highest" point).
 
 |                                    | k=2                       | k=3                       | k=4                       |
 |--------------------|-----------------|-----------------|-----------------|
-| Average Silhoutte width            | 0.29                      | 0.24                      | 0.21                      |
-| total within-cluster sum of square | 39369.3                   | 33408.38                  | 28836.46                  |
-| BCubed precision                   | 0.3383452                 | 0.3362839                 | 0.3374109                 |
-| BCubed recall                      | 0.5123139                 | 0.3660838                 | 0.2540036                 |
+| Average Silhoutte width            | 0.3                      | 0.25                      | 0.22                      |
+| total within-cluster sum of square | 40750.1                   | 34529.21                  | 29822.08                  |
+| BCubed precision                   | 0.3349891                 | 0.3352973                 | 0.3362805                 |
+| BCubed recall                      | 0.512721                 | 0.3487142                 | 0.2555154                 |
 | Visualization                      | all figure is shown above | all figure is shown above | all figure is shown above |
 
 #### 6.2.7 Discussion:
 
 From the results of the methods implemented on "Employees" data set we
 obtained the following: the model with the number of clusters k=2 had
-average silhouette width=0.29 it is the best result since the model with
-the number of clusters k=3 and 4 had average silhouette width=0.24 and
-0.21 respectively this means that the the model with the number of
+average silhouette width=0.3 it is the best result since the model with
+the number of clusters k=3 and 4 had average silhouette width=0.25 and
+0.22 respectively this means that the the model with the number of
 clusters k=2 has the highest average silhouette result, this value
 indicates that that objects within the same cluster are close to each
 other and as far as possible to the objects in the other cluster.
 
 For total within cluster sum results of model with the number of
-clusters k=2 we had a result with the value of 39369.3 this value
+clusters k=2 we had a result with the value of 40750.1 this value
 represents the distances between each data point in a cluster and the
 centroid of that cluster, it is which is considered relatively large
 comparing with the other two models' results, for model with the number
-of clusters k=3 and 4 we had the results 33408.38 and 28836.46
-respectively, in my opinion the as the number of clusters (k) increases,
+of clusters k=3 and 4 we had the results 34529.21 and 29822.08
+respectively, in my opinion as the number of clusters (k) increases,
 the total within cluster sum generally decreases because the data points
 are closer to their cluster centroids.
 
 BCubed precision and recall results showed that model with the number of
-clusters k=2 has the highest precision with the value 0.3383452 and the
-highest recall with the value 0.5123139, the model with the number of
-clusters k=3 and 4 had precision values of 0.3362839 and 0.3374109
+clusters k=2 has the highest precision with the value 0.3349891 and the
+highest recall with the value 0.512721, the model with the number of
+clusters k=3 and 4 had precision values of 0.3352973 and 0.3362805
 respectively and the model with the number of clusters k=3 snd 4 had
-recall values of 0.3660838 and 0.2540036 respectively, A higher
+recall values of 0.3487142 and 0.2555154 respectively, A higher
 precision indicates that, within a cluster, the data points are more
 homogeneous and accurately assigned to the same group and higher recall
 implies that the clustering algorithm is effective in identifying and
 grouping together all instances of a specific category.
 
 The model with the number of clusters k=2 seems to be the optimal number
-of clustering since most of the evaluation methods' results supports it,
+of clustering since it had the highest average silhouette width, and the highest value of precision and recall,
+this means that most of the evaluation methods' results supports it,
 we also applied the Elbow Method and we had the result of k=2.
 
 ### **7.0 Findings:**
