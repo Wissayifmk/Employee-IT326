@@ -1592,8 +1592,8 @@ between each data point and the centroid of its assigned cluster.
 
 ### 5.2.4 Elbow method
 
-(factoextra) pakage making easy to extract and visualize the output of
-exploratory multivariate data analyses.
+(factoextra) pakage making easy to extract and visualize the output
+of exploratory multivariate data analyses. ^[6]^
 
 the elbow approach is a technique used to find the ideal number of
 clusters in a dataset. It aids in determining the point at which the
