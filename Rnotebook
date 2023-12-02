@@ -1602,8 +1602,7 @@ and less.
 
 #### 6.2.0 Clustring
 
-We selected 3 values for k-means, we have chosen k=2 after applying the elbow method,
-then we randomly selected k=3 and k=4 to test them to find the optimal K.
+We randomly selected 3 values for k-means, we have selected k=2, k=3 and k=4 to test them to find the optimal K.
 
 #### 6.2.1 First K-mean (k=2)
 
