@@ -1875,6 +1875,17 @@ recall <- metrics$recall
 cat("BCubed Precision:", precision, "\n") 
 cat("BCubed Recall:", recall, "\n")
 ```
+###Plots Disscution:
+
+Clusters silhouette plot:
+a higher average silhouette width is considered better, as it indicates that the clusters are well-defined and appropriately separated. Therefore, 
+among the values 0.3, 0.25, and 0.22 of k=2, k=3 and k=4 respectively
+a average silhouette width of 0.3 is the best.
+
+Cluster plot:
+Among k=2, k=3, and k=4, we observed overlapping in each of them, but the cluster with k=2 had the least overlapping,
+and the cluster with k=4 had the most overlapping.
+
 
 #### 6.2.4 Using Elbow method
 
