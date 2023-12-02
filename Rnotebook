@@ -538,6 +538,50 @@ with the highest ratio as the ideal split. This will reduce the
 likelihood of bias toward attributes with a high number of values or
 categories.^[5]^
 
+#### 5.2.0 Clustring
+
+We used Clustering techniques to apply unsupervised learning to our
+data. Clustering groups similar data pointstogether based on some
+characteristics.The primary goal of clustering is to find natural
+groupings or clusters within our dataset without any prior knowledge of
+the groups. In this section we are going to partition our data using
+k-means. we are going to try three different k-means values which are
+(2,3 and 4).For each one we will calculate the average silhouette, total
+within-cluster sum of square and the BCubed precision and recall.
+
+#### 5.2.1 Silhouette coefficient
+
+The average silhouette coefficient used to evaluate the quality of
+clusters formed by a clustering algorithm, such as K-means or
+hierarchical clustering. It gives an overall evaluation of the
+suitability of the clustering and quantifies how well each data point
+fits into the designated cluster.
+
+#### 5.2.2 BCubed precision and recall
+
+BCubed is used to assess the quality of clustering results, It focuses
+on assessing the precision and recall of clustered data points
+concerning their true categories or classes. Precision of an object
+indicates how many other objects in the same cluster belong to the same
+category as the object. Recall of an object reflects how many objects of
+the same category are assigned to the same cluster.
+
+#### 5.2.3 Total within-cluster sum of square
+
+Total within-cluster sum of square measures the compactness or
+homogeneity of clusters by calculating the sum of squared distances
+between each data point and the centroid of its assigned cluster.
+
+#### 5.2.4 Elbow method
+
+(factoextra) pakage making easy to extract and visualize the output
+of exploratory multivariate data analyses. ^[6]^
+
+the elbow approach is a technique used to find the ideal number of
+clusters in a dataset. It aids in determining the point at which the
+number of clusters increases and the quality of clustering improves less
+and less.
+
 ### 6.0.0 Evaluation and comparison
 
 #### 6.1.0 Classification
@@ -1556,49 +1600,6 @@ other partitions. The 70% Train, 30% Test and 65% Train, 35% Test
 partitions have the highest precision and similar sensitivity and
 specificity values.
 
-#### 5.2.0 Clustring
-
-We used Clustering techniques to apply unsupervised learning to our
-data. Clustering groups similar data pointstogether based on some
-characteristics.The primary goal of clustering is to find natural
-groupings or clusters within our dataset without any prior knowledge of
-the groups. In this section we are going to partition our data using
-k-means. we are going to try three different k-means values which are
-(2,3 and 4).For each one we will calculate the average silhouette, total
-within-cluster sum of square and the BCubed precision and recall.
-
-#### 5.2.1 Silhouette coefficient
-
-The average silhouette coefficient used to evaluate the quality of
-clusters formed by a clustering algorithm, such as K-means or
-hierarchical clustering. It gives an overall evaluation of the
-suitability of the clustering and quantifies how well each data point
-fits into the designated cluster.
-
-#### 5.2.2 BCubed precision and recall
-
-BCubed is used to assess the quality of clustering results, It focuses
-on assessing the precision and recall of clustered data points
-concerning their true categories or classes. Precision of an object
-indicates how many other objects in the same cluster belong to the same
-category as the object. Recall of an object reflects how many objects of
-the same category are assigned to the same cluster.
-
-#### 5.2.3 Total within-cluster sum of square
-
-Total within-cluster sum of square measures the compactness or
-homogeneity of clusters by calculating the sum of squared distances
-between each data point and the centroid of its assigned cluster.
-
-#### 5.2.4 Elbow method
-
-(factoextra) pakage making easy to extract and visualize the output
-of exploratory multivariate data analyses. ^[6]^
-
-the elbow approach is a technique used to find the ideal number of
-clusters in a dataset. It aids in determining the point at which the
-number of clusters increases and the quality of clustering improves less
-and less.
 
 #### 6.2.0 Clustring
 
