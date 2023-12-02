@@ -2112,21 +2112,21 @@ specificity, and more specific conditions based on feature selection.
 
 **Discussion:**
 
- ##Cluster with k-mean = 2
+ #### Cluster with k-mean = 2
 Average Silhoutte width was 0.3 indicating less space between objects of
 in a cluster and more space between objects in different clusters,
 total within-cluster sum of square was 40750.1,
 BCubed precision was 0.3349891 indicating objects of a cluster are correctly assigned to it,
 BCubed recall was 0.512721 indicating objects of the same category assigned to the same cluster.
 
-##Cluster with k-mean = 3
+#### Cluster with k-mean = 3
 Average Silhoutte width was 0.25 indicating less space between objects of
 in a cluster and more space between objects in different clusters,
 total within-cluster sum of square was 34529.21,
 BCubed precision was 0.3352973 indicating objects of a cluster are correctly assigned to it,
 BCubed recall was 0.3487142 indicating objects of the same category assigned to the same cluster.
 
-##Cluster with k-mean = 4
+#### Cluster with k-mean = 4
 Average Silhoutte width was 0.22 indicating less space between objects of
 in a cluster and more space between objects in different clusters,
 total within-cluster sum of square was 29822.08,
