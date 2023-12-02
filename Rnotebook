@@ -80,7 +80,7 @@ Kaggle
 
 ### 3.2 link of the dataset:
 
-<https://www.kaggle.com/datasets/qusaybtoush1990/employes>
+<https://www.kaggle.com/datasets/qusaybtoush1990/employes> ^[1]^
 
 ### 3.3 General Information about Employees dataset:
 
@@ -392,7 +392,7 @@ participate equally to the performance of the model. Some of the
 features could even make redundancy or some noise. Feature selection
 assist in showing the most relevant features, leading to simpler and
 more interpretable models. In our dataset the most relevant features
-were "Job Status", "Job Rate" and "ID".
+were "Job Status", "Job Rate" and "ID". ^[2]^
 
 ### 4.5.0 Data Imbalance
 
@@ -496,7 +496,7 @@ str(Employees)
 
 (rpart) is a measure used in decision tree algorithms. It is used to
 evaluate the quality of a split in a decision tree by measuring the
-reduction in entropy in the dataset.
+reduction in entropy in the dataset. ^[3]^
 
 The information gain approach in rpart considers various potential
 splits based on different features in the dataset. For each split, the
@@ -504,7 +504,7 @@ information gain is calculated by comparing the entropy of the original
 dataset with the weighted average of the entropies of the resulting
 subsets. The split that maximizes the information gain is chosen as the
 best split, as it leads to subsets with the highest level of homogeneity
-or purity.
+or purity.^[3]^
 
 When building a decision tree using rpart, the algorithm iterates
 through all possible splits and selects the one with the highest
@@ -516,13 +516,13 @@ maximum tree depth or a minimum number of samples in a leaf node.
 
 Gini index (rpart) can be considered as a measure for the level of
 impurity in a dataset. When building the tree, decision tree algorithms
-frequently use it to determine the split's quality.
+frequently use it to determine the split's quality.^[4]^
 
 The approach takes into consideration several possible splits depending
 on distinct aspects in the dataset in order to employ the Gini index in
 a decision tree. Every split's Gini index is computed, and the split
 with the lowest value is chosen. The selected split produces the
-resulting subsets with the best level of homogeneity or purity.
+resulting subsets with the best level of homogeneity or purity.^[4]^
 
 #### 5.1.3 Gain Ratio
 
@@ -530,13 +530,13 @@ Gain ratio (C.50) is a measure utilized in decision tree algorithms to
 assess the quality of a split by considering both the information gain
 and the intrinsic information of a feature. It factors in the entropy or
 impurity of a dataset and the potential information obtained from
-dividing the data based on a specific feature.
+dividing the data based on a specific feature.^[5]^
 
 The algorithm examines the gain ratios of different features while
 employing the gain ratio under a decision tree, selecting the feature
 with the highest ratio as the ideal split. This will reduce the
 likelihood of bias toward attributes with a high number of values or
-categories.
+categories.^[5]^
 
 ### 6.0.0 Evaluation and comparison
 
@@ -1893,7 +1893,7 @@ produce a clear, distinct "highest" point).
 ##### Table 5
 
 |                                    | k=2                       | k=3                       | k=4                       |
-|---------------------|-----------------|-----------------|-----------------|
+|--------------------|-----------------|-----------------|-----------------|
 | Average Silhoutte width            | 0.29                      | 0.24                      | 0.21                      |
 | total within-cluster sum of square | 39369.3                   | 33408.38                  | 28836.46                  |
 | BCubed precision                   | 0.3383452                 | 0.3362839                 | 0.3374109                 |
@@ -1949,14 +1949,15 @@ and other commands, we removed all null, missing, and outliers' values
 that can badly affect the results. Also, we applied data transformation,
 so we normalized discretized, and incdeed some attributes to give them
 equal weight and to facilitate handling the data during data mining
-tasks.
+tasks. Consequently, we applied the data mining tasks which are
+classification and clustering.
 
-Consequently, we applied the data mining tasks which are classification
-and clustering. For classification, we use the decision tree method to
-construct our model, we tried 3 different sizes of training and testing
-data to get the best result for construction and evaluation and
-different methods. So we concluded the following results: Information
-Gain: 
+#### Classification
+
+For classification, we use the decision tree method to construct our
+model, we tried 3 different sizes of training and testing data to get
+the best result for construction and evaluation and different methods.
+So we concluded the following results: Information Gain:
 
 |             | 70% training set 30% testing set: | 70% training set 30% testing set: | 70% training set 30% testing set: | 75% training set 25% testing set: | 75% training set 25% testing set: | 75% training set 25% testing set: | 65% training set 35% testing set: | 65% training set 35% testing set: | 65% training set 35% testing set: |
 |--------|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
@@ -1966,44 +1967,150 @@ Gain:
 | Sensitivity |                57%                |                60%                |                70%                |                67%                |                60%                |                65%                |                68%                |                61%                |                59%                |
 | Specificity |               100%                |               100%                |                93%                |                93%                |               100%                |                94%                |                96%                |               100%                |               100%                |
 
-Partition 1 (70% training set, 30% testing set):
+#### Partition 1 (70% training set, 30% testing set):
 
-IG algorithm: The accuracy is 78%, indicating that the model correctly predicted 78% of the instances in the testing set. The precision is 100%, meaning that all the instances predicted as positive by the model were actually positive. The sensitivity is 57%, indicating that the model correctly identified 57% of the positive instances. The specificity is 100%, meaning that the model correctly identified all the negative instances.
+IG algorithm: The accuracy is 78%, indicating that the model correctly
+predicted 78% of the instances in the testing set. The precision is
+100%, meaning that all the instances predicted as positive by the model
+were actually positive. The sensitivity is 57%, indicating that the
+model correctly identified 57% of the positive instances. The
+specificity is 100%, meaning that the model correctly identified all the
+negative instances.
 
-IG Ratio algorithm: The accuracy is 86%, indicating that the model correctly predicted 86% of the instances in the testing set. The precision is 100%, meaning that all the instances predicted as positive by the model were actually positive. The sensitivity is 60%, indicating that the model correctly identified 60% of the positive instances. The specificity is 100%, meaning that the model correctly identified all the negative instances.
+IG Ratio algorithm: The accuracy is 86%, indicating that the model
+correctly predicted 86% of the instances in the testing set. The
+precision is 100%, meaning that all the instances predicted as positive
+by the model were actually positive. The sensitivity is 60%, indicating
+that the model correctly identified 60% of the positive instances. The
+specificity is 100%, meaning that the model correctly identified all the
+negative instances.
 
-Gini Index algorithm: The accuracy is 83%, indicating that the model correctly predicted 83% of the instances in the testing set. The precision is 92%, meaning that 92% of the instances predicted as positive by the model were actually positive. The sensitivity is 70%, indicating that the model correctly identified 70% of the positive instances. The specificity is 93%, meaning that the model correctly identified 93% of the negative instances.
+Gini Index algorithm: The accuracy is 83%, indicating that the model
+correctly predicted 83% of the instances in the testing set. The
+precision is 92%, meaning that 92% of the instances predicted as
+positive by the model were actually positive. The sensitivity is 70%,
+indicating that the model correctly identified 70% of the positive
+instances. The specificity is 93%, meaning that the model correctly
+identified 93% of the negative instances.
 
-When we choose the best algorithm, we go towards the algorithm with the highest number of attributes and the highest accuracy. Therefore, we will exclude the IG Ratio algorithm because it uses 4 attributes, which is less than the number of attributes in the rest of the algorithms.
-The Gini Index algorithm achieved an accuracy of 83%, which is the highest among the remaining algorithms in this partition. It had a higher accuracy compared to the IG algorithm (78%).
+When we choose the best algorithm, we go towards the algorithm with the
+highest number of attributes and the highest accuracy. Therefore, we
+will exclude the IG Ratio algorithm because it uses 4 attributes, which
+is less than the number of attributes in the rest of the algorithms. The
+Gini Index algorithm achieved an accuracy of 83%, which is the highest
+among the remaining algorithms in this partition. It had a higher
+accuracy compared to the IG algorithm (78%).
 
-Partition 2 (75% training set, 25% testing set):
+#### Partition 2 (75% training set, 25% testing set):
 
-IG algorithm: The accuracy is 83%, indicating that the model correctly predicted 83% of the instances in the testing set. The precision is 92%, meaning that 92% of the instances predicted as positive by the model were actually positive. The sensitivity is 67%, indicating that the model correctly identified 67% of the positive instances. The specificity is 93%, meaning that the model correctly identified 93% of the negative instances.
+IG algorithm: The accuracy is 83%, indicating that the model correctly
+predicted 83% of the instances in the testing set. The precision is 92%,
+meaning that 92% of the instances predicted as positive by the model
+were actually positive. The sensitivity is 67%, indicating that the
+model correctly identified 67% of the positive instances. The
+specificity is 93%, meaning that the model correctly identified 93% of
+the negative instances.
 
-IG Ratio algorithm: The accuracy is 86%, indicating that the model correctly predicted 86% of the instances in the testing set. The precision is 1%, meaning that only 1% of the instances predicted as positive by the model were actually positive. The sensitivity is 60%, indicating that the model correctly identified 60% of the positive instances. The specificity is 100%, meaning that the model correctly identified all the negative instances.
+IG Ratio algorithm: The accuracy is 86%, indicating that the model
+correctly predicted 86% of the instances in the testing set. The
+precision is 1%, meaning that only 1% of the instances predicted as
+positive by the model were actually positive. The sensitivity is 60%,
+indicating that the model correctly identified 60% of the positive
+instances. The specificity is 100%, meaning that the model correctly
+identified all the negative instances.
 
-Gini Index algorithm: The accuracy is 82%, indicating that the model correctly predicted 82% of the instances in the testing set. The precision is 93%, meaning that 93% of the instances predicted as positive by the model were actually positive. The sensitivity is 65%, indicating that the model correctly identified 65% of the positive instances. The specificity is 94%, meaning that the model correctly identified 94% of the negative instances.
+Gini Index algorithm: The accuracy is 82%, indicating that the model
+correctly predicted 82% of the instances in the testing set. The
+precision is 93%, meaning that 93% of the instances predicted as
+positive by the model were actually positive. The sensitivity is 65%,
+indicating that the model correctly identified 65% of the positive
+instances. The specificity is 94%, meaning that the model correctly
+identified 94% of the negative instances.
 
-When we choose the best algorithm, we go towards the algorithm with the highest number of attributes and the highest accuracy. Therefore, we will exclude the IG Ratio algorithm because it uses 4 attributes, which is less than the number of attributes in the rest of the algorithms.
-The Gini Index algorithm achieved an accuracy of 82%, which is the highest among the remaining algorithms in this partition. It outperformed the IG algorithm (83%) in terms of accuracy.
+When we choose the best algorithm, we go towards the algorithm with the
+highest number of attributes and the highest accuracy. Therefore, we
+will exclude the IG Ratio algorithm because it uses 4 attributes, which
+is less than the number of attributes in the rest of the algorithms. The
+Gini Index algorithm achieved an accuracy of 82%, which is the highest
+among the remaining algorithms in this partition. It outperformed the IG
+algorithm (83%) in terms of accuracy.
 
-Partition 3 (65% training set, 35% testing set):
+#### Partition 3 (65% training set, 35% testing set):
 
-IG algorithm: The accuracy is 83%, indicating that the model correctly predicted 83% of the instances in the testing set. The precision is 95%, meaning that 95% of the instances predicted as positive by the model were actually positive. The sensitivity is 68%, indicating that the model correctly identified 68% of the positive instances. The specificity is 96%, meaning that the model correctly identified 96% of the negative instances.
+IG algorithm: The accuracy is 83%, indicating that the model correctly
+predicted 83% of the instances in the testing set. The precision is 95%,
+meaning that 95% of the instances predicted as positive by the model
+were actually positive. The sensitivity is 68%, indicating that the
+model correctly identified 68% of the positive instances. The
+specificity is 96%, meaning that the model correctly identified 96% of
+the negative instances.
 
-IG Ratio algorithm: The accuracy is 85%, indicating that the model correctly predicted 85% of the instances in the testing set. The precision is 100%, meaning that all the instances predicted as positive by the model were actually positive. The sensitivity is 61%, indicating that the model correctly identified 61% of the positive instances. The specificity is 100%, meaning that the model correctly identified all the negative instances.
+IG Ratio algorithm: The accuracy is 85%, indicating that the model
+correctly predicted 85% of the instances in the testing set. The
+precision is 100%, meaning that all the instances predicted as positive
+by the model were actually positive. The sensitivity is 61%, indicating
+that the model correctly identified 61% of the positive instances. The
+specificity is 100%, meaning that the model correctly identified all the
+negative instances.
 
-Gini Index algorithm: The accuracy is 80%, indicating that the model correctly predicted 80% of the instances in the testing set. The precision is 100%, meaning that all the instances predicted as positive by the model were actually positive. The sensitivity is 59%, indicating that the model correctly identified 59% of the positive instances. The specificity is 100%, meaning that the model correctly identified all the negative instances.
+Gini Index algorithm: The accuracy is 80%, indicating that the model
+correctly predicted 80% of the instances in the testing set. The
+precision is 100%, meaning that all the instances predicted as positive
+by the model were actually positive. The sensitivity is 59%, indicating
+that the model correctly identified 59% of the positive instances. The
+specificity is 100%, meaning that the model correctly identified all the
+negative instances.
 
-When we choose the best algorithm, we go towards the algorithm with the highest number of attributes and the highest accuracy. Therefore, we will exclude the IG Ratio algorithm because it uses 4 attributes, which is less than the number of attributes in the rest of the algorithms.
-The IG algorithm achieved an accuracy of 83%, which is the highest among the remaining algorithms in this partition. It had a higher accuracy compared to the Gini Index algorithm (80%).
+When we choose the best algorithm, we go towards the algorithm with the
+highest number of attributes and the highest accuracy. Therefore, we
+will exclude the IG Ratio algorithm because it uses 4 attributes, which
+is less than the number of attributes in the rest of the algorithms. The
+IG algorithm achieved an accuracy of 83%, which is the highest among the
+remaining algorithms in this partition. It had a higher accuracy
+compared to the Gini Index algorithm (80%).
 
-Overall Best Algorithm (based on accuracy):
+**Overall Best Algorithm (based on accuracy):**
 
-The Gini Index algorithm achieved the highest accuracy across all partitions. While the accuracy of the Gini Index algorithm varied slightly in each partition (83% in Partition 1, 82% in Partition 2, and 80% in Partition 3), it consistently outperformed the other algorithms in terms of accuracy.
+The Gini Index algorithm achieved the highest accuracy across all
+partitions. While the accuracy of the Gini Index algorithm varied
+slightly in each partition (83% in Partition 1, 82% in Partition 2, and
+80% in Partition 3), it consistently outperformed the other algorithms
+in terms of accuracy.
 
+**Best Decision Tree:**
 
+After careful review, we concluded that the Information Gain algorithm
+-65% training set and 35% testing set- produced the most accurate and
+dependable findings. As a result, we confidently chose it as the best
+model to build a decision tree. 
+
+The model was selected for our decision tree due to its higher accuracy,
+precision, and specificity compared to other algorithms and sizes.
+Furthermore, it covers an extensive assessment of many attributes,
+taking into account their value via feature selection algorithms. This
+technique allows us to use a big of relevant attributes, which improves
+the decision tree's overall performance. Moreover, this model
+effectively collects the most informative features that significantly
+contribute to the target variable, resulting in specific conditions for
+decision making.
+
+**Several findings can be drawn from the decision tree analysis:**
+
+1.  The decision tree has 10 leaf nodes, indicating that the tree has
+    extracted 10 rules or distinct conditions.
+
+2.  The decision nodes in the tree apply the attributes that have a
+    significant impact to make decisions and classify cases.
+
+3.  The tree indicates that Job Rate, Job Status, Years, Department, and
+    Permission will determine the good and fair Salary for the Arab
+    Region Employees.
+
+Consequently, the Information Gain algorithm emerged as the best
+selection, providing decision trees with high accuracy, precision,
+specificity, and more specific conditions based on feature selection.
+
+#### Clustering 
 
 In order to determine the ideal number of clusters for clustering, we
 employed the K-means algorithm with three distinct K. We then computed
@@ -2048,10 +2155,12 @@ Accessed on: November 8, 2023.
 Accessed on: November 10, 2023.
 
 [5] RDocumentation, "C5.0 - RDocumentation," RDocumentation, Available:
-<https://www.rdocumentation.org/packages/C50/versions/0.1.8/topics/C5.0.default,)
+\<<https://www.rdocumentation.org/packages/C50/versions/0.1.8/topics/C5.0.default>,)
 Accessed on: November 10, 2023.
 
-[6] G. K. Roussel, M. Chessel, and S. J. Champely, "Factoextra: Extract and Visualize
-the Results of Multivariate Data Analyses," R package version 1.0.7, Extract and
-Visualize the Results of Multivariate Data Analyses, 2021. [Online].
-Available: https://cran.r-project.org/package=factoextra. Accessed: November 29, 2023.
+[6] G. K. Roussel, M. Chessel, and S. J. Champely, "Factoextra: Extract
+and Visualize the Results of Multivariate Data Analyses," R package
+version 1.0.7, Extract and Visualize the Results of Multivariate Data
+Analyses, 2021. [Online]. Available:
+<https://cran.r-project.org/package=factoextra>. Accessed: November 29,
+2023.
