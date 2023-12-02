@@ -1602,6 +1602,9 @@ and less.
 
 #### 6.2.0 Clustring
 
+We selected 3 values for k-means, we have chosen k=2 after applying the elbow method,
+then we randomly selected k=3 and k=4 to test them to find the optimal K.
+
 #### 6.2.1 First K-mean (k=2)
 
 1.  Deleting columns
@@ -1902,40 +1905,26 @@ produce a clear, distinct "highest" point).
 
 #### 6.2.7 Discussion:
 
-From the results of the methods implemented on "Employees" data set we
-obtained the following: the model with the number of clusters k=2 had
-average silhouette width=0.3 it is the best result since the model with
-the number of clusters k=3 and 4 had average silhouette width=0.25 and
-0.22 respectively this means that the the model with the number of
-clusters k=2 has the highest average silhouette result, this value
-indicates that that objects within the same cluster are close to each
-other and as far as possible to the objects in the other cluster.
+ ##Cluster with k-mean = 2
+Average Silhoutte width was 0.3 indicating less space between objects of
+in a cluster and more space between objects in different clusters,
+total within-cluster sum of square was 40750.1,
+BCubed precision was 0.3349891 indicating objects of a cluster are correctly assigned to it,
+BCubed recall was 0.512721 indicating objects of the same category assigned to the same cluster.
 
-For total within cluster sum results of model with the number of
-clusters k=2 we had a result with the value of 40750.1 this value
-represents the distances between each data point in a cluster and the
-centroid of that cluster, it is which is considered relatively large
-comparing with the other two models' results, for model with the number
-of clusters k=3 and 4 we had the results 34529.21 and 29822.08
-respectively, in my opinion as the number of clusters (k) increases,
-the total within cluster sum generally decreases because the data points
-are closer to their cluster centroids.
+##Cluster with k-mean = 3
+Average Silhoutte width was 0.25 indicating less space between objects of
+in a cluster and more space between objects in different clusters,
+total within-cluster sum of square was 34529.21,
+BCubed precision was 0.3352973 indicating objects of a cluster are correctly assigned to it,
+BCubed recall was 0.3487142 indicating objects of the same category assigned to the same cluster.
 
-BCubed precision and recall results showed that model with the number of
-clusters k=2 has the highest precision with the value 0.3349891 and the
-highest recall with the value 0.512721, the model with the number of
-clusters k=3 and 4 had precision values of 0.3352973 and 0.3362805
-respectively and the model with the number of clusters k=3 snd 4 had
-recall values of 0.3487142 and 0.2555154 respectively, A higher
-precision indicates that, within a cluster, the data points are more
-homogeneous and accurately assigned to the same group and higher recall
-implies that the clustering algorithm is effective in identifying and
-grouping together all instances of a specific category.
-
-The model with the number of clusters k=2 seems to be the optimal number
-of clustering since it had the highest average silhouette width, and the highest value of precision and recall,
-this means that most of the evaluation methods' results supports it,
-we also applied the Elbow Method and we had the result of k=2.
+##Cluster with k-mean = 4
+Average Silhoutte width was 0.22 indicating less space between objects of
+in a cluster and more space between objects in different clusters,
+total within-cluster sum of square was 29822.08,
+BCubed precision was 0.3362805 indicating objects of a cluster are correctly assigned to it,
+BCubed recall was 0.2555154 indicating objects of the same category assigned to the same cluster.
 
 ### **7.0 Findings:**
 
@@ -2111,21 +2100,81 @@ Consequently, the Information Gain algorithm emerged as the best
 selection, providing decision trees with high accuracy, precision,
 specificity, and more specific conditions based on feature selection.
 
+
 #### Clustering 
 
-In order to determine the ideal number of clusters for clustering, we
-employed the K-means algorithm with three distinct K. We then computed
-the average silhouette width for each K, and came to the following
-conclusions: When cluster (K) is equal to 2, the average silhouette
-width is 0.29. When cluster (K) is equal to 3, the average silhouette
-width is 0.24.When cluster (K) is equal to 4, the average silhouette
-width is 0.21. • The average silhouette width is 0.246. Since the 2-Mean
-model has the best average silhouette width---meaning that items within
-the same cluster are as close to each other as possible and as far away
-from the objects in the other cluster as possible---it has the ideal
-number of clusters. Additionally, as the figures in the assessment and
-comparison section demonstrate, when compared to the other models, the
-2-Mean clustering has the least amount of cluster overlapping.
+|                                    | k=2                       | k=3                       | k=4                       |
+|--------------------|-----------------|-----------------|-----------------|
+| Average Silhoutte width            | 0.3                      | 0.25                      | 0.22                      |
+| total within-cluster sum of square | 40750.1                   | 34529.21                  | 29822.08                  |
+| BCubed precision                   | 0.3349891                 | 0.3352973                 | 0.3362805                 |
+| BCubed recall                      | 0.512721                 | 0.3487142                 | 0.2555154                 |
+| Visualization                      | all figure is shown above | all figure is shown above | all figure is shown above |
+
+**Discussion:**
+
+ ##Cluster with k-mean = 2
+Average Silhoutte width was 0.3 indicating less space between objects of
+in a cluster and more space between objects in different clusters,
+total within-cluster sum of square was 40750.1,
+BCubed precision was 0.3349891 indicating objects of a cluster are correctly assigned to it,
+BCubed recall was 0.512721 indicating objects of the same category assigned to the same cluster.
+
+##Cluster with k-mean = 3
+Average Silhoutte width was 0.25 indicating less space between objects of
+in a cluster and more space between objects in different clusters,
+total within-cluster sum of square was 34529.21,
+BCubed precision was 0.3352973 indicating objects of a cluster are correctly assigned to it,
+BCubed recall was 0.3487142 indicating objects of the same category assigned to the same cluster.
+
+##Cluster with k-mean = 4
+Average Silhoutte width was 0.22 indicating less space between objects of
+in a cluster and more space between objects in different clusters,
+total within-cluster sum of square was 29822.08,
+BCubed precision was 0.3362805 indicating objects of a cluster are correctly assigned to it,
+BCubed recall was 0.2555154 indicating objects of the same category assigned to the same cluster.
+
+**findings:**
+
+From the results of the methods implemented on "Employees" data set we
+obtained the following: the model with the number of clusters k=2 had
+average silhouette width=0.3 it is the best result since the model with
+the number of clusters k=3 and 4 had average silhouette width=0.25 and
+0.22 respectively this means that the the model with the number of
+clusters k=2 has the highest average silhouette result, this value
+indicates that that objects within the same cluster are close to each
+other and as far as possible to the objects in the other cluster.
+
+For total within cluster sum results of model with the number of
+clusters k=2 we had a result with the value of 40750.1 this value
+represents the distances between each data point in a cluster and the
+centroid of that cluster, which is considered relatively large
+compared to the other two models' results, for model with the number
+of clusters k=3 and 4 we had the results 34529.21 and 29822.08
+respectively, in my opinion as the number of clusters (k) increases,
+the total within cluster sum generally decreases because the data points
+are closer to their cluster centroids, more specifically, with more clusters,
+each cluster tends to have fewer data points, and these data points are typically closer to their cluster centroid.
+This leads to a decrease in the overall WCSS,
+indicating that the data points are more tightly clustered around their respective centroids.
+
+BCubed precision and recall results showed that model with the number of
+clusters k=2 has the highest precision with the value 0.3349891 and the
+highest recall with the value 0.512721, the model with the number of
+clusters k=3 and 4 had precision values of 0.3352973 and 0.3362805
+respectively and the model with the number of clusters k=3 snd 4 had
+recall values of 0.3487142 and 0.2555154 respectively, A higher
+precision indicates that, within a cluster, the data points are more
+homogeneous and accurately assigned to the same group and higher recall
+implies that the clustering algorithm is effective in identifying and
+grouping together all instances of a specific category.
+
+Based on the previous findings, we can draw the following conclusion,
+the model with the number of clusters k=2 seems to be the optimal number
+of clustering since it had the highest average silhouette width, and the highest value of BCubed precision and recall,
+this means that most of the evaluation methods' results supports it,
+we also applied the Elbow Method and we had the result of k=2 to be the optimal K.
+
 
 Finally, both models are helpful for predicting Salaries and helped us
 to reach our goal which is helping people to take in consideration if
