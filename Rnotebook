@@ -2169,7 +2169,8 @@ This leads to a decrease in the overall WCSS,
 indicating that the data points are more tightly clustered around their respective centroids.
 
 BCubed precision and recall results showed that model with the number of
-clusters k=2 has the highest precision with the value 0.3349891 and the
+clusters k=2 has the least precision with a relatively small difference compared to the other k-means,
+precision value is 0.3349891 and the
 highest recall with the value 0.512721, the model with the number of
 clusters k=3 and 4 had precision values of 0.3352973 and 0.3362805
 respectively and the model with the number of clusters k=3 snd 4 had
