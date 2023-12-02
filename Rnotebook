@@ -1963,68 +1963,67 @@ So we concluded the following results: Information Gain:
 |             | 70% training set 30% testing set: | 70% training set 30% testing set: | 70% training set 30% testing set: | 75% training set 25% testing set: | 75% training set 25% testing set: | 75% training set 25% testing set: | 65% training set 35% testing set: | 65% training set 35% testing set: | 65% training set 35% testing set: |
 |--------|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
 |             |                IG                 |             IG ratio              |            Gini Index             |                IG                 |             IG ratio              |            Gini Index             |                IG                 |             IG ratio              |            Gini Index             |
-| Accuracy    |                78%                |                86%                |                83%                |                83%                |                86%                |                82%                |                83%                |                85%                |                80%                |
-| Precision   |               100%                |               100%                |                92%                |                92%                |                1%                 |                93%                |                95%                |               100%                |               100%                |
-| Sensitivity |                57%                |                60%                |                70%                |                67%                |                60%                |                65%                |                68%                |                61%                |                59%                |
-| Specificity |               100%                |               100%                |                93%                |                93%                |               100%                |                94%                |                96%                |               100%                |               100%                |
+| Accuracy    |                84%                |                85%                |                84%                |                83%                |                85%                |                83%                |                81%                |                82%                |                81%                |
+| Precision   |                94%                |                98%                |                94%                |                93%                |                87%                |                93%                |                88%                |                87%                |                88%                |
+| Sensitivity |                69%                |                67%                |                69%                |                69%                |                73%                |                69%                |                70%                |                65%                |                70%                |
+| Specificity |                95%                |                99%                |                95%                |                94%                |                91%                |                94%                |                90%                |                92%                |                90%                |
 
 #### Partition 1 (70% training set, 30% testing set):
 
-IG algorithm: The accuracy is 78%, indicating that the model correctly
-predicted 78% of the instances in the testing set. The precision is
-100%, meaning that all the instances predicted as positive by the model
-were actually positive. The sensitivity is 57%, indicating that the
-model correctly identified 57% of the positive instances. The
-specificity is 100%, meaning that the model correctly identified all the
-negative instances.
+IG algorithm: The accuracy is 84%, indicating that the model correctly
+predicted 84% of the instances in the testing set. The precision is 94%,
+meaning that almost all the instances predicted as positive by the model
+were actually positive. The sensitivity is 69%, indicating that the
+model correctly identified 69% of the positive instances. The
+specificity is 95%, meaning that the model correctly identified 95% of
+the negative instances.
 
-IG Ratio algorithm: The accuracy is 86%, indicating that the model
-correctly predicted 86% of the instances in the testing set. The
-precision is 100%, meaning that all the instances predicted as positive
-by the model were actually positive. The sensitivity is 60%, indicating
-that the model correctly identified 60% of the positive instances. The
-specificity is 100%, meaning that the model correctly identified all the
-negative instances.
+IG Ratio algorithm: The accuracy is 85%, indicating that the model
+correctly predicted 85% of the instances in the testing set. The
+precision is 98%, meaning that about 98% instances predicted as positive
+by the model were actually positive. The sensitivity is 67%, indicating
+that the model correctly identified 67% of the positive instances. The
+specificity is 99%, meaning that the model correctly identified almost
+all the negative instances.
 
-Gini Index algorithm: The accuracy is 83%, indicating that the model
-correctly predicted 83% of the instances in the testing set. The
-precision is 92%, meaning that 92% of the instances predicted as
-positive by the model were actually positive. The sensitivity is 70%,
-indicating that the model correctly identified 70% of the positive
-instances. The specificity is 93%, meaning that the model correctly
-identified 93% of the negative instances.
+Gini Index algorithm: The accuracy is 84%, indicating that the model
+correctly predicted 84% of the instances in the testing set. The
+precision is 94%, meaning that 94% of the instances predicted as
+positive by the model were actually positive. The sensitivity is 69%,
+indicating that the model correctly identified 69% of the positive
+instances. The specificity is 95%, meaning that the model correctly
+identified 95% of the negative instances.
 
 When we choose the best algorithm, we go towards the algorithm with the
 highest number of attributes and the highest accuracy. Therefore, we
 will exclude the IG Ratio algorithm because it uses 4 attributes, which
 is less than the number of attributes in the rest of the algorithms. The
-Gini Index algorithm achieved an accuracy of 83%, which is the highest
-among the remaining algorithms in this partition. It had a higher
-accuracy compared to the IG algorithm (78%).
+Gini Index algorithm achieved an accuracy of 83%, which is the higher
+than IG algorithm in this partition.
 
 #### Partition 2 (75% training set, 25% testing set):
 
 IG algorithm: The accuracy is 83%, indicating that the model correctly
-predicted 83% of the instances in the testing set. The precision is 92%,
-meaning that 92% of the instances predicted as positive by the model
-were actually positive. The sensitivity is 67%, indicating that the
-model correctly identified 67% of the positive instances. The
-specificity is 93%, meaning that the model correctly identified 93% of
+predicted 83% of the instances in the testing set. The precision is 93%,
+meaning that 93% of the instances predicted as positive by the model
+were actually positive. The sensitivity is 69%, indicating that the
+model correctly identified 69% of the positive instances. The
+specificity is 94%, meaning that the model correctly identified 94% of
 the negative instances.
 
-IG Ratio algorithm: The accuracy is 86%, indicating that the model
-correctly predicted 86% of the instances in the testing set. The
-precision is 1%, meaning that only 1% of the instances predicted as
-positive by the model were actually positive. The sensitivity is 60%,
-indicating that the model correctly identified 60% of the positive
-instances. The specificity is 100%, meaning that the model correctly
-identified all the negative instances.
+IG Ratio algorithm: The accuracy is 85%, indicating that the model
+correctly predicted 85% of the instances in the testing set. The
+precision is 87%, meaning that only 87% of the instances predicted as
+positive by the model were actually positive. The sensitivity is 73%,
+indicating that the model correctly identified 73% of the positive
+instances. The specificity is 91%, meaning that the model correctly
+identified a lot of the negative instances.
 
-Gini Index algorithm: The accuracy is 82%, indicating that the model
-correctly predicted 82% of the instances in the testing set. The
+Gini Index algorithm: The accuracy is 83%, indicating that the model
+correctly predicted 83% of the instances in the testing set. The
 precision is 93%, meaning that 93% of the instances predicted as
-positive by the model were actually positive. The sensitivity is 65%,
-indicating that the model correctly identified 65% of the positive
+positive by the model were actually positive. The sensitivity is 69%,
+indicating that the model correctly identified 69% of the positive
 instances. The specificity is 94%, meaning that the model correctly
 identified 94% of the negative instances.
 
@@ -2032,56 +2031,56 @@ When we choose the best algorithm, we go towards the algorithm with the
 highest number of attributes and the highest accuracy. Therefore, we
 will exclude the IG Ratio algorithm because it uses 4 attributes, which
 is less than the number of attributes in the rest of the algorithms. The
-Gini Index algorithm achieved an accuracy of 82%, which is the highest
-among the remaining algorithms in this partition. It outperformed the IG
-algorithm (83%) in terms of accuracy.
+Gini Index and IG algorithms achieved an accuracy of 83%, which is the
+same in this partition. It outperformed the IG algorithm (83%) in terms
+of accuracy.
 
 #### Partition 3 (65% training set, 35% testing set):
 
-IG algorithm: The accuracy is 83%, indicating that the model correctly
-predicted 83% of the instances in the testing set. The precision is 95%,
-meaning that 95% of the instances predicted as positive by the model
-were actually positive. The sensitivity is 68%, indicating that the
-model correctly identified 68% of the positive instances. The
-specificity is 96%, meaning that the model correctly identified 96% of
+IG algorithm: The accuracy is 81%, indicating that the model correctly
+predicted 81% of the instances in the testing set. The precision is 88%,
+meaning that 88% of the instances predicted as positive by the model
+were actually positive. The sensitivity is 70%, indicating that the
+model correctly identified 70% of the positive instances. The
+specificity is 90%, meaning that the model correctly identified 90% of
 the negative instances.
 
-IG Ratio algorithm: The accuracy is 85%, indicating that the model
-correctly predicted 85% of the instances in the testing set. The
-precision is 100%, meaning that all the instances predicted as positive
-by the model were actually positive. The sensitivity is 61%, indicating
-that the model correctly identified 61% of the positive instances. The
-specificity is 100%, meaning that the model correctly identified all the
-negative instances.
+IG Ratio algorithm: The accuracy is 82%, indicating that the model
+correctly predicted 82% of the instances in the testing set. The
+precision is 87%, meaning that a lot of the instances predicted as
+positive by the model were actually positive. The sensitivity is 65%,
+indicating that the model correctly identified 65% of the positive
+instances. The specificity is 92%, meaning that the model correctly
+identified 92% of the negative instances.
 
-Gini Index algorithm: The accuracy is 80%, indicating that the model
-correctly predicted 80% of the instances in the testing set. The
-precision is 100%, meaning that all the instances predicted as positive
-by the model were actually positive. The sensitivity is 59%, indicating
-that the model correctly identified 59% of the positive instances. The
-specificity is 100%, meaning that the model correctly identified all the
-negative instances.
+Gini Index algorithm: The accuracy is 81%, indicating that the model
+correctly predicted 81% of the instances in the testing set. The
+precision is 88%, meaning that 88% of the instances predicted as
+positive by the model were actually positive. The sensitivity is 70%,
+indicating that the model correctly identified 70% of the positive
+instances. The specificity is 90%, meaning that the model correctly
+identified 90% of the negative instances.
 
 When we choose the best algorithm, we go towards the algorithm with the
 highest number of attributes and the highest accuracy. Therefore, we
 will exclude the IG Ratio algorithm because it uses 4 attributes, which
 is less than the number of attributes in the rest of the algorithms. The
-IG algorithm achieved an accuracy of 83%, which is the highest among the
-remaining algorithms in this partition. It had a higher accuracy
-compared to the Gini Index algorithm (80%).
+Gini Index and IG algorithms achieved an accuracy of 83%, which is the
+same in this partition. It outperformed the IG algorithm (83%) in terms
+of accuracy.
 
 **Overall Best Algorithm (based on accuracy):**
 
-The Gini Index algorithm achieved the highest accuracy across all
-partitions. While the accuracy of the Gini Index algorithm varied
-slightly in each partition (83% in Partition 1, 82% in Partition 2, and
-80% in Partition 3), it consistently outperformed the other algorithms
-in terms of accuracy.
+The IG Ratio algorithm achieved the highest accuracy across all
+partitions. While the accuracy of the IG Ratio algorithm varied slightly
+in each partition (85% in Partition 1, 83% in Partition 2, and 81% in
+Partition 3), it consistently outperformed the other algorithms in terms
+of accuracy.
 
 **Best Decision Tree:**
 
 After careful review, we concluded that the Information Gain algorithm
--65% training set and 35% testing set- produced the most accurate and
+-70% training set and 30% testing set- produced the most accurate and
 dependable findings. As a result, we confidently chose it as the best
 model to build a decision tree. 
 
@@ -2097,8 +2096,8 @@ decision making.
 
 **Several findings can be drawn from the decision tree analysis:**
 
-1.  The decision tree has 10 leaf nodes, indicating that the tree has
-    extracted 10 rules or distinct conditions.
+1.  The decision tree has 6 leaf nodes, indicating that the tree has
+    extracted 6 rules or distinct conditions.
 
 2.  The decision nodes in the tree apply the attributes that have a
     significant impact to make decisions and classify cases.
@@ -2110,7 +2109,6 @@ decision making.
 Consequently, the Information Gain algorithm emerged as the best
 selection, providing decision trees with high accuracy, precision,
 specificity, and more specific conditions based on feature selection.
-
 
 #### Clustering 
 
